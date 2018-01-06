@@ -1,0 +1,63 @@
+
+copyright = "my test?????"
+
+
+
+# baseurl             = "https://orianna-zzo.github.io/"
+builddrafts         = false
+languageCode        = "zh-CN"
+canonifyurls        = true
+contentdir          = "content"
+layoutdir           = "layouts"
+publishdir          = "public"
+
+theme               = "cocoa"
+author              = "ZHENG Zi'ou"
+title               = "博客|ZHENG Zi'ou's Home"
+googleAnalytics     = "UA-90057853-1"
+
+
+
+[permalinks]
+blog  = "blog/:slug/"
+
+[[menu.main]]
+name                   = "Blog"
+weight                 = -120
+identifier             = "blog"
+url                    = "/blog/"
+
+[[menu.main]]
+name                   = "About"
+weight                 = -110
+identifier             = "about"
+url                    = "/about/"
+
+
+
+[params]
+include_rss            = true                          # include RSS <link> tag in <head> and show RSS icon
+latestpostscount       = 5                             # how many posts to display on the home page
+i18n_flags             = false                         # whether to display small country flags for available translations
+author                 = "ZHENG Zi'ou"
+cachebuster            = true                          # add the current unix timestamp in query string for cache busting css assets
+dateform               = "Jan 2, 2006"
+dateformfull           = "Mon Jan 2 2006 15:04:05"
+description            = "Don't panic"
+email                  = "zhengziou@gmail.com"
+extracssfiles          = [ "/css/override.css" ]       # In your `static` directory, add/remove files as necessary.
+faviconfile            = "img/leaf.ico"
+github                 = "//github.com/orianna-zzo"
+linkedin               = "//linkedin.com/in/ziouzheng"
+noshowreadtime         = false                         # if true, don't show "<x> minutes read" in posts
+selfintro              = "Be myself. Love the wonderful world. Do the right things in the right way."                            # appears in the site header when set to a non-empty string
+
+highlightjs            = true
+# highlightjslanguages = ["go"]                        # additional languages not included in the "common" set
+# highlightjsStyle     = "darcula"
+
+
+avatar                 = "img/profile.png" # path to image in static dir e.g img/avatar.png (do not use in the same time as gravatar)
+# gravatar             = ""                # gravatar hash. see https://en.gravatar.com/site/implement/hash/. do not use in the same time as avatar
+
+
