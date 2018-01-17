@@ -53,7 +53,7 @@ draft: true
 title: "Blog养成记(4) 增加tags、topics和categories"
 tags: ["hugo"]
 topics: ["Blog养成记"]
-categories: ["浅尝杂技"]
+categories: ["杂技浅尝"]
 ```
 
 当然实际上，Hugo默认会产生 `tags` 和 `categories` 的分类，如果只需要这两个，可以不用在 `config.toml` 中声明就在post头部使用。
@@ -107,7 +107,7 @@ categoryes_weight: 96
 {{ with .Params.tags }}
 <ul id="tags">
   {{ range . }}
-    <li> <a href="{{ "tags" | absURL }}{{ . | urlize }}">{{ . }}</a> </li>
+    <li> <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a> </li>
   {{ end }}
 </ul>
 {{ end }}
@@ -115,7 +115,7 @@ categoryes_weight: 96
 {{ with .Params.topics }}
 <ul id="topics">
   {{ range . }}
-    <li> <a href="{{ "topics" | absURL }}{{ . | urlize }}">{{ . }}</a> </li>
+    <li> <a href="{{ "topics" | absURL }}/{{ . | urlize }}">{{ . }}</a> </li>
   {{ end }}
 </ul>
 {{ end }}
@@ -123,7 +123,7 @@ categoryes_weight: 96
 {{ with .Params.categories }}
 <ul id="categories">
   {{ range . }}
-    <li><a href="{{ "categories" | absURL}}{{ . | urlize }}">{{ . }}</a> </li>
+    <li><a href="{{ "categories" | absURL}}/{{ . | urlize }}">{{ . }}</a> </li>
   {{ end }}
 </ul>
 {{ end }}
@@ -186,7 +186,7 @@ categoryes_weight: 96
             {{ with .Params.topics }}
             <div class="page-tag" id="topics">
                 {{ range . }}
-                <a href="{{ "topics" | absURL }}{{ . | urlize }}">{{ . }}</a> 
+                <a href="{{ "topics" | absURL }}/{{ . | urlize }}">{{ . }}</a> 
                 {{ end }}
             </div>
             {{ end }}
@@ -196,7 +196,7 @@ categoryes_weight: 96
             {{ with .Params.categories }}
             <div class="page-tag" id="categories">
                 {{ range . }}
-                <a href="{{ "categories" | absURL}}{{ . | urlize }}">{{ . }}</a> 
+                <a href="{{ "categories" | absURL}}/{{ . | urlize }}">{{ . }}</a> 
                 {{ end }}
             </div>
             {{ end }}
@@ -208,7 +208,7 @@ categoryes_weight: 96
         <div class="page-tag" id="tags">
             {{ range . }}
             <div class="page-tag">
-                <a href="{{ "tags" | absURL }}{{ . | urlize }}">{{ . }}</a>
+                <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a>
             </div>
             {{ end }}
         </div>
