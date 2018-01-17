@@ -1,0 +1,88 @@
+{{ partial "header.html" . }}
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    {{ partial "page-heading" . }}
+                    <div class="initials"><a href="{{ .Site.BaseURL }}">{{ .Site.Params.Initials }}</a></div>
+                </div>
+                <div class="meta">
+                    <div style="display: flex">
+                        {{ if and .Site.Params.dateformfull .Site.Params.dateform }}
+                        <div class="date" title='{{ .Date.Format .Site.Params.dateformfull }}'>{{ .Date.Format .Site.Params.dateformfull }}</div>
+                        {{ else }}
+                        <div class="date" title='{{ .Date.Format "Mon Jan 2 2006 15:04:05" }}'>{{ .Date.Format "Jan 2, 2006" }}</div>
+                        {{ end }}
+  
+                        {{ if not .Site.Params.noshowreadtime }}
+                        <div class="reading-time"><div class="middot"></div>{{ i18n "readingTime" .ReadingTime }}</div>
+                        {{ end }}
+                    </div>
+                    <div style="display: flex;">
+                        <div class="page-tag">
+                            <div class="page-tag">topic:</div>
+                            {{ with .Params.topics }}
+                            <div class="page-tag" id="topics">
+                                {{ range . }}
+                                <a href="{{ "topics" | absURL }}{{ . | urlize }}">{{ . }}</a> 
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                        </div>
+                        <div class="page-tag">
+                            <div class="page-tag">category: </div>
+                            {{ with .Params.categories }}
+                            <div class="page-tag" id="categories">
+                                {{ range . }}
+                                <a href="{{ "categories" | absURL}}{{ . | urlize }}">{{ . }}</a> 
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                        </div>
+                    </div>
+                    <div class="page-tag">
+                        <div class="page-tag">tags: </div>
+                        {{ with .Params.tags }}
+                        <div class="page-tag" id="tags">
+                            {{ range . }}
+                            <div class="page-tag">
+                                <a href="{{ "tags" | absURL }}{{ . | urlize }}">{{ . }}</a>
+                            </div>
+                            {{ end }}
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+            <div class="markdown">
+                {{ .Content }}
+                <br>
+                <p class="back-to-posts"><a href="/blog/">{{ i18n "backToPosts" }}</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                {{ template "_internal/disqus.html" . }}
+            </div>
+            {{ if .Site.Params.gitalk }}
+            <div id="gitalk-container"></div>
+            <script type="text/javascript">
+                const gitalk = new Gitalk({
+                  clientID: "{{ .Site.Params.gitalk_clientID }}",
+                  clientSecret: "{{ .Site.Params.gitalk_clientSecret }}",
+                  repo: "{{ .Site.Params.gitalk_repo }}",
+                  owner: "{{ .Site.Params.gitalk_owner }}",
+                  admin: {{ .Site.Params.gitalk_admin }},
+                  // facebook-like distraction free mode
+                  distractionFreeMode: true
+                })
+                gitalk.render('gitalk-container')
+            </script>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+
+{{ partial "footer.html" . }}
