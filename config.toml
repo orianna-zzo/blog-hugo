@@ -24,7 +24,7 @@ title                      = "博客|ZHENG Zi'ou"
 
 [taxonomies]
   tag = "tags"
-  topic = "topics"
+  series = "series"
   category = "categories"
 
 

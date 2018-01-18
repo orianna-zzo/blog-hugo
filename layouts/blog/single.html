@@ -21,16 +21,20 @@
                         {{ end }}
                     </div>
                     <div style="display: flex;">
+                        {{ if .Params.series }}
                         <div class="page-tag">
-                            <div class="page-tag">topic:</div>
-                            {{ with .Params.topics }}
-                            <div class="page-tag" id="topics">
+                            <div class="page-tag">series:</div>
+                            {{ with .Params.series }}
+                            <div class="page-tag" id="series">
                                 {{ range . }}
-                                <a href="{{ "topics" | absURL }}/{{ . | urlize }}">{{ . }}</a> 
+                                <a href="{{ "series" | absURL }}/{{ . | urlize }}">{{ . }}</a> 
                                 {{ end }}
                             </div>
                             {{ end }}
                         </div>
+                        {{ end }}
+
+                        {{ if .Params.categories }}
                         <div class="page-tag">
                             <div class="page-tag">category: </div>
                             {{ with .Params.categories }}
@@ -41,7 +45,10 @@
                             </div>
                             {{ end }}
                         </div>
+                        {{ end }}
                     </div>
+
+                    {{ if .Params.tags }}
                     <div class="page-tag">
                         <div class="page-tag">tags: </div>
                         {{ with .Params.tags }}
@@ -54,6 +61,7 @@
                         </div>
                         {{ end }}
                     </div>
+                    {{ end }}
                 </div>
             </div>
             <div class="markdown">

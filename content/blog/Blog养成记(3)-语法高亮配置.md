@@ -3,7 +3,7 @@ date: "2018-01-09T17:52:25+08:00"
 draft: false
 title: "Blog养成记(3) 语法高亮配置"
 tags: ["hugo"]
-topics: ["Blog养成记"]
+series: ["Blog养成记"]
 categories: ["杂技浅尝"]
 toc: true
 

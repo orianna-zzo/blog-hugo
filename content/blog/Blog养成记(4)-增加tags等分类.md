@@ -3,7 +3,7 @@ date: "2018-01-09T18:22:25+08:00"
 draft: false
 title: "Blog养成记(4) 增加tags等分类"
 tags: ["hugo"]
-topics: ["Blog养成记"]
+series: ["Blog养成记"]
 categories: ["杂技浅尝"]
 toc: true
 
@@ -41,7 +41,7 @@ Hugo是支持用户自定义分类的，这个称为taxonomy，可以来对网�
 ```
 [taxonomies]
   tag = "tags"
-  topic = "topics"
+  series = "series"
   category = "categories"
 ```
 
@@ -49,10 +49,10 @@ Hugo是支持用户自定义分类的，这个称为taxonomy，可以来对网�
 
 ```yaml
 date: "2018-01-09T16:22:25+08:00"
-draft: true
-title: "Blog养成记(4) 增加tags、topics和categories"
+draft: false
+title: "Blog养成记(4) 增加tags等分类"
 tags: ["hugo"]
-topics: ["Blog养成记"]
+series: ["Blog养成记"]
 categories: ["杂技浅尝"]
 ```
 
@@ -70,6 +70,8 @@ categories: ["杂技浅尝"]
 
 ### 分类排序
 
+> 分类排序还未正式尝试，无法确认正式效果，还需后面确认后再补充。
+
 在内容页头部中以 `术语名称_weight` 来标志权重，可在分类的查看野种按该权重进行排序。但暂时只支持默认情况下以日期作为权重排序标准。
 
 还是以这篇博文为例：
@@ -80,12 +82,11 @@ draft: true
 title: "Blog养成记(4) 增加tags、topics和categories"
 tags: ["hugo"]
 tags_weight: 66
-topics: ["Blog养成记"]
-topics_weight: 96
+series: ["Blog养成记"]
+series_weight: 96
 categories: ["浅尝杂技"]
 categoryes_weight: 96
 ```
-
 
 
 ## 网页布局修改
@@ -98,7 +99,6 @@ categoryes_weight: 96
 
 网页布局主要涉及到Hugo的模板，可对现有主题的布局进行的修改有很多，具体语法和教程可参考官网对于[模板的介绍](https://gohugo.io/templates/)，现暂且从简单入手，只考虑对博客正文页增加tags、topics、categories，并增加table of contents作为目录导航，因此只需要考虑single page template单页模板，[此处](https://gohugo.io/templates/single-page-templates/)有官网具体说明。
 
-### 增加分类显示
 
 #### 显示分类
 
@@ -165,7 +165,7 @@ categoryes_weight: 96
 
 这样meta类的div中的所有div都占有一行，但是如此一来，显示post时间和显示阅读时间也分成了两行，所以对于这两部分，在外面也套一个div，定义style的 `display: flex`。同样的，我也希望topic和category也在一行，所以做同样的操作。
 
-再加上一些局部布局样式修改，这一块代码现在应为：
+再加上一些局部布局样式修改以及若标签内没有内容就不显示这部分内容，这一块代码现在应为：
 
 {{<highlight python "linenos=inline, hl_lines=2 13 14 15 17 24 25 27 35 36 38 40">}}
 <div class="meta">
@@ -181,16 +181,20 @@ categoryes_weight: 96
         {{ end }}
     </div>
     <div style="display: flex;">
+        {{ if .Params.series }}
         <div class="page-tag">
             <div class="page-tag">topic:</div>
-            {{ with .Params.topics }}
-            <div class="page-tag" id="topics">
+            {{ with .Params.series }}
+            <div class="page-tag" id="series">
                 {{ range . }}
-                <a href="{{ "topics" | absURL }}/{{ . | urlize }}">{{ . }}</a> 
+                <a href="{{ "series" | absURL }}/{{ . | urlize }}">{{ . }}</a> 
                 {{ end }}
             </div>
             {{ end }}
         </div>
+        {{ end }}
+
+        {{ if .Params.categories }}
         <div class="page-tag">
             <div class="page-tag">category: </div>
             {{ with .Params.categories }}
@@ -201,7 +205,10 @@ categoryes_weight: 96
             </div>
             {{ end }}
         </div>
+        {{ end }}
     </div>
+
+    {{ if .Params.tags }}
     <div class="page-tag">
         <div class="page-tag">tags: </div>
         {{ with .Params.tags }}
@@ -214,6 +221,7 @@ categoryes_weight: 96
         </div>
         {{ end }}
     </div>
+    {{ end }}
 </div>
 
 
