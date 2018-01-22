@@ -1,8 +1,8 @@
 ---
 date: "2018-01-18T09:14:15+08:00"
 draft: false
-title: "建立python虚拟环境"
-tags: ["python", "conda", "环境配置"]
+title: "在公司建立python虚拟环境"
+tags: ["python", "conda", "环境配置", "公司"]
 series: []
 categories: ["杂技浅尝"]
 toc: true
@@ -11,7 +11,7 @@ toc: true
 
 **Resource资源链接汇总**：
 
-[conda github repo](https：//github.com/conda/conda)、[conda用户手册]([https：//conda.io](https：//conda.io/))
+[conda github repo](https://github.com/conda/conda)、[conda用户手册](https://conda.io/)
 
 ## 前言
 
@@ -32,7 +32,7 @@ toc: true
 
 #### docker
 
-其实docker很不错。容器化是现在非常火的一个方案。docker容器崩溃也不会影响主机，而且环境镜像可移植性非常强，能非常方便地把环境移植到不同的主机上去而不需要重新配置。现在我自己电脑也尽量在docker中开发，希望能不扰乱电脑本身的环境。可惜的是，尽管网上有信息说新版的docker容器使用可以不使用root权限，也有教程说建立一个可以使用docker的用户组，但是docker的安装还是避免不了需要root权限，而对于公司的环境来说，主机系统环境版本较旧且需要运营安装配置，灵活度不够。（插一句吐槽，其实对于正常有运营的组来说非常正常，但现在新到的组十分不规范，虽然不使用生产数据库但开发机都放在生产环境，其他人都不知道怎么找人root安装软件。）所以在公司使用的场景下只能忍痛放弃。如果没有这个限制，我还是很推荐这个方案，具体使用方法可以参考我另外的docker系列文章。
+其实docker很不错。容器化是现在非常火的一个方案。docker容器崩溃也不会影响主机，而且环境镜像可移植性非常强，能非常方便地把环境移植到不同的主机上去而不需要重新配置安装。现在我自己电脑也尽量在docker中开发，希望能不扰乱电脑本身的环境。可惜的是，尽管网上有信息说新版的docker容器使用可以不使用root权限，也有教程说建立一个可以使用docker的用户组，但是docker的安装还是避免不了需要root权限，而对于公司的环境来说，主机系统环境版本较旧且需要运营安装配置，灵活度不够。（插一句吐槽，其实对于正常有运营的组来说非常正常，但现在新到的组十分不规范，虽然不使用生产数据库但开发机都放在生产环境，其他人都不知道怎么找人root安装软件。）所以在公司使用的场景下只能忍痛放弃。如果没有这个限制，我还是很推荐这个方案，具体使用方法可以参考我另外的docker系列文章。
 
 #### virtualenv vs venv
 
@@ -44,9 +44,9 @@ venv在python3.3之后集成在python标准库中。在python3.4之后可以直�
 
 venv相关信息比较少，但因为virtualenv与之相似度很大，就用virtualenv与conda进行比较了。
 
-首先非常重要的一点，venv也好，virtualenv也好都只针对python，也就是无法用在其他语言环境，而conda并不局限于python，它可以管理任何其他语言。我找到一篇关于澄清对conda误解的[博文](https：//jakevdp.github.io/blog/2016/08/25/conda-myths-and-misconceptions/)，看完就能对conda有个大致的认识。其中，第5条说明了作者认为conda相比于virtualenv/venv的优点，之后还给出了virtualenv与conda如何结合使用。对我来说最重要的是：conda环境完全隔离，连执行路径都不一致，还有很重要的一点，conda虚拟环境也方便迁移，可以在有外网的电脑生成后打包上传到无网的服务器上使用。这一点就基本决定了要使用conda建立python开发环境。
+首先非常重要的一点，venv也好，virtualenv也好都只针对python，也就是无法用在其他语言环境，而conda并不局限于python，它可以管理任何其他语言。我找到一篇关于澄清对conda误解的[博文](https://jakevdp.github.io/blog/2016/08/25/conda-myths-and-misconceptions/)，看完就能对conda有个大致的认识。其中，第5条说明了作者认为conda相比于virtualenv/venv的优点，之后还给出了virtualenv与conda如何结合使用。对我来说最重要的是：conda环境完全隔离，连执行路径都不一致，还有很重要的一点，conda虚拟环境也方便迁移，可以在有外网的电脑生成后打包上传到无网的服务器上使用。这一点就基本决定了要使用conda建立python开发环境。
 
-此外，针对python，[Anaconda的文档](https：//docs.anaconda.com/_downloads/conda-pip-virtualenv-translator.html)中对conda、pip和virtualenv进行了简要的比较，其中点明了pip是个包管理器、virtualenv是环境管理器，而conda两者兼顾，还可以升级python核心程序。这个很好地说明了conda的全能。具体对比如下：
+此外，针对python，[Anaconda的文档](https://docs.anaconda.com/_downloads/conda-pip-virtualenv-translator.html)中对conda、pip和virtualenv进行了简要的比较，其中点明了pip是个包管理器、virtualenv是环境管理器，而conda两者兼顾，还可以升级python核心程序。这个很好地说明了conda的全能。具体对比如下：
 
 | Task                                 | Conda package and environment manager command | Pip package manager command              | Virtualenv environment manager command   |
 | ------------------------------------ | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
@@ -72,13 +72,13 @@ venv相关信息比较少，但因为virtualenv与之相似度很大，就用vir
 
 一般如果通过Anaconda安装的python，conda就已经默认安装好了。
 
-也可以在[github的repo](https：//github.com/conda/conda)上下载发行版的源码仅安装conda及其依赖 (称之为Miniconda)。源码下载后解压缩，进入文件夹后在终端输入： 
+也可以在[github的repo](https://github.com/conda/conda)上下载发行版的源码仅安装conda及其依赖 (称之为Miniconda)。源码下载后解压缩，进入文件夹后在终端输入： 
 
 ```shell
 $ python setup.py install
 ```
 
-或者在[这里](https：//conda.io/miniconda.html)下载对应版本的bash文件，在终端执行：
+或者在[这里](https://conda.io/miniconda.html)下载对应版本的bash文件，在终端执行：
 
 ```shell
 $ bash Miniconda_file_name.sh
@@ -137,7 +137,7 @@ Linux: $ source activate envname
 Windows: $ activate envname
 ```
 
-激活后，终端的当前目录前会显示你的虚拟环境名称。此时执行的就是虚拟环境envname中的包依赖，这样就可以开始使用啦。
+激活后，终端的当前目录前会显示你的虚拟环境名称。此时执行的就是虚拟环境envname中的包依赖，这样就可以开始使用啦。可以用 `which python` 查看现在使用的python执行程序，就能发现已经不是使用系统路径下的python了。
 
 使用结束后，可以通过下面命令来关闭当前环境：
 
@@ -168,8 +168,132 @@ $ conda list
 $ conda remove --name envname package
 ```
 
+查找需要安装的包，比如说tensorflow：
+```shell
+$ conda search tensorflow
+```
+
+在实际使用中发现conda search得到的版本不够新，因此在激活虚拟环境后使用 `pip install` 或者`python setup.py install` 来安装包。
+
+## 实施流程
+
+1. 自己电脑建立与服务器系统一致的docker环境镜像，以mint18为例：
+
+用以下dockerfile建立以下镜像：
+```
+FROM vcatechnology/base-linux-mint
+MAINTAINER Zi'ou Zheng <zhengziou@gmail.com>
+
+
+# Mount volume to host
+VOLUME /output
+
+
+CMD ["/bin/bash"]
+```
+
+若为其他系统，base image最好为official image。
+
+镜像建立：
+```shell
+$ docker build -t orianna/mint:18 .
+```
+
+2. 新建容器并配置环境
+
+在当前文件夹新建文件夹python3.6来挂在在容器上，来与容器进行数据交流。网上下载需要的环境包，例如Anaconda3，并放在python3.6文件中。
+新建容器my-mint:
+
+```shell
+$ docker run --name "my-mint" -v $(pwd)/python3.6:/output -it orianna/mint:18
+```
+
+进入 `/output` 后，根据指示安装Anaconda3:
+```shell
+$ sh Anaconda3-5.0.1-Linux-x86_64.sh
+```
+
+查看python是否安装完成:
+```shell
+$ python
+```
+
+如果显示的不是 `Python 3.6.3 |Anaconda, Inc.|`，则还需要输入以下命令 (具体路径需要参考安装Anaconda3时给出的提示)，使 `.bashrc`中能正常使用
+```shell
+$ source /root/.bashrc
+```
+
+新建conda虚拟环境 `py3.6-tf`，虚拟环境以现有python3环境作为基础:
+```shell
+$ conda create -n py3.6-tf --clone root
+```
+
+在虚拟环境中安装其他需要的包:
+```shell
+$ # 进入虚拟环境
+$ source acivate py3.6-tf
+(py3.6-tf)$ # 安装其他包
+(py3.6-tf)$ pip install tensorflow
+(py3.6-tf)$ pip install jieba
+(py3.6-tf)$ pip install gensim
+(py3.6-tf)$ pip install tqdm
+```
+
+安装完成后进行查看:
+```shell
+(py3.6-tf)$ python
+(py3.6-tf)> import tensorflow
+(py3.6-tf)> import jieba
+(py3.6-tf)> import gensim
+(py3.6-tf)> import tqdm
+
+```
+
+如果能够正常引入，则安装成功。
+可以退出python和虚拟环境:
+```shell
+(py3.6-tf)> # 退出python
+(py3.6-tf)> exit()
+(py3.6-tf)$ # 退出虚拟环境
+(py3.6-tf)$ source deactivate
+```
+
+退出该docker镜像:
+```shell
+$ exit
+```
+
+3. 更新镜像，并将新建的虚拟环境导出
+更新镜像，并删除已有容器:
+```shell
+$ # 更新镜像
+$ docker commit my-mint orianna/mint:18
+$ # 删除该容器
+$ docker rm my-mint
+```
+
+新打开一个容器，这个容器关闭后会自动删除:
+```shell
+$ docker run -v $(pwd)/python3.6:/output --rm -it orianna/mint:18
+```
+
+进入 `Anaconda3/envs` 文件夹，并对py3.6-tf进行打包:
+```shell
+$ cd /root/Anaconda3/envs
+$ tar -czxf py3.6-tf_mint.tar.gzip py3.6-tf
+```
+
+将压缩文件移到output文件夹，可在宿主机中直接访问:
+```shell
+$ mv py3.6-tf_mint.tar.gzip /output/
+```
+
+之后只需要将该压缩文件在服务器对应的 `Anaconda/envs` 中解压缩即可。
+
 ## 版本控制
 
-| Version | Action | Time       |
-| ------- | ------ | ---------- |
-| 1.0     | Init   | 2018-01-18 |
+| Version | Action     | Time       |
+| ------- | ---------- | ---------- |
+| 1.0     | Init       | 2018-01-18 |
+| 1.1     | 增加公司流程 | 2018-01-19 |
+
