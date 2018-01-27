@@ -38,7 +38,7 @@ toc: true
 
 前者是虚拟机的架构图，后者是docker容器的架构图。最显然的区别是，每个虚拟机中都运行着各自的guest OS，而在docker容器架构中每个容器只包含了各自的应用和依赖包，并不包含独立的操作系统。也就是说容器采用kernel共享，同时使用cgroups和namespace等方法对容器所使用的命名空间和依赖包等进行区分以达到隔离效果。所以尽管各个容器都是独立在宿主机的操作系统上运行着的，但不可避免地，各个容器之间会共享一些通用运行库。这个区别会使得各个容器之间相互独立，但并没有虚拟机的隔离性好，但这也是使得docker容器能够快速启动并且资源占用少的一个重要原因。太复杂的我也不清楚细节，只是大致有个概念，这对我们简单应用了解也应该就足够了。
 
-嗯，再啰嗦一句。在查资料是看到了这篇知乎上的[博文](https://zhuanlan.zhihu.com/p/30594040?utm_source=weibo&utm_medium=social)，里面提到在会议SOSP 2017上发表了一篇很有意思的paper，他们通过精简内核和其他虚拟技术把虚拟机做的更轻量级，使之启动速度比docker更快，内存开销比docker更小。现在的热门是容器技术，说不定再过个四五年的又是虚拟机的天下了呢？嗯，说不准是两个结合的究极进化体。门外汉表示看看热闹就可以了:smile:。
+嗯，再啰嗦一句。在查资料是看到了这篇知乎上的[博文](https://zhuanlan.zhihu.com/p/30594040?utm_source=weibo&utm_medium=social)，里面提到在会议SOSP 2017上发表了一篇很有意思的paper，他们通过精简内核和其他虚拟技术把虚拟机做的更轻量级，使之启动速度比docker更快，内存开销比docker更小。现在的热门是容器技术，说不定再过个四五年的又是虚拟机的天下了呢？嗯，说不准是两个结合的究极进化体。门外汉表示看看热闹就可以了。
 
 ### docker并不万能
 
@@ -46,7 +46,7 @@ Docker真心很好用，才上手了1个多月的我特别喜欢。但是作为�
 
 * docker容器主要针对Unix系的，也就是说如果应用是基于windows平台的，现在无法使用docker容器。不负责任地加一嘴，就是没有windows系的基镜像，就像不让你用windows虚拟机一样。
 * docker本身基于Linux 64bit，也就是说如果你的机子是32位的，暂时无法使用，不过好在现在基本是64位机的天下了，这个问题基本很少遇到。
-* windows机如果要使用docker，需要支持硬件虚拟化。现在windows版的docker实际上相当于跑了个linux内核的虚拟机。也就是windows不是所有64位机子都能装得上docker的:joy:，我新的实习生电脑就装不上，公司的windows笔记本也装不上。
+* windows机如果要使用docker，需要支持硬件虚拟化。现在windows版的docker实际上相当于跑了个linux内核的虚拟机。也就是windows不是所有64位机子都能装得上docker的，我新的实习生电脑就装不上，公司的windows笔记本也装不上。
 * 截止目前为止，docker的安装还需要root权限，docker的使用至少需要有sudo权限的用户组。据说容器的使用已经可以不需要root权限了，但我还没有实际使用过。公司服务器一般不会给你root权限，这个需要找运营，折腾起来麻烦。
 * 由于docker的隔离性并不够强，所以docker的安全方面还有待加强。这部分我还没有强烈感受到，反正不影响在自己电脑上折腾。
 
@@ -67,7 +67,10 @@ Docker分为Community (CE) 和Enterprise (EE) 版本，个人使用用CE就够�
 Mac可以选择用Homebrew进行安装:
 
 ```shell
+$ # stable channel
 $ brew cask install docker
+$ # edge channel
+$ brew cask install docker-edge
 ```
 
 也可以在[这里](https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac)选择stable或者edge进行下载，安装对应的dmg包即可。
@@ -80,7 +83,7 @@ PS，其实还有docker toolbox，暂时还没搞清楚之间的关系，感觉�
 
 ### Linux安装
 
-Docker CE支持Ubuntu、Debian、CentOS、Fedora这几个Linux环境安装。，但基本思路一致。
+Docker CE支持Ubuntu、Debian、CentOS、Fedora这几个Linux环境安装。
 
 Linux安装分为2种：
 
