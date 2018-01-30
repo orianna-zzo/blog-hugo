@@ -1,0 +1,274 @@
+---
+date: "2018-01-31T01:56:13+08:00"
+draft: false
+title: "我的Mac所需安装软件"
+tags: ["mac", "软件安装"]
+series: []
+categories: ["杂技浅尝"]
+toc: true
+---
+
+**Resource资源链接汇总**:
+
+[Homebrew官网](https://brew.sh/)、[Cask官网](http://caskroom.github.io/)
+
+## 序
+
+终于转到有terminal的电脑上了，既然换了Mac OS，需要重新开始找软件。Windows上的软件安装习惯是网上找软件exe，下载安装，基本一个版本能用很久，没有习惯更是懒得经常更新。Linux上倒是有包管理器，但用的不多，只在编程时用过，不过编程包依赖特别重要，一般不会修改，因此基本没有鼓捣过。这次准备换电脑，看着同事非常优雅自如地更新软件，有些羡慕呀，这样才能最大化开源/更新频繁的软件优势。App Store倒是可以随时更新，不过不是所有软件都发布在App Store上，所以这里记录下我需要的配置、计划安装的软件，以及安装方法。如果和我一样刚开始接触mac的小伙伴本，希望这篇能有所帮助。
+
+## Mac系统配置
+
+### Finder配置
+
+#### 显示隐藏文件夹
+
+Mac系统的/usr、/etc等文件夹都是隐藏文件，如果不进行设置用户是无法见到的。估计是因为mac用户并不是所有人都对linux的操作十分熟悉，所以把这些对于系统十分重要的文件夹都进行隐藏了，免得用户误删等操作把系统玩坏。
+
+在terminal中输入下面命令：
+
+```shell
+$ defaults write com.apple.finder AppleShowAllFiles -bool true
+```
+
+然后重启Finder，在terminal 中输入：
+
+```shell
+$ killall Finder
+```
+
+当当当当，隐藏的文件夹就显示出来了！
+
+#### 显示工具栏
+
+显示 > 显示标签页栏、路径栏、边栏、预览。
+
+对工具栏自定义：显示 > 自定义工具栏，增加新建文件夹，或者还可以添加其他想要添加工具栏。
+
+### 第三方软件安装
+
+有些软件并没有在apple认可的开发者列表内，如果要安装，首先需要mac允许软件来自任何人，而这个估计因为安全问题，属于隐藏设置，需要先打开Terminal，输入：
+
+```shell
+$ sudo spctl --master-disable
+```
+
+然后在设置>安全与隐私中选择“任何来源”。安装完毕后，为了安全考虑，最好能够再选择回来自可信任的开发者。
+
+## 包管理器
+
+### Homebrew
+
+Mac OS用户大多使用Homebrew作为包管理工具，据说相当于Ubuntu下的apt-get。官网上的一句话介绍是The missing package manager for macOS，也就是针对Mac OS所开发的包管理器。
+
+[Homebrew官网](https://brew.sh/)给出了安装brew的方法，只要复制下面脚本在Terminal中粘贴执行就安装成功。
+
+```shell
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+而有了Homebrew后，包的管理和更新就方便了很多。
+
+#### Homebrew常用指令
+
+| 指令内容               | 指令                               |
+| ------------------ | -------------------------------- |
+| 帮助文档               | ``` brew help```                 |
+| 安装某包，比如git         | ``` brew install git```          |
+| 卸载某包，比如git         | ``` brew uninstall git```        |
+| 强制卸载某包所有版本，比如git   | ```brew uninstall git --force``` |
+| Homebrew本身更新       | ```brew update```                |
+| 查看那些包过期了           | ```brew outdated```              |
+| 将所有包都更新            | ```brew upgrade```               |
+| 指定某包更新，比如git       | ```brew upgrade git```           |
+| 锁定某包不让更新，比如git     | ```brew pin git```               |
+| 解锁某包可以继续更新，比如git   | ```brew unpin git```             |
+| 卸载所有过时的包           | ```brew cleanup```               |
+| 卸载所有过时的包，并显示即将卸载的包 | ```brew cleanup -n```            |
+| 卸载过时的包，比如git       | ```brew cleanup git```           |
+| 列出所有brew装的包        | ```brew list```                  |
+| 显示软件信息             | ```brew info```                  |
+| 显示已安装的包依赖          | ```brew deps --installed```      |
+| 查看brew包下载缓存        | ```brew --cache```               |
+
+具体可查看帮助文档。
+
+如需卸载Homebrew，复制下面指令到Terminal执行：
+
+```shell
+$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
+```
+
+**遇到的问题**：
+
+* brew update
+
+  更新Homebrew本身时需要科学上网。
+
+* 更新git报错
+
+```
+xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+
+Error: Failure while executing: git config --local --replace-all homebrew.private true
+```
+
+​	如果报错，使用terminal执行：
+
+```shell
+$ brew upgrade git
+```
+
+### Homebrew Cask
+
+[Cask](http://caskroom.github.io/)扩展了Homebrew，Homebrew针对包，而cask针对应用。在实际使用中，可以不使用 `brew cask xxx` 的样式，而是先用 `brew search xxx` 进行搜索，可以发现软件会在caskroom/cask的路径下，猜想 `brew cask install xxx` 应该与 `brew install caskroom/cask/xxx` 一样。
+
+## 效率工具
+
+### 科学上网
+
+#### Windscribe
+
+这个比较麻烦，[Windscribe官网](https://windscribe.com)和安装包都需要科学上网，如果要使用需要先在官网注册，但是也要先科学上网。Homebrew下载也无法直接连接。还好之前找人下了安装包。好在安装完后可以直接登陆。免费用户每个月有10G流量，基本不看视频都够用，而且这个软件也有手机和ipad版。
+
+### 分屏工具
+
+#### Spectacle
+
+可用Homebrew进行安装。
+
+```shell
+$ brew cask install spectacle
+```
+
+Spectacle完全开源免费，不支持拖拽，需要使用快捷键。此外，Spectacle的布局较为简单，左右双屏仅支持对半开，但基本都够用，若对布局要求较高可试试Sizeup。
+
+### 防休眠工具
+
+#### Amphetamine 防休眠工具
+
+苹果App Store上直接下载就好，选择不在Dock栏显示。默认对图标左击打开设置，右击(双击)进行状态激活，可进行相反设置，为防止误击，我保留了原始设置。
+
+Amphetamine可设定每次状态激活时防休眠时长，可指定每天的某一时间段内发挥作用，还可设置触发条件Trigger，用户可以选择在插入电源适配器之后启用防休眠，或是在连接到某一Wifi之后停止休眠。Amphetamine还支持快捷键设置，还有多套图标可选，挺喜欢猫头鹰，但可惜区别只在于眼睛，太不明显，所以我选择了日月。
+
+总结：Amphetamine适合设置自动激活场景，在这些场景下可以在不合屏情况下防止休眠。但是如果需要合屏，就不适用了。
+
+#### NoSleep 合盖休眠也无效
+
+经常我们希望mac合屏后也能继续工作，比如晚上下载时避免光污染。对我来说在确认安全不会离开座位的情况下，合盖并不希望休眠，继续工作时并不想再次输入密码。NoSleep 就是专为合盖放休眠设计的。
+
+NoSleep可在Homebrew下载安装卸载：
+
+```shell
+$ brew cask install nosleep
+```
+
+NoSleep的设置比较简单，除去指定在电源适配器或者电池下启用外，其余选项都只是关于图标和自启动的附加选项。
+
+### Cheatsheet 查看快捷键
+
+```shell
+$ brew cask install cheatsheet
+```
+
+长按 `cmd` 会显示快捷键表。
+
+### Tuxera NTFS for Mac 2015
+
+收费软件。已下安装包，离线安装。
+
+### Little Snitch 防止软件自动连接网络
+
+这个不错，可以防止软件自动连接网络，不过这个软件收费也不便宜。已下载安装包。
+
+### 压缩软件
+
+#### The Unarchive
+
+The Unarchiver 支持解压 **RAR**、**7-zip**、**Tar **等常用压缩格式的文件，同时也可以打开**ISO**、**EXE** 等类型的文件，功能齐全并且免费。
+
+```shell
+$ brew cask install the-unarchiver
+```
+
+### 下载器
+
+#### Azureus
+
+这个是PT需要的软件，linux环境下一般推荐这个。
+
+```shell
+$ brew cask install vuze
+```
+
+## 程序必备
+
+### 虚拟化
+
+#### Docker
+
+Terminal安装稳定版：
+
+```shell
+$ brew cask install docker
+```
+
+使用方面，可以参考我的[docker系列](https://orianna-zzo.github.io/series/%E6%85%A2%E5%AD%A6docker/)。
+
+### 文本编辑器
+
+#### Sublime
+
+可以在官网下载安装，但是为了便于更新，还是使用Homebrew安装
+
+```shell
+$ brew cask install sublime-text
+```
+
+sublime 3安装插件需要先安装Package Control:
+
+按 ``ctrl + ` `` 打开console，然后把下面这段代码复制执行：
+
+```
+import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
+```
+
+**遇到的问题**：
+
+有时由于网络，中间文件下载可能会有些问题（也许科学上网会好些？），会提示某个位置找不到文件，该文件不是一个zip文件，可以选择离线安装。
+
+离线下载Package Control包，在[这里](https://github.com/wbond/package_control/releases)选择发布版本下载，解压缩后重命名为Package Control放置到个人用户中的 `~/Library/Application Support/Sublime Text 3Sublime Text 3/Packages` 文件夹中去，同时需要将 installed packages文件夹中关于Package control的删去。
+
+重启sublime。按 `cmd + shift + P` 打开command palette，输入 Install Package，选择Package Control: Install Package。但是弹出一个说明：There are no packages available for installation。网上说是路由器不支持ipv6的关系，需要修改hosts。
+
+打开 `/etc/hosts` 增加下面内容：
+
+```
+# sublime
+50.116.34.243 sublime.wbond.net
+```
+
+##### 安装的插件
+
+安装插件，按 `cmd + shift + P` 打开command palette，输入 Install Package，选择Package Control: Install Package，然后在新的输入框内键入插件名进行安装。
+
+* GBK support 支持中文gbk编码
+
+##### 其他配置
+
+### IDE
+
+#### Pycharm
+
+下载Professional版，需要输入key：
+
+```shell
+$ brew cask install pycharm
+```
+
+
+
+## 版本控制
+
+| Version | Action | Time       |
+| ------- | ------ | ---------- |
+| 1.0     | Init   | 2018-01-30 |
