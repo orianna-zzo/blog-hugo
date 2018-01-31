@@ -255,6 +255,41 @@ import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.
 
 ##### 其他配置
 
+`cmd + , ` 打开配置页面，在右侧用户自定义的页面中进行配置。
+
+* 修改默认打开形式：
+
+  ```yaml
+  "open_files_in_new_window": false,
+  ```
+
+  设置为false，默认tab形式打开；设置为true，默认新开一个窗口
+
+* 显示编码格式
+
+  ```yaml
+  "show_encoding": true,
+  ```
+
+  会在窗口底部显示现在使用的编码格式。
+
+* 显示空格占位符
+
+  ```yaml
+  "draw_white_space": "all",
+  "indent_guide_options": ["draw_active"],
+  ```
+
+* 显示行末占位符格式
+
+  ```yaml
+  "show_line_endings": true,
+  ```
+
+  Windows行末占位符为 `\r\n`，而Unix行末占位符为 `\n`，在文字处理中需要注意。
+
+  配置好后会在窗口底部显示行末占位符是Windows还是Unix。
+
 ### IDE
 
 #### Pycharm
