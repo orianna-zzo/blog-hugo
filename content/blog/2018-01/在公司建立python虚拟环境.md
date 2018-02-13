@@ -9,9 +9,6 @@ toc: true
 
 ---
 
-**Resource资源链接汇总**：
-
-[conda github repo](https://github.com/conda/conda)、[conda用户手册](https://conda.io/)
 
 ## 前言
 
@@ -292,6 +289,10 @@ $ mv py3.6-tf_mint.tar.gzip /output/
 ```
 
 之后只需要将该压缩文件在服务器对应的 `Anaconda/envs` 中解压缩即可。
+
+## Resource资源链接汇总
+
+[conda github repo](https://github.com/conda/conda)、[conda用户手册](https://conda.io/)
 
 ## 版本控制
 

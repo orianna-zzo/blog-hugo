@@ -9,14 +9,6 @@ toc: true
 
 ---
 
-**Resource资源链接汇总**:
-
-我建立的docker for Hugo开发镜像:  [Docker Hub上的repo](https://hub.docker.com/r/orianna/hugo-docker-dev/)、[Github上的repo](https://github.com/orianna-zzo/hugo-docker-dev)。  
-我的个人主页Hugo代码:  [blog-hugo](https://github.com/orianna-zzo/blog-hugo)  
-
-[Hugo官网](https://gohugo.io)、[关于语法高亮说明](http://gohugo.io/content-management/syntax-highlighting/)
-
-
 ## 前言
 
 Hugo官网在[这里](http://gohugo.io/content-management/syntax-highlighting/)给出了详细的语法高亮配置说明。
@@ -110,6 +102,12 @@ class Foo:
 感觉使用CSS进行语法高亮会相对更灵活、可定制。但是暂时还未尝试，若后续尝试则在此处补充。
 
 
+## Resource资源链接汇总
+
+我建立的docker for Hugo开发镜像:  [Docker Hub上的repo](https://hub.docker.com/r/orianna/hugo-docker-dev/)、[Github上的repo](https://github.com/orianna-zzo/hugo-docker-dev)。  
+我的个人主页Hugo代码:  [blog-hugo](https://github.com/orianna-zzo/blog-hugo)  
+
+[Hugo官网](https://gohugo.io)、[关于语法高亮说明](http://gohugo.io/content-management/syntax-highlighting/)
 
 ## 版本控制
 

@@ -9,13 +9,6 @@ toc: true
 
 ---
 
-**Resource资源链接汇总**:
-
-我建立的docker for Hugo开发镜像:  [Docker Hub上的repo](https://hub.docker.com/r/orianna/hugo-docker-dev/)、[Github上的repo](https://github.com/orianna-zzo/hugo-docker-dev)。  
-我的个人主页Hugo代码:  [blog-hugo](https://github.com/orianna-zzo/blog-hugo)  
-
-[Hugo官网](https://gohugo.io)、[关于Taxonomy分类说明](https://gohugo.io/content-management/taxonomies/)、[Hugo Template介绍](https://gohugo.io/templates/)
-
 ## 自定义分类
 
 Hugo是支持用户自定义分类的，这个称为taxonomy，可以来对网页内容进行逻辑划分，详情可以在[这里](https://gohugo.io/content-management/taxonomies/)查看。
@@ -226,6 +219,16 @@ categoryes_weight: 96
 
 
 {{</highlight >}}
+
+
+## Resource资源链接汇总
+
+我建立的docker for Hugo开发镜像:  [Docker Hub上的repo](https://hub.docker.com/r/orianna/hugo-docker-dev/)、[Github上的repo](https://github.com/orianna-zzo/hugo-docker-dev)。  
+我的个人主页Hugo代码:  [blog-hugo](https://github.com/orianna-zzo/blog-hugo)  
+
+[Hugo官网](https://gohugo.io)、[关于Taxonomy分类说明](https://gohugo.io/content-management/taxonomies/)、[Hugo Template介绍](https://gohugo.io/templates/)
+
+
 
 ## 版本控制
 

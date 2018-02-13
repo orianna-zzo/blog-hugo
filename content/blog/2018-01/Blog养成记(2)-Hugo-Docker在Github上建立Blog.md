@@ -9,15 +9,6 @@ toc: true
 
 ---
 
-**Resource资源链接汇总**:
-
-我建立的docker for Hugo开发镜像:  [Docker Hub上的repo](https://hub.docker.com/r/orianna/hugo-docker-dev/)、[Github上的repo](https://github.com/orianna-zzo/hugo-docker-dev)。  
-我的个人主页Hugo代码:  [blog-hugo](https://github.com/orianna-zzo/blog-hugo)  
-
-[Hugo官网](https://gohugo.io)、[Hugo release版下载](https://github.com/gohugoio/hugo/releases)  
-[Docker官网](https://www.docker.com/)、[Docker下载](https://www.docker.com/get-docker)  
-[Github Pages个人/项目主页设置](https://help.github.com/articles/user-organization-and-project-pages/)
-
 
 ## Introduction
 
@@ -256,6 +247,15 @@ $ docker run --name my-hugo -v $(pwd):/hugo-site -v $(pwd)/public:/static-site -
 
 这就需要你在Github上建立一个以 `username.github.io` 为名称的repository，对于我来说就是 `orianna-zzo.github.io`。此外，需要将Hugo生成的所有静态网页push到这个repository的master分支上。现在就可以用这个域名打开个人网站了。
 
+
+## Resource资源链接汇总
+
+我建立的docker for Hugo开发镜像:  [Docker Hub上的repo](https://hub.docker.com/r/orianna/hugo-docker-dev/)、[Github上的repo](https://github.com/orianna-zzo/hugo-docker-dev)。  
+我的个人主页Hugo代码:  [blog-hugo](https://github.com/orianna-zzo/blog-hugo)  
+
+[Hugo官网](https://gohugo.io)、[Hugo release版下载](https://github.com/gohugoio/hugo/releases)  
+[Docker官网](https://www.docker.com/)、[Docker下载](https://www.docker.com/get-docker)  
+[Github Pages个人/项目主页设置](https://help.github.com/articles/user-organization-and-project-pages/)
 
 ## 版本控制
 

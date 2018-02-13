@@ -1,5 +1,5 @@
 ---
-date: "2018-01-31T01:56:13+08:00"
+date: "2018-02-13T17:15:13+08:00"
 draft: false
 title: "我的Mac所需安装软件"
 tags: ["mac", "软件安装"]
@@ -8,51 +8,11 @@ categories: ["杂技浅尝"]
 toc: true
 ---
 
-**Resource资源链接汇总**:
 
-[Homebrew官网](https://brew.sh/)、[Cask官网](http://caskroom.github.io/)
 
 ## 序
 
 终于转到有terminal的电脑上了，既然换了Mac OS，需要重新开始找软件。Windows上的软件安装习惯是网上找软件exe，下载安装，基本一个版本能用很久，没有习惯更是懒得经常更新。Linux上倒是有包管理器，但用的不多，只在编程时用过，不过编程包依赖特别重要，一般不会修改，因此基本没有鼓捣过。这次准备换电脑，看着同事非常优雅自如地更新软件，有些羡慕呀，这样才能最大化开源/更新频繁的软件优势。App Store倒是可以随时更新，不过不是所有软件都发布在App Store上，所以这里记录下我需要的配置、计划安装的软件，以及安装方法。如果和我一样刚开始接触mac的小伙伴本，希望这篇能有所帮助。
-
-## Mac系统配置
-
-### Finder配置
-
-#### 显示隐藏文件夹
-
-Mac系统的/usr、/etc等文件夹都是隐藏文件，如果不进行设置用户是无法见到的。估计是因为mac用户并不是所有人都对linux的操作十分熟悉，所以把这些对于系统十分重要的文件夹都进行隐藏了，免得用户误删等操作把系统玩坏。
-
-在terminal中输入下面命令：
-
-```shell
-$ defaults write com.apple.finder AppleShowAllFiles -bool true
-```
-
-然后重启Finder，在terminal 中输入：
-
-```shell
-$ killall Finder
-```
-
-当当当当，隐藏的文件夹就显示出来了！
-
-#### 显示工具栏
-
-显示 > 显示标签页栏、路径栏、边栏、预览。
-
-对工具栏自定义：显示 > 自定义工具栏，增加新建文件夹，或者还可以添加其他想要添加工具栏。
-
-### 第三方软件安装
-
-有些软件并没有在apple认可的开发者列表内，如果要安装，首先需要mac允许软件来自任何人，而这个估计因为安全问题，属于隐藏设置，需要先打开Terminal，输入：
-
-```shell
-$ sudo spctl --master-disable
-```
-
-然后在设置>安全与隐私中选择“任何来源”。安装完毕后，为了安全考虑，最好能够再选择回来自可信任的开发者。
 
 ## 包管理器
 
@@ -102,7 +62,7 @@ $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/maste
 
 * brew update
 
-  更新Homebrew本身时需要科学上网。
+  更新Homebrew本身时可能需要科学上网。
 
 * 更新git报错
 
@@ -122,17 +82,101 @@ $ brew upgrade git
 
 [Cask](http://caskroom.github.io/)扩展了Homebrew，Homebrew针对包，而cask针对应用。在实际使用中，可以不使用 `brew cask xxx` 的样式，而是先用 `brew search xxx` 进行搜索，可以发现软件会在caskroom/cask的路径下，猜想 `brew cask install xxx` 应该与 `brew install caskroom/cask/xxx` 一样。
 
+## Mac系统配置
+
+### 第三方软件安装
+
+有些软件并没有在apple认可的开发者列表内，如果要安装，首先需要mac允许软件来自任何人，而这个估计因为安全问题，属于隐藏设置，需要先打开Terminal，输入：
+
+```shell
+$ sudo spctl --master-disable
+```
+
+然后在设置>安全与隐私中选择“任何来源”。安装完毕后，为了安全考虑，最好能够再选择回来自可信任的开发者。
+
+<img name="Config-privacy-source" src="/images/blog/2018-02/Config-privacy-source.png" width='300px'/>
+
+### Finder配置
+
+#### 显示隐藏文件夹
+
+Mac系统的/usr、/etc等文件夹都是隐藏文件，如果不进行设置用户是无法见到的。估计是因为mac用户并不是所有人都对linux的操作十分熟悉，所以把这些对于系统十分重要的文件夹都进行隐藏了，免得用户误删等操作把系统玩坏。
+
+在terminal中输入下面命令：
+
+```shell
+$ defaults write com.apple.finder AppleShowAllFiles -bool true
+```
+
+然后重启Finder，在terminal 中输入：
+
+```shell
+$ killall Finder
+```
+
+当当当当，隐藏的文件夹就显示出来了！
+
+#### 显示工具栏
+
+显示 > 显示标签页栏、路径栏、边栏、预览。
+
+<img name="Finder-view" src="/images/blog/2018-02/Finder-view.png" width='300px'/>
+
+对工具栏自定义：显示 > 自定义工具栏，增加新建文件夹，或者还可以添加其他想要添加工具栏。
+
+<img name="Finder-toolbox" src="/images/blog/2018-02/Finder-toolbox.png" width='300px'
+
+#### Finder文件夹快速打开Terminal
+
+其实这部分应该算是效率工具，但是更像是针对Finder路径这一问题的解决方案，因此勉强放在这里了。
+
+这里提供两个方案。方案一：设置快捷键，但是只能在上层文件夹中选择需要的路径的文件夹后才能打开Terminal。方案二：安装Go2Shell，可以在Finder的Toolbox中安装一个插件，非常方便。
+
+##### 方案一：设置快捷键
+
+系统偏好设置 > 键盘 > 快捷键 > 服务 > 新建位于文件夹位置的终端窗口。
+
+<img name="open-terminal" src="/images/blog/2018-02/open-terminal.png" width='300px'/>
+
+这样在Finder中选中文件夹，双指右击，就可以在服务中看到打开终端的选项。
+
+<img name="service-open-terminal" src="/images/blog/2018-02/service-open-terminal.png" width='300px'/>
+
+还可以设置快捷键，我设置了 `ctrl + alt + cmd + T`，选中文件夹后使用快捷键后即可快速打开终端。
+
+##### 方案二：安装Go2Shell
+
+<img name="Go2Shell" src="/images/blog/2018-02/Go2Shell.icns" width='300px'/>
+
+不要通过App Store安装，无法使用，直接通过Homebrew安装：
+
+```shell
+$ brew cask install go2shell
+```
+
+安装后打开，点击Install Go2Shell to Finder
+
+<img name="go2shell-finder" src="/images/blog/2018-02/go2shell-finder.icns" width='300px'/>
+
+然后就可以在Finder的工具栏发现Go2Shell的图标了。点击这个图标就会打开一个在当前文件夹的Terminal，很方便。
+
+![go2shell-toolbox](/images/blog/2018-02/go2shell-toolbox.png)
+
 ## 效率工具
 
 ### 科学上网
 
 #### Windscribe
 
+<img name="Windscribe" src="/images/blog/2018-02/Windscribe.icns" width='300px'/>
+
 这个比较麻烦，[Windscribe官网](https://windscribe.com)和安装包都需要科学上网，如果要使用需要先在官网注册，但是也要先科学上网。Homebrew下载也无法直接连接。还好之前找人下了安装包。好在安装完后可以直接登陆。免费用户每个月有10G流量，基本不看视频都够用，而且这个软件也有手机和ipad版。
 
 ### 分屏工具
 
 #### Spectacle
+
+<img name="Spectacle" src="/images/blog/2018-02/Spectacle.icns" width='300px'/>
 
 可用Homebrew进行安装。
 
@@ -146,6 +190,8 @@ Spectacle完全开源免费，不支持拖拽，需要使用快捷键。此外�
 
 #### Amphetamine 防休眠工具
 
+<img name="Amphetamine" src="/images/blog/2018-02/Amphetamine.icns" width='300px'/>
+
 苹果App Store上直接下载就好，选择不在Dock栏显示。默认对图标左击打开设置，右击(双击)进行状态激活，可进行相反设置，为防止误击，我保留了原始设置。
 
 Amphetamine可设定每次状态激活时防休眠时长，可指定每天的某一时间段内发挥作用，还可设置触发条件Trigger，用户可以选择在插入电源适配器之后启用防休眠，或是在连接到某一Wifi之后停止休眠。Amphetamine还支持快捷键设置，还有多套图标可选，挺喜欢猫头鹰，但可惜区别只在于眼睛，太不明显，所以我选择了日月。
@@ -153,6 +199,8 @@ Amphetamine可设定每次状态激活时防休眠时长，可指定每天的某
 总结：Amphetamine适合设置自动激活场景，在这些场景下可以在不合屏情况下防止休眠。但是如果需要合屏，就不适用了。
 
 #### NoSleep 合盖休眠也无效
+
+<img name="NoSleep" src="/images/blog/2018-02/NoSleep.icns" width='300px'/>
 
 经常我们希望mac合屏后也能继续工作，比如晚上下载时避免光污染。对我来说在确认安全不会离开座位的情况下，合盖并不希望休眠，继续工作时并不想再次输入密码。NoSleep 就是专为合盖放休眠设计的。
 
@@ -165,6 +213,8 @@ $ brew cask install nosleep
 NoSleep的设置比较简单，除去指定在电源适配器或者电池下启用外，其余选项都只是关于图标和自启动的附加选项。
 
 ### Cheatsheet 查看快捷键
+
+<img name="Cheatsheet" src="/images/blog/2018-02/Cheatsheet.icns" width='300px'/>
 
 ```shell
 $ brew cask install cheatsheet
@@ -206,6 +256,8 @@ $ brew cask install vuze
 
 #### Docker
 
+<img name="Docker" src="/images/blog/2018-02/Docker.icns" width='300px'/>
+
 Terminal安装稳定版：
 
 ```shell
@@ -216,7 +268,9 @@ $ brew cask install docker
 
 ### 文本编辑器
 
-#### Sublime
+#### Sublime Text
+
+<img name="Sublime" src="/images/blog/2018-02/Sublime-Text.icns" width='300px'/>
 
 可以在官网下载安装，但是为了便于更新，还是使用Homebrew安装
 
@@ -294,6 +348,8 @@ import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.
 
 #### Pycharm
 
+<img name="Pycharm" src="/images/blog/2018-02/PyCharm.icns" width='300px'/>
+
 下载Professional版，需要输入key：
 
 ```shell
@@ -301,9 +357,14 @@ $ brew cask install pycharm
 ```
 
 
+## Resource资源链接汇总
+
+[Homebrew官网](https://brew.sh/)、[Cask官网](http://caskroom.github.io/)
+
 
 ## 版本控制
 
-| Version | Action | Time       |
-| ------- | ------ | ---------- |
-| 1.0     | Init   | 2018-01-30 |
+| Version | Action         | Time       |
+| ------- | -------------- | ---------- |
+| 1.0     | Init           | 2018-01-30 |
+| 1.1     | Finder打开终端 |            |

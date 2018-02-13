@@ -8,14 +8,6 @@ categories: ["杂技浅尝"]
 toc: true
 ---
 
-**Resource资源链接汇总**：
-
-[docker官方文档](https://docs.docker.com/)、[docker for mac下载页](https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac)、[docker for windows下载页](https://docs.docker.com/docker-for-windows/install/#download-docker-for-windows)、[docer for linux下载页](https://download.docker.com/linux/)
-
-[docker for Ubuntu安装说明](https://docs.docker.com/install/linux/docker-ce/ubuntu/)、[docker for Debian安装说明](https://docs.docker.com/install/linux/docker-ce/debian/)、[docker for CentOS安装说明](https://docs.docker.com/install/linux/docker-ce/centos/)、[docker for Fedora安装说明](https://docs.docker.com/install/linux/docker-ce/fedora/)
-
-[nvidia-docker github](https://github.com/NVIDIA/nvidia-docker)
-
 ## Introduction
 
 ### 什么是docker？
@@ -178,6 +170,13 @@ alpine这个镜像如果不使用的话也可以删除了：
 $ docker rmi alpine
 ```
 
+## Resource资源链接汇总：
+
+[docker官方文档](https://docs.docker.com/)、[docker for mac下载页](https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac)、[docker for windows下载页](https://docs.docker.com/docker-for-windows/install/#download-docker-for-windows)、[docer for linux下载页](https://download.docker.com/linux/)
+
+[docker for Ubuntu安装说明](https://docs.docker.com/install/linux/docker-ce/ubuntu/)、[docker for Debian安装说明](https://docs.docker.com/install/linux/docker-ce/debian/)、[docker for CentOS安装说明](https://docs.docker.com/install/linux/docker-ce/centos/)、[docker for Fedora安装说明](https://docs.docker.com/install/linux/docker-ce/fedora/)
+
+[nvidia-docker github](https://github.com/NVIDIA/nvidia-docker)
 
 ## 版本控制
 

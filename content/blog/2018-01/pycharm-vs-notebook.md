@@ -8,9 +8,6 @@ categories: ["杂技浅尝"]
 toc: true
 ---
 
-**Resource资源链接汇总**:
-
-[stackoverflow: 如何更好地整理notebook中的代码](https://stackoverflow.com/questions/36427747/scientific-computing-ipython-notebook-how-to-organize-code)
 
 严格说来题目起的有些问题，pycharm是一个IDE (Integrated Development Environment)，而且在pycharm里同样也可以使用Notebook。这里主要是指传统的编程方式和Notebook交互式方式的比较和选择。这篇博客希望对那些和我一样有选择恐惧症并且非常迷茫的人有所帮助。
 
@@ -47,6 +44,10 @@ Pycharm就像是我们经常使用的其他语言的IDE一样 (比如说visual s
 
 并没有完整意义上的完美的工具，每个工具都有其最优使用场景。在这个场景不尽如意，不等于这不是一个好的工具。Pycharm是各个意义上强大的工具，但并不等于notebook没有优秀的地方。尽管常规编程、调试、上线不是notebook的强项，但对于数据科学这个领域需要多种实验查看数据结构，notebook就十分适合记录实验结果，可以验证多种想法假设。想法初步验证后，再正式重构正规编程。
 
+
+## Resource资源链接汇总
+
+[stackoverflow: 如何更好地整理notebook中的代码](https://stackoverflow.com/questions/36427747/scientific-computing-ipython-notebook-how-to-organize-code)
 
 
 ## 版本控制

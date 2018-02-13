@@ -8,9 +8,7 @@ categories: ["杂技浅尝"]
 toc: true
 ---
 
-**Resource资源链接汇总**:
 
-[Google网站管理](www.google.com/webmasters/)、[Bing网站管理](https://www.bing.com/webmaster/home)、[百度网站管理](https://ziyuan.baidu.com/site/)
 
 ## 居然都找不到！
 
@@ -122,6 +120,11 @@ Google基本过一天就能查到，但是Bing我总是很难搜索到，猛然�
 然后选择“数据监控>抓取诊断”，并输入博客网址进行抓取。然后发现，全部都抓取失败了，显示是“拒绝访问”。果然是真的屏蔽了百度爬虫了呀。
 
 ![baidu-spider](/images/blog/2018-01/baidu-spider.png)
+
+
+## Resource资源链接汇总
+
+[Google网站管理](www.google.com/webmasters/)、[Bing网站管理](https://www.bing.com/webmaster/home)、[百度网站管理](https://ziyuan.baidu.com/site/)
 
 ## 版本控制
 

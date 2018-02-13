@@ -8,7 +8,7 @@ categories: ["杂技浅尝"]
 toc: true
 ---
 
-[gitignore官方文档说明](https://git-scm.com/docs/gitignore)、[gitignore文件模板参考](https://www.gitignore.io/)、[git config官方文档说明](https://git-scm.com/docs/git-config)
+
 
 ## Git中多出来的.DS_Store
 
@@ -88,6 +88,11 @@ $ git config --global core.excludesfile ~/.gitignore_global
 ```
 
 这样就不用每个git目录都设置忽略.DS_Store文件了！
+
+## Resource资源链接汇总
+
+[gitignore官方文档说明](https://git-scm.com/docs/gitignore)、[gitignore文件模板参考](https://www.gitignore.io/)、[git config官方文档说明](https://git-scm.com/docs/git-config)
+
 
 ## 版本控制
 
