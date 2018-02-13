@@ -7,5 +7,5 @@
 
 
 # generate static site
-hugo --baseUrl="https://orianna-zzo.github.io/" -d /static-site
+ hugo --baseUrl="https://orianna-zzo.github.io/" -d /static-site
 # hugo --baseUrl="https://orianna-zzo.github.io/"  
