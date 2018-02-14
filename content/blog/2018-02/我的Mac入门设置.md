@@ -24,6 +24,8 @@ toc: true
 
 ⇧ - shift
 
+␣ - space
+
 ## 包管理器
 
 ### Homebrew
@@ -94,6 +96,12 @@ $ brew upgrade git
 
 ## Mac系统配置
 
+### 触摸板设置
+
+触摸板是mac最常用的工具，更好地设置触摸板使用起来可以方便省力很多。
+
+⌈系统偏好设置⌋ > ⌈触控板⌋ ，将所有手势都选上。我常用的手势有：轻点代替点按、双指点按代表右击、三指点按选词查询词典、四指合拢打开Lauchpad、四指分开显示桌面 、三指向上划mission control。
+
 ### 第三方软件安装
 
 有些软件并没有在apple认可的开发者列表内，如果要安装，首先需要mac允许软件来自任何人，而这个估计因为安全问题，属于隐藏设置，需要先打开terminal，输入：
@@ -102,7 +110,7 @@ $ brew upgrade git
 $ sudo spctl --master-disable
 ```
 
-然后在⌈设置⌋ > ⌈安全与隐私⌋ 中选择 ⌈任何来源⌋。安装完毕后，为了安全考虑，最好能够再选择回来自可信任的开发者。
+然后在⌈系统偏好设置⌋ > ⌈安全与隐私⌋ 中选择 ⌈任何来源⌋。安装完毕后，为了安全考虑，最好能够再选择回来自可信任的开发者。
 
 <img name="Config-privacy-source" src="/images/blog/2018-02/Config-privacy-source.png" width='500px'/>
 
@@ -154,7 +162,7 @@ $ killall Finder
 
 <img name="service-open-terminal" src="/images/blog/2018-02/service-open-terminal.png" width='500px'/>
 
-还可以设置快捷键，我设置了 ` ⌘ + ⌥ + ⌃ + T`，选中文件夹后使用快捷键后即可快速打开终端。
+还可以设置快捷键，我设置了 ` ⌘⌥⌃T`，选中文件夹后使用快捷键后即可快速打开终端。
 
 ##### 方案二：安装Go2Shell
 
@@ -176,7 +184,7 @@ $ brew cask install go2shell
 
 #### Finder复制文件夹路径
 
-直接快捷键 `⌘ + ⌥ + C` 即可。
+直接快捷键 `⌘⌥C` 即可。
 
 ### 字符设置
 
@@ -197,6 +205,37 @@ $ brew cask install go2shell
 ⌈系统偏好设置⌋ > 键盘 > 文本，通过⌈+⌋增加文本快捷键
 
 <img name="sig-shortcut" src="/images/blog/2018-02/sig-shortcut.png" />
+
+### Touchbar设置
+
+⌈系统偏好设置⌋ > ⌈键盘⌋ > ⌈键盘⌋ > 点击⌈自定义控制条⌋ 即可进行设置。
+
+此外推荐很多的BetterTouchTool也可以，不过这款软件收费。
+
+### 常用快捷键
+
+这里罗列下常用的快捷键。部分可能涉及之后安装的软件和设置。特别针对软件的就不在这里罗列。
+
+快捷键可在⌈系统偏好设置⌋ > ⌈键盘⌋ > ⌈快捷键⌋中进行设置，若 ⌈服务⌋中不存在的，可通过Automator添加服务后添加快捷键 。
+
+下表中无特殊说明是默认设置。
+
+**全局快捷键**
+|  快捷方式    |  动作  |
+| ---: | :--- |
+| ⌃␣ |   切换输入法   |
+| ⌘, | 打开spotlight搜索 |
+| ⌘⌥F | 选中窗口最大化（安装Spectacle默认设置） |
+| ⌘⌥←/⌘⌥→ | 选中窗口放在左半边/右半边（安装Spectacle默认设置） |
+| ⌘长按 | 查看快捷键（安装Cheatsheet） |
+
+**大多数软件通用快捷键**
+
+| 快捷方式 | 动作      |
+| -------: | :-------- |
+|    ⌘C/⌘V | 复制/粘贴 |
+|       ⌘N | 新建      |
+|       ⌘S | 保存      |
 
 ## 效率工具
 
@@ -222,7 +261,7 @@ $ brew cask install spectacle
 
 Spectacle完全开源免费，不支持拖拽，需要使用快捷键。此外，Spectacle的布局较为简单，左右双屏仅支持对半开，但基本都够用，若对布局要求较高可试试Sizeup。
 
-Spectacle默认设置 `⌘ + ⌥  + C` 是将窗口放在屏幕中央 (center)，这个快捷键与Finder中复制路径快捷键重合了，而将窗口放在屏幕中央对我来说有些鸡肋，我就在Perference 中删除了这个的快捷键，也懒得设定新的快捷键了。
+Spectacle默认设置 `⌘⌥C` 是将窗口放在屏幕中央 (center)，这个快捷键与Finder中复制路径快捷键重合了，而将窗口放在屏幕中央对我来说有些鸡肋，我就在Perference 中删除了这个的快捷键，也懒得设定新的快捷键了。
 
 ### 防休眠工具
 
@@ -276,7 +315,7 @@ $ brew cask install cheatsheet
 
 <img name="unarchiver" src="/images/blog/2018-02/unarchiver.png" width='100px'/>
 
-The Unarchiver 支持解压 **RAR**、**7-zip**、**Tar **等常用压缩格式的文件，同时也可以打开**ISO**、**EXE**等类型的文件，功能齐全并且免费。
+The Unarchiver 支持解压 **RAR**、**7-zip**、**Tar**等常用压缩格式的文件，同时也可以打开**ISO**、**EXE**等类型的文件，功能齐全并且免费。
 
 ```shell
 $ brew cask install the-unarchiver
@@ -324,7 +363,7 @@ $ brew cask install sublime-text
 
 sublime3安装插件需要先安装Package Control:
 
-按 `` ⌘ + ` `` 打开console，然后把下面这段代码复制执行：
+按 `` ⌘` `` 打开console，然后把下面这段代码复制执行：
 
 ```
 import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
@@ -336,7 +375,7 @@ import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.
 
 离线下载Package Control包，在[这里](https://github.com/wbond/package_control/releases)选择发布版本下载，解压缩后重命名为Package Control放置到个人用户中的 `~/Library/Application Support/Sublime Text 3Sublime Text 3/Packages` 文件夹中去，同时需要将 installed packages文件夹中关于Package control的删去。 
 
-重启sublime。按 `⌘ + ⇧ + P` 打开command palette，输入 `Install Package`，选择⌈Package Control: Install Package⌋ 。但是弹出一个说明：⌈There are no packages available for installation⌋。网上说是路由器不支持ipv6的关系，需要修改hosts。
+重启sublime。按 `⌘⇧P` 打开command palette，输入 `Install Package`，选择⌈Package Control: Install Package⌋ 。但是弹出一个说明：⌈There are no packages available for installation⌋。网上说是路由器不支持ipv6的关系，需要修改hosts。
 
 打开 `/etc/hosts` 增加下面内容：
 
@@ -347,13 +386,13 @@ import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.
 
 ##### 安装的插件
 
-安装插件，按 `⌘ + ⇧ + P` 打开command palette，输入 `Install Package`，选择⌈Package Control: Install Package⌋，然后在新的输入框内键入插件名进行安装。
+安装插件，按 `⌘⇧P` 打开command palette，输入 `Install Package`，选择⌈Package Control: Install Package⌋，然后在新的输入框内键入插件名进行安装。
 
 * GBK support 支持中文gbk编码
 
 ##### 其他配置
 
-`⌘ + , ` 打开配置页面，在右侧用户自定义的页面中进行配置。
+`⌘, ` 打开配置页面，在右侧用户自定义的页面中进行配置。
 
 * 修改默认打开形式：
 
