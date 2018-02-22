@@ -1,9 +1,9 @@
 ---
-date: "2018-02-14T01:49:13+08:00"
+date: "2018-02-14T15:04:48+08:00"
 draft: false
-title: "我的Mac入门设置"
+title: "Mac小白探索记(1) 基本设置与常用软件"
 tags: ["mac", "软件安装"]
-series: []
+series: ["Mac小白探索记"]
 categories: ["杂技浅尝"]
 toc: true
 ---
@@ -12,7 +12,9 @@ toc: true
 
 ## 序
 
-终于转到有terminal的电脑上了，既然换了Mac OS，需要重新开始找软件。Windows上的软件安装习惯是网上找软件exe，下载安装，基本一个版本能用很久，没有习惯更是懒得经常更新。Linux上倒是有包管理器，但用的不多，只在编程时用过，不过编程包依赖特别重要，一般不会修改，因此基本没有鼓捣过。这次准备换电脑，看着同事非常优雅自如地更新软件，有些羡慕呀，这样才能最大化开源/更新频繁的软件优势。App Store倒是可以随时更新，不过不是所有软件都发布在App Store上，所以这里记录下我需要的配置、计划安装的软件，以及安装方法。如果和我一样刚开始接触mac的小伙伴们，希望这篇能有所帮助。
+原本打算将所有相关内容只写在一篇博文里，但后面发现越加越多，内容越来越零散，最后决定进行拆分，也变为一个系列。我是2017年底才刚开始深入使用mac，算是mac小白一枚，在探索的过程中想将一些我觉得高效实用的信息记录下来，希望其他和我一样刚开始学习mac的小伙伴们能看了后有所帮助。
+
+第一篇主要介绍新入手mac后的基本设置与常用软件安装。终于转到有terminal的电脑上了，既然换了Mac OS，需要重新开始找软件。Windows上的软件安装习惯是网上找软件exe，下载安装，基本一个版本能用很久，没有习惯更是懒得经常更新。Linux上倒是有包管理器，但用的不多，只在编程时用过，不过编程包依赖特别重要，一般不会修改，因此基本没有鼓捣过。这次准备换电脑，看着同事非常优雅自如地更新软件，有些羡慕呀，这样才能最大化开源/更新频繁的软件优势。App Store倒是可以随时更新，不过不是所有软件都发布在App Store上，所以这里记录下我需要的配置、计划安装的软件，以及安装方法，以供参照。PS，不定期更新。
 
 首先说明下按键符号，如果第一次使用mac可能会有些混，因此这里说明一下：
 
@@ -25,6 +27,28 @@ toc: true
 ⇧ - shift
 
 ␣ - space
+
+Windows平台上control在快捷键中使用频繁，而转到mac平台后很多通用快捷键设置需要替代为⌘command，比如⌘C复制、⌘V粘贴，快捷键会在其他文中详述。
+
+## Mac系统基本配置
+
+### 触摸板设置
+
+触摸板是mac最常用的工具，更好地设置触摸板使用起来可以方便省力很多。
+
+⌈系统偏好设置⌋ > ⌈触控板⌋ ，建议将所有手势都选上，使用起来很方便，也可以节省快捷键。我常用的手势有：轻点代替点按、双指点按代表右击、三指点按选词查询词典、四指合拢打开Lauchpad、四指分开显示桌面 、三指向上划mission control。
+
+### 第三方软件安装
+
+有些软件并没有在apple认可的开发者列表内，如果要安装，首先需要mac允许软件来自任何人，而这个估计因为安全问题，属于隐藏设置，需要先打开terminal，输入：
+
+```shell
+$ sudo spctl --master-disable
+```
+
+然后在⌈系统偏好设置⌋ > ⌈安全与隐私⌋ 中选择 ⌈任何来源⌋。安装完毕后，为了安全考虑，最好能够再选择回来自可信任的开发者。
+
+<img name="Config-privacy-source" src="/images/series/Mac小白探索记/1/Config-privacy-source.png" width='500px'/>
 
 ## 包管理器
 
@@ -94,156 +118,31 @@ $ brew upgrade git
 
 [Cask](http://caskroom.github.io/)扩展了Homebrew，Homebrew针对包，而cask针对应用。在实际使用中，可以不使用 `brew cask xxx` 的样式，而是先用 `brew search xxx` 进行搜索，可以发现软件会在caskroom/cask的路径下，猜想 `brew cask install xxx` 应该与 `brew install caskroom/cask/xxx` 一样。
 
-## Mac系统配置
-
-### 触摸板设置
-
-触摸板是mac最常用的工具，更好地设置触摸板使用起来可以方便省力很多。
-
-⌈系统偏好设置⌋ > ⌈触控板⌋ ，将所有手势都选上。我常用的手势有：轻点代替点按、双指点按代表右击、三指点按选词查询词典、四指合拢打开Lauchpad、四指分开显示桌面 、三指向上划mission control。
-
-### 第三方软件安装
-
-有些软件并没有在apple认可的开发者列表内，如果要安装，首先需要mac允许软件来自任何人，而这个估计因为安全问题，属于隐藏设置，需要先打开terminal，输入：
+如果想将使用Cask安装的包(软件)都进行更新，使用：
 
 ```shell
-$ sudo spctl --master-disable
+$ brew cask upgrade
 ```
 
-然后在⌈系统偏好设置⌋ > ⌈安全与隐私⌋ 中选择 ⌈任何来源⌋。安装完毕后，为了安全考虑，最好能够再选择回来自可信任的开发者。
+## 常用效率工具
 
-<img name="Config-privacy-source" src="/images/blog/2018-02/Config-privacy-source.png" width='500px'/>
+### 输入法
 
-### Finder配置
+#### 搜狗输入法
 
-#### 显示隐藏文件夹
-
-Mac系统的 `/usr`、`/etc`等文件夹都是隐藏文件，如果不进行设置用户是无法见到的。估计是因为mac用户并不是所有人都对linux的操作十分熟悉，所以把这些对于系统十分重要的文件夹都进行隐藏了，免得用户误删等操作把系统玩坏。
-
-在terminal中输入下面命令：
+还是最习惯使用搜狗输入法。使用Homebrew安装。打开terminal，输入：
 
 ```shell
-$ defaults write com.apple.finder AppleShowAllFiles -bool true
+$ brew cask install sogouinput
 ```
 
-然后重启Finder，在terminal 中输入：
-
-```shell
-$ killall Finder
-```
-
-当当当当，隐藏的文件夹就显示出来了！
-
-#### 显示工具栏
-
-选择 ⌈显示⌋ > ⌈显示标签页栏⌋、⌈显示路径栏⌋、⌈显示边栏⌋、⌈显示预览⌋。
-
-<img name="Finder-view" src="/images/blog/2018-02/Finder-view.png" width='300px'/>
-
-对工具栏自定义：⌈显示⌋ > ⌈自定义工具栏⌋，增加⌈新建文件夹⌋，或者还可以添加其他想要添加工具栏。
-
-<img name="Finder-toolbox" src="/images/blog/2018-02/Finder-toolbox.png" width='500px'/>
-
-#### Finder文件夹快速打开Terminal
-
-其实这部分应该算是效率工具，但是更像是针对Finder路径这一问题的解决方案，因此勉强放在这里了。
-
-其实还可以打开Terminal打上`cd ` 之后直接把文件夹拖进去，就会显示文件夹的路径，但是这样十分繁琐。
-
-这里提供两个方案。方案一：设置快捷键，但是只能在上层文件夹中选择需要的路径的文件夹后才能打开Terminal。方案二：安装Go2Shell，可以在Finder的Toolbox中安装一个插件，非常方便。
-
-##### 方案一：设置快捷键
-
-⌈系统偏好设置⌋ > ⌈键盘⌋ > ⌈快捷键⌋ > ⌈服务⌋ > ⌈新建位于文件夹位置的终端窗口⌋。
-
-<img name="open-terminal" src="/images/blog/2018-02/open-terminal.png" width='500px'/>
-
-这样在Finder中选中文件夹，双指右击，就可以在服务中看到打开终端的选项。
-
-<img name="service-open-terminal" src="/images/blog/2018-02/service-open-terminal.png" width='500px'/>
-
-还可以设置快捷键，我设置了 ` ⌘⌥⌃T`，选中文件夹后使用快捷键后即可快速打开终端。
-
-##### 方案二：安装Go2Shell
-
-<img name="Go2Shell" src="/images/blog/2018-02/Go2Shell.png" width='100px'/>
-
-不要通过App Store安装，无法使用，直接通过Homebrew安装：
-
-```shell
-$ brew cask install go2shell
-```
-
-安装后打开，点击⌈Install Go2Shell to Finder⌋
-
-<img name="go2shell-finder" src="/images/blog/2018-02/go2shell-finder.png" width='300px'/>
-
-然后就可以在Finder的工具栏发现Go2Shell的图标了。点击这个图标就会打开一个在当前文件夹的Terminal，很方便。
-
-![go2shell-toolbox](/images/blog/2018-02/go2shell-toolbox.png)
-
-#### Finder复制文件夹路径
-
-直接快捷键 `⌘⌥C` 即可。
-
-### 字符设置
-
-⌈系统偏好设置⌋ > ⌈键盘⌋ > ⌈键盘⌋ > 勾选⌈在menu bar显示键盘及emoji显示器⌋
-
-<img name="show-emoji-view" src="/images/blog/2018-02/show-emoji-view.png" width='500px'/>
-
-然后就可以点击menu bar上的输入法图标，点击⌈显示表情与符号⌋
-
-<img name="open-emoji-view" src="/images/blog/2018-02/open-emoji-view.png" width='300px' />
-
-按照下图，先点击左上角的⌈齿轮⌋符号打开设置，选择⌈自定列表⌋，选择⌈⌘技术符号⌋
-
-<img name="show-tech-emoji" src="/images/blog/2018-02/show-tech-emoji.png" />
-
-如果嫌打开⌈表情与符号⌋太过繁琐，可以设置文本快捷键。
-
-⌈系统偏好设置⌋ > 键盘 > 文本，通过⌈+⌋增加文本快捷键
-
-<img name="sig-shortcut" src="/images/blog/2018-02/sig-shortcut.png" />
-
-### Touchbar设置
-
-⌈系统偏好设置⌋ > ⌈键盘⌋ > ⌈键盘⌋ > 点击⌈自定义控制条⌋ 即可进行设置。
-
-此外推荐很多的BetterTouchTool也可以，不过这款软件收费。
-
-### 常用快捷键
-
-这里罗列下常用的快捷键。部分可能涉及之后安装的软件和设置。特别针对软件的就不在这里罗列。
-
-快捷键可在⌈系统偏好设置⌋ > ⌈键盘⌋ > ⌈快捷键⌋中进行设置，若 ⌈服务⌋中不存在的，可通过Automator添加服务后添加快捷键 。
-
-下表中无特殊说明是默认设置。
-
-**全局快捷键**
-|  快捷方式    |  动作  |
-| ---: | :--- |
-| ⌃␣ |   切换输入法   |
-| ⌘, | 打开spotlight搜索 |
-| ⌘⌥F | 选中窗口最大化（安装Spectacle默认设置） |
-| ⌘⌥←/⌘⌥→ | 选中窗口放在左半边/右半边（安装Spectacle默认设置） |
-| ⌘长按 | 查看快捷键（安装Cheatsheet） |
-
-**大多数软件通用快捷键**
-
-| 快捷方式 | 动作      |
-| -------: | :-------- |
-|    ⌘C/⌘V | 复制/粘贴 |
-|       ⌘N | 新建      |
-|       ⌘S | 保存      |
-
-## 效率工具
+就安装完毕。切换输入法使用快捷键 `⌘␣` 或者在menu bar切换输入法都可以。
 
 ### 科学上网
 
 #### Windscribe
 
-<img name="Windscribe" src="/images/blog/2018-02/Windscribe.png" width='100px'/>
+<img name="Windscribe" src="/images/series/Mac小白探索记/1/Windscribe.png" width='100px'/>
 
 这个比较麻烦，[Windscribe官网](https://windscribe.com)和安装包都需要科学上网，如果要使用需要先在官网注册，但是也要先科学上网。Homebrew下载也无法直接连接。还好之前找人下了安装包。好在安装完后可以直接登陆。免费用户每个月有10G流量，基本不看视频都够用，而且这个软件也有手机和ipad版。
 
@@ -251,7 +150,7 @@ $ brew cask install go2shell
 
 #### Spectacle
 
-<img name="Spectacle" src="/images/blog/2018-02/Spectacle.png" width='100px'/>
+<img name="Spectacle" src="/images/series/Mac小白探索记/1/Spectacle.png" width='100px'/>
 
 可用Homebrew进行安装。
 
@@ -267,7 +166,7 @@ Spectacle默认设置 `⌘⌥C` 是将窗口放在屏幕中央 (center)，这个
 
 #### Amphetamine 防休眠工具
 
-<img name="Amphetamine" src="/images/blog/2018-02/Amphetamine.png" width='100px'/>
+<img name="Amphetamine" src="/images/series/Mac小白探索记/1/Amphetamine.png" width='100px'/>
 
 苹果App Store上直接下载就好，选择不在Dock栏显示。默认对图标左击打开设置，右击(双击)进行状态激活，可进行相反设置，为防止误击，我保留了原始设置。
 
@@ -277,7 +176,7 @@ Amphetamine可设定每次状态激活时防休眠时长，可指定每天的某
 
 #### NoSleep 合盖休眠也无效
 
-<img name="NoSleep" src="/images/blog/2018-02/NoSleep.png" width='100px'/>
+<img name="NoSleep" src="/images/series/Mac小白探索记/1/NoSleep.png" width='100px'/>
 
 经常我们希望mac合屏后也能继续工作，比如晚上下载时避免光污染。对我来说在确认安全不会离开座位的情况下，合盖并不希望休眠，继续工作时并不想再次输入密码。NoSleep 就是专为合盖放休眠设计的。
 
@@ -291,7 +190,7 @@ NoSleep的设置比较简单，除去指定在电源适配器或者电池下启�
 
 ### Cheatsheet 查看快捷键
 
-<img name="Cheatsheet" src="/images/blog/2018-02/Cheatsheet.png" width='100px'/>
+<img name="Cheatsheet" src="/images/series/Mac小白探索记/1/Cheatsheet.png" width='100px'/>
 
 ```shell
 $ brew cask install cheatsheet
@@ -299,21 +198,11 @@ $ brew cask install cheatsheet
 
 长按 `⌘` 会显示快捷键表。
 
-### Tuxera NTFS for Mac 2015
-
-收费软件。已下安装包，离线安装。
-
-### Little Snitch 防止软件自动连接网络
-
-<img name="Little-Snitch" src="/images/blog/2018-02/Little-Snitch.png" width='100px'/>
-
-这个不错，可以防止软件自动连接网络，不过这个软件收费也不便宜。已下载安装包。
-
 ### 压缩软件
 
 #### The Unarchive
 
-<img name="unarchiver" src="/images/blog/2018-02/unarchiver.png" width='100px'/>
+<img name="unarchiver" src="/images/series/Mac小白探索记/1/unarchiver.png" width='100px'/>
 
 The Unarchiver 支持解压 **RAR**、**7-zip**、**Tar**等常用压缩格式的文件，同时也可以打开**ISO**、**EXE**等类型的文件，功能齐全并且免费。
 
@@ -325,7 +214,7 @@ $ brew cask install the-unarchiver
 
 #### Azureus
 
-<img name="vuze" src="/images/blog/2018-02/vuze.png" width='100px'/>
+<img name="vuze" src="/images/series/Mac小白探索记/1/vuze.png" width='100px'/>
 
 这个是PT需要的软件，linux环境下一般推荐这个。
 
@@ -333,13 +222,45 @@ $ brew cask install the-unarchiver
 $ brew cask install vuze
 ```
 
-## 程序必备
+### 播放器
+
+#### Splayerx 射手播放器
+
+<img name="SPlayerX" src="/images/series/Mac小白探索记/1/SPlayerX.png" width='100px'/>
+
+尽管射手播放器并不是在播放器中口碑最好的，而且射手播放器已经停止更新维护好几年了，但由于射手播放器自动搜索字幕并下载实在太好用太方便，不忍舍弃。
+
+```shell
+$ brew cask install splayerx
+```
+
+#### VLC
+
+<img name="vlc" src="/images/series/Mac小白探索记/1/vlc.png" width='100px'/>
+
+vlc应该是linux上最著名的开源播放器，口碑非常好。不过鉴于射手太好用，估计只有在射手实在hold不住时才会打开吧。PS，iphone/ipad上用这个看影片很不错，特别是rmvb格式的影片。
+
+```shell
+$ brew cask install vlc
+```
+
+### Tuxera NTFS for Mac 2015
+
+收费软件。已下安装包，离线安装。
+
+### Little Snitch 防止软件自动连接网络
+
+<img name="Little-Snitch" src="/images/series/Mac小白探索记/1/Little-Snitch.png" width='100px'/>
+
+这个不错，可以防止软件自动连接网络，不过这个软件收费也不便宜。已下载安装包。
+
+## 程序员必备
 
 ### 虚拟化
 
 #### Docker
 
-<img name="Docker" src="/images/blog/2018-02/Docker.png" width='100px'/>
+<img name="Docker" src="/images/series/Mac小白探索记/1/Docker.png" width='100px'/>
 
 Terminal安装稳定版：
 
@@ -353,7 +274,7 @@ $ brew cask install docker
 
 #### Sublime Text
 
-<img name="Sublime" src="/images/blog/2018-02/Sublime-Text.png" width='100px'/>
+<img name="Sublime" src="/images/series/Mac小白探索记/1/Sublime-Text.png" width='100px'/>
 
 可以在官网下载安装，但是为了便于更新，还是使用Homebrew安装
 
@@ -427,11 +348,23 @@ import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.
 
   配置好后会在窗口底部显示行末占位符是Windows还是Unix。
 
+#### Visual Studio Code
+
+<img name="Code" src="/images/series/Mac小白探索记/1/Code.png" width='100px'/>
+
+这是微软出品免费的文本编辑器，主要针对前端开发，真心很好用。同样Homebrew安装：
+
+```shell
+$ brew cask install visual-studio-code
+```
+
+有时在使用到某一类型文件时，会自动提醒你有这个插件，询问是否需要安装。使用Git时有conflict，也会用颜色提示，询问保留的部分。可能缺点就是开启速度没有Sublime快，但真心很强大。
+
 ### IDE
 
 #### Pycharm
 
-<img name="Pycharm" src="/images/blog/2018-02/PyCharm.png" width='100px'/>
+<img name="Pycharm" src="/images/series/Mac小白探索记/1/PyCharm.png" width='100px'/>
 
 下载Professional版，需要输入key：
 
@@ -451,3 +384,4 @@ $ brew cask install pycharm
 | ------- | ------------------------ | ---------- |
 | 1.0     | Init                     | 2018-01-30 |
 | 1.1     | Finder打开终端、复制路径 | 2018-02-14 |
+| 1.2     | 拆分为系列               | 2018-02-14 |
