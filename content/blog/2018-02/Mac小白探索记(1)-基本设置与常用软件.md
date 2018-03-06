@@ -38,6 +38,16 @@ Windows平台上control在快捷键中使用频繁，而转到mac平台后很多
 
 ⌈系统偏好设置⌋ > ⌈触控板⌋ ，建议将所有手势都选上，使用起来很方便，也可以节省快捷键。我常用的手势有：轻点代替点按、双指点按代表右击、三指点按选词查询词典、四指合拢打开Lauchpad、四指分开显示桌面 、三指向上划mission control。
 
+### Touchbar设置
+
+⌈系统偏好设置⌋ > ⌈键盘⌋ > ⌈键盘⌋ > 点击⌈自定义控制条⌋ 即可进行设置。
+
+<img name="touchbar-config" src="/images/series/Mac小白探索记/1/touchbar-config.png"/>
+
+可以将一些找起来比较麻烦但常用的设置放在touchbar，移除默认设置touchbar中一些不常用的功能。我放了night shift、免打扰和屏幕保护程序。应用程序中的touchbar的功能和该应用程序本身功能有关，有些可以在程序中设置touchbar的功能。
+
+此外有很多人推荐的BetterTouchTool也可以，不过这款软件收费。   
+
 ### 第三方软件安装
 
 有些软件并没有在apple认可的开发者列表内，如果要安装，首先需要mac允许软件来自任何人，而这个估计因为安全问题，属于隐藏设置，需要先打开terminal，输入：
@@ -48,7 +58,7 @@ $ sudo spctl --master-disable
 
 然后在⌈系统偏好设置⌋ > ⌈安全与隐私⌋ 中选择 ⌈任何来源⌋。安装完毕后，为了安全考虑，最好能够再选择回来自可信任的开发者。
 
-<img name="Config-privacy-source" src="/images/series/Mac小白探索记/1/Config-privacy-source.png" width='500px'/>
+<img name="Config-privacy-source" src="/images/series/Mac小白探索记/1/config-privacy-source.png"/>
 
 ## 包管理器
 
