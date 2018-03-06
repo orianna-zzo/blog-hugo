@@ -73,7 +73,7 @@ $ killall Finder
 
 <img name="Go2Shell" src="/images/series/Mac小白探索记/2/Go2Shell.png" width='100px'/>
 
-不要通过App Store安装，无法使用，直接通过Homebrew安装：
+相比方案一，这个还是要方便高效更多。注意不要通过App Store安装，无法使用，直接通过Homebrew安装：
 
 ```shell
 $ brew cask install go2shell
@@ -122,7 +122,7 @@ on run {input, parameters}
 end run
 ```
 
-按⌈⌘s⌋保存脚本，修改app名称和存放位置。 
+按 `⌘S` 保存脚本，修改app名称和存放位置。 
 
 ![save-script](/images/series/Mac小白探索记/2/save-script.png)
 
