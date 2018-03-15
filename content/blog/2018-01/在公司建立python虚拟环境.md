@@ -86,16 +86,17 @@ $ bash Miniconda_file_name.sh
 > 网上有介绍说安装完成后，conda下的bin文件会添加到环境变量里面，这时候需要source一下bash文件：
 >
 > ```shell
- $ source ~/.bashrc
+> $ source ~/.bashrc
+> ```
  ```
  
 
 安装完成后可以通过下面的命令查看conda版本以及进行conda版本更新：
 
-```shell
+​```shell
 $ conda -V
 $ conda update conda
-```
+ ```
 
 ### python项目虚拟环境使用
 
@@ -179,116 +180,114 @@ $ conda search tensorflow
 
 1. 自己电脑建立与服务器系统一致的docker环境镜像，以mint18为例：
 
-用以下dockerfile建立以下镜像：
-```
-FROM vcatechnology/base-linux-mint
-MAINTAINER Zi'ou Zheng <zhengziou@gmail.com>
+	用以下dockerfile建立以下镜像：
 
-
-# Mount volume to host
-VOLUME /output
-
-
-CMD ["/bin/bash"]
-```
-
-若为其他系统，base image最好为official image。
-
-镜像建立：
-```shell
-$ docker build -t orianna/mint:18 .
-```
+	```
+	FROM vcatechnology/base-linux-mint
+	MAINTAINER Zi'ou Zheng <zhengziou@gmail.com>
+	
+	# Mount volume to host
+	VOLUME /output
+	CMD ["/bin/bash"]
+	```
+	
+	若为其他系统，base image最好为official image。
+	
+	镜像建立：
+	```shell
+	$ docker build -t orianna/mint:18 .
+	```
 
 2. 新建容器并配置环境
 
-在当前文件夹新建文件夹python3.6来挂在在容器上，来与容器进行数据交流。网上下载需要的环境包，例如Anaconda3，并放在python3.6文件中。
+	在当前文件夹新建文件夹python3.6来挂在在容器上，来与容器进行数据交流。网上下载需要的环境包，例如Anaconda3，并放在python3.6文件中。
 新建容器my-mint:
 
-```shell
-$ docker run --name "my-mint" -v $(pwd)/python3.6:/output -it orianna/mint:18
-```
+	```shell
+	$ docker run --name "my-mint" -v $(pwd)/python3.6:/output -it orianna/mint:18
+	```
 
-进入 `/output` 后，根据指示安装Anaconda3:
-```shell
-$ sh Anaconda3-5.0.1-Linux-x86_64.sh
-```
+	进入 `/output` 后，根据指示安装Anaconda3:
+	```shell
+	$ sh Anaconda3-5.0.1-Linux-x86_64.sh
+	```
 
-查看python是否安装完成:
-```shell
-$ python
-```
+	查看python是否安装完成:
+	```shell
+	$ python
+	```
 
-如果显示的不是 `Python 3.6.3 |Anaconda, Inc.|`，则还需要输入以下命令 (具体路径需要参考安装Anaconda3时给出的提示)，使 `.bashrc`中能正常使用
-```shell
-$ source /root/.bashrc
-```
+	如果显示的不是 `Python 3.6.3 |Anaconda, Inc.|`，则还需要输入以下命令 (具体路径需要参考安装Anaconda3时给出的提示)，使 `.bashrc`中能正常使用
+	```shell
+	$ source /root/.bashrc
+	```
 
-新建conda虚拟环境 `py3.6-tf`，虚拟环境以现有python3环境作为基础:
-```shell
-$ conda create -n py3.6-tf --clone root
-```
+	新建conda虚拟环境 `py3.6-tf`，虚拟环境以现有python3环境作为基础:
+	```shell
+	$ conda create -n py3.6-tf --clone root
+	```
 
-在虚拟环境中安装其他需要的包:
-```shell
-$ # 进入虚拟环境
-$ source acivate py3.6-tf
-(py3.6-tf)$ # 安装其他包
-(py3.6-tf)$ pip install tensorflow
-(py3.6-tf)$ pip install jieba
-(py3.6-tf)$ pip install gensim
-(py3.6-tf)$ pip install tqdm
-```
+	在虚拟环境中安装其他需要的包:
+	```shell
+	$ # 进入虚拟环境
+	$ source acivate py3.6-tf
+	(py3.6-tf)$ # 安装其他包
+	(py3.6-tf)$ pip install tensorflow
+	(py3.6-tf)$ pip install jieba
+	(py3.6-tf)$ pip install gensim
+	(py3.6-tf)$ pip install tqdm
+	```
 
-安装完成后进行查看:
-```shell
-(py3.6-tf)$ python
-(py3.6-tf)> import tensorflow
-(py3.6-tf)> import jieba
-(py3.6-tf)> import gensim
-(py3.6-tf)> import tqdm
+	安装完成后进行查看:
+	```shell
+	(py3.6-tf)$ python
+	(py3.6-tf)> import tensorflow
+	(py3.6-tf)> import jieba
+	(py3.6-tf)> import gensim
+	(py3.6-tf)> import tqdm
 
-```
+	```
 
-如果能够正常引入，则安装成功。
-可以退出python和虚拟环境:
-```shell
-(py3.6-tf)> # 退出python
-(py3.6-tf)> exit()
-(py3.6-tf)$ # 退出虚拟环境
-(py3.6-tf)$ source deactivate
-```
-
-退出该docker镜像:
-```shell
-$ exit
-```
-
+	如果能够正常引入，则安装成功。
+	可以退出python和虚拟环境:
+	```shell
+	(py3.6-tf)> # 退出python
+	(py3.6-tf)> exit()
+	(py3.6-tf)$ # 退出虚拟环境
+	(py3.6-tf)$ source deactivate
+	```
+	
+	退出该docker镜像:
+	```shell
+	$ exit
+	```
+	
 3. 更新镜像，并将新建的虚拟环境导出
-更新镜像，并删除已有容器:
-```shell
-$ # 更新镜像
-$ docker commit my-mint orianna/mint:18
-$ # 删除该容器
-$ docker rm my-mint
-```
+	更新镜像，并删除已有容器:
+	```shell
+	$ # 更新镜像
+	$ docker commit my-mint orianna/mint:18
+	$ # 删除该容器
+	$ docker rm my-mint
+	```
+	
+	新打开一个容器，这个容器关闭后会自动删除:
+	```shell
+	$ docker run -v $(pwd)/python3.6:/output --rm -it orianna/mint:18
+	```
+	
+	进入 `Anaconda3/envs` 文件夹，并对py3.6-tf进行打包:
+	```shell
+	$ cd /root/Anaconda3/envs
+	$ tar -czxf py3.6-tf_mint.tar.gzip py3.6-tf
+	```
+	
+	将压缩文件移到output文件夹，可在宿主机中直接访问:
+	```shell
+	$ mv py3.6-tf_mint.tar.gzip /output/
+	```
 
-新打开一个容器，这个容器关闭后会自动删除:
-```shell
-$ docker run -v $(pwd)/python3.6:/output --rm -it orianna/mint:18
-```
-
-进入 `Anaconda3/envs` 文件夹，并对py3.6-tf进行打包:
-```shell
-$ cd /root/Anaconda3/envs
-$ tar -czxf py3.6-tf_mint.tar.gzip py3.6-tf
-```
-
-将压缩文件移到output文件夹，可在宿主机中直接访问:
-```shell
-$ mv py3.6-tf_mint.tar.gzip /output/
-```
-
-之后只需要将该压缩文件在服务器对应的 `Anaconda/envs` 中解压缩即可。
+	之后只需要将该压缩文件在服务器对应的 `Anaconda/envs` 中解压缩即可。
 
 ## Resource资源链接汇总
 

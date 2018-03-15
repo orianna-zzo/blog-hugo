@@ -2,7 +2,7 @@
 date: "2018-01-28T22:04:23+08:00"
 draft: false
 title: "Blog养成记(5) 要让Github Pages被索引到"
-tags: ["blog", "robots", "sitemap"]
+tags: ["seo", "sitemap"]
 series: ["Blog养成记"]
 categories: ["杂技浅尝"]
 toc: true
@@ -43,7 +43,7 @@ Disallow: /
 
 #### 添加资源
 
-在google搜索页面输入“site:orianna-zzo.github.io”就可以看到这个网页是否被google索引到，如果没被索引到，在搜索结果页面就会直接提示你使用[Google Search Console](www.google.com/webmasters/)。登录后，如果是首次使用在Search Console中以下界面中选择“网页”类型资源，并将博客完整url填入其中，我填入“https://orianna-zzo.github.io”。注意http或者https，www等最好能完全正确。
+在google搜索页面输入“site:orianna-zzo.github.io”就可以看到这个网页是否被google索引到，如果没被索引到，在搜索结果页面就会直接提示你使用[Google Search Console](www.google.com/webmasters/)。登录后，如果是首次使用在Search Console中以下界面中选择“网页”类型资源，并将博客完整url填入其中，我填入“[https://orianna-zzo.github.io](https://orianna-zzo.github.io)”。注意http或者https，www等最好能完全正确。
 
 ![google-add-resource1](/images/series/Blog养成记/5/google-add-resource1.png)
 
@@ -77,7 +77,7 @@ robots.txt设置成功还是不够的，还是需要手动添加url。在左侧�
 
 #### 站点地图
 
-在左侧点击“站点地图”，并在右侧点添加/测试站点地图，并添加url，我的是“https://orianna-zzo.github.io/sitemap.xml”。
+在左侧点击“站点地图”，并在右侧点添加/测试站点地图，并添加url，我的是“[https://orianna-zzo.github.io/sitemap.xml](https://orianna-zzo.github.io/sitemap.xml)”。
 
 ![google-add-sitemap](/images/series/Blog养成记/5/google-add-sitemap.png)
 

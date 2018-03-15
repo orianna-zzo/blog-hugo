@@ -94,7 +94,7 @@ $ docker run --name my-hugo -v $(pwd)/site-sample:/hugo-site -v $(pwd)/public:/s
 
 其中，`—name` 给该容器起了名字（可省略）；
 
-`-v $(pwd)/site-sample:/hugo-site` 是将当前文件夹中的 `site-sample` 文件夹挂载到镜像中的 `/hugo-ste` 文件夹（不可省略）；
+`-v $(pwd)/site-sample:/hugo-site` 是将当前文件夹中的 `site-sample` 文件夹挂载到镜像中的 `/hugo-site` 文件夹（不可省略）；
 
 `-v $(pwd)/public:static-site` 将当前文件夹中 `public` 文件夹挂载到镜像中的 `/static-site` 文件夹（可视情况省略）；
 
