@@ -50,7 +50,7 @@ Hugo本身并不支持\\(\\LaTeX\\)，但可以通过javascript进行渲染。Hu
 
 ## 使用
 
-[KaTeX的github](https://github.com/Khan/KaTeX/blob/master/contrib/auto-render/README.md)上是如下给出auto-render的默认值的：
+尽管[KaTeX的github](https://github.com/Khan/KaTeX/blob/master/contrib/auto-render/README.md)上是如下给出auto-render的默认值的：
 
 ```yaml
 [
@@ -60,7 +60,7 @@ Hugo本身并不支持\\(\\LaTeX\\)，但可以通过javascript进行渲染。Hu
 ]
 ```
 
-实际上，三种标识符都成立，其中前两种将数学公式以block形式展现，第三种以inline形式展现。使用中只需要将left和right放在数学公式两侧即可。
+但实际上，三种标识符都成立，其中前两种将数学公式以block形式展现，第三种以inline形式展现。使用中只需要将left和right放在数学公式两侧即可。
 
 ## Resource资源链接汇总
 
