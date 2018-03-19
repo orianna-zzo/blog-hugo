@@ -10,10 +10,12 @@ canonifyurls               = true
 contentdir                 = "content"
 layoutdir                  = "layouts"
 publishdir                 = "public"
+enableEmoji                = true
 
 theme                      = "cocoa"
 author                     = "ZHENG Zi'ou"
 title                      = "博客|ZHENG Zi'ou"
+
 
 
 

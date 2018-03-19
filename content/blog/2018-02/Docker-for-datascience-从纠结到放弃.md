@@ -1,5 +1,5 @@
 ---
-date: "2018-02-13T10:01:15+08:00"
+date: "2018-02-06T10:01:15+08:00"
 draft: false
 title: "Docker for datascience: 从纠结到放弃"
 tags: ["docker", "环境配置", "dockerfile"]

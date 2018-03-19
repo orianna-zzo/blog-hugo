@@ -81,22 +81,20 @@ $ python setup.py install
 $ bash Miniconda_file_name.sh
 ```
 
-> 这部分不确定：
->
-> 网上有介绍说安装完成后，conda下的bin文件会添加到环境变量里面，这时候需要source一下bash文件：
->
-> ```shell
-> $ source ~/.bashrc
-> ```
- ```
- 
+这部分不确定：
+
+网上有介绍说安装完成后，conda下的bin文件会添加到环境变量里面，这时候需要source一下bash文件：
+
+```shell
+$ source ~/.bashrc
+```
 
 安装完成后可以通过下面的命令查看conda版本以及进行conda版本更新：
 
-​```shell
+```shell
 $ conda -V
 $ conda update conda
- ```
+```
 
 ### python项目虚拟环境使用
 
@@ -133,9 +131,9 @@ $ conda remove -n envname --all
 ```shell
 $ # Linux
 $ source activate envname
-
-> # Windows
-> activate envname
+$
+$ # Windows
+$ activate envname
 ```
 
 激活后，终端的当前目录前会显示你的虚拟环境名称。此时执行的就是虚拟环境envname中的包依赖，这样就可以开始使用啦。可以用 `which python` 查看现在使用的python执行程序，就能发现已经不是使用系统路径下的python了。
