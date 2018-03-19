@@ -22,16 +22,16 @@ toc: true
 
 1. 展现神经网络的强大拟合能力
 
-  通过不同程度随机或根据一定规则修改数据集标签（部分错误的标签数据集、随机标签的数据集）及修改数据集图片（图片的像素点打乱的数据集(shuffled、random，前者根据打乱一部分像素，后者完全打乱)、根据高斯分布生成的新数据集）两种方式来进行实验，使用随机梯度下降SGD并使用相同的超参，(Figure 1)**发现Inception模型在CIFAR10的各种数据集上都能100%拟合，只是不同噪声的数据集收敛速度有所不同（但也相差并没有太多），而一旦开始收敛，都能很快拟合。随机标签被认为是对数据的一次transformation，也就是说学习算法的uniform stability 和训练数据的标签是独立的**。
+  通过不同程度随机或根据一定规则修改数据集标签（部分错误的标签数据集、随机标签的数据集）及修改数据集图片（图片的像素点打乱的数据集(shuffled、random，前者根据打乱一部分像素，后者完全打乱)、根据高斯分布生成的新数据集）两种方式来进行实验，使用随机梯度下降SGD并使用相同的超参，(Figure 1)**发现Inception模型在CIFAR10的各种数据集上都能100%拟合，只是不同噪声的数据集收敛速度有所不同（但也相差并没有太多），而一旦开始收敛，都能很快拟合。随机标签被认为是对数据的一次transformation，也就是说学习算法的uniform stability和训练数据的标签是独立的**。
 
-  作者还提出不同于之前在"population level"对于特定function family在整个领域的表达能力，认为需要关注给定样本大小$n$情况下，也就是有限样本的网络的表达能力，并在文中证明**2层使用ReLU作为激活函数并有$2n+d$参数的神经网络就已经有足够的capacity去表示$d$维的样本大小为$n$的数据集**。
+  作者还提出不同于之前在"population level"对于特定function family在整个领域的表达能力，认为需要关注给定样本大小\\(n\\)情况下，也就是有限样本的网络的表达能力，并在文中证明**2层使用ReLU作为激活函数并有\\(2n+d\\)参数的神经网络就已经有足够的capacity去表示\\(d\\)维的样本大小为\\(n\\)数据集**。
 
 2. 现有显式正则化方法的局限性
 
 	通过在真实数据集和随机标签数据集(CIFAR10、ImageNet2012)上，分别对不同的显式正则化方法(explicit regularization)进行试验，发现(Table 1&2)：
 
 	* random crop的数据增强方法在CIFAR10中使用不同网结构络(Inception、Alexnet)的试验中基本都能提高3%~4%的测试准确率，在ImageNet中能提高10%甚至以上。
-	* Weight decay(l2正则化)在CIFAR10中能提高1%左右测试准确率，但有时会降低0.1% ~ 0.3%（Inception使用数据增强、MLP1层），在ImageNet中提高了6% ~ 8%（没有CIFAR10降低的对比情况）。
+	* Weight decay(\\(l2\\)正则化)在CIFAR10中能提高1%左右测试准确率，但有时会降低0.1% ~ 0.3%（Inception使用数据增强、MLP1层），在ImageNet中提高了6% ~ 8%（没有CIFAR10降低的对比情况）。
 	* dropout并没有控制变量的对比试验。
 	* 即使加入了显式正则化方法(explicit regularization)，随机标签的数据集一样能有很高的拟合程度，CIFAR10都能达到99%以上，ImageNet中最低的也有87%，其他也都在90%以上。
 
@@ -70,7 +70,7 @@ toc: true
 
 ## 进一步阅读与了解
 
-[线性模型的SGD中implicit regularization符合最小$$l2$$正则证明](https://stats.stackexchange.com/questions/316240/implicit-regularization-in-sgd-on-linear-model)
+[线性模型的SGD中implicit regularization符合最小\\(l2\\)正则证明](https://stats.stackexchange.com/questions/316240/implicit-regularization-in-sgd-on-linear-model)
 
 [Generalization Theory and Deep Nets, An introduction](http://www.offconvex.org/2017/12/08/generalization1/) 几个教授的blog，都和最优化有关，有时间都要学习下。这篇主要进行了泛化理论的入门介绍。
 
