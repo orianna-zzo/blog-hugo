@@ -2,7 +2,7 @@
 date: "2018-01-22T11:20:32+08:00"
 draft: false
 title: "/bin/sh vs /bin/bash"
-tags: ['linux', 'shell']
+tags: ['linux', 'shell', 'bash', "alpine"]
 series: []
 categories: ["杂技浅尝"]
 toc: true
@@ -30,7 +30,12 @@ toc: true
 
 ## 后续
 
-所以，赶紧把dockerfile里的都改为 `/bin/bash` 了……
+~~所以，赶紧把dockerfile里的都改为 `/bin/bash` 了……~~(2018-03-20 Update)
+
+发现不是所有系统都有bash，因此盲目将所有sh都改成`/bin/bash`是不行的，最好使用前先了解所用的操作系统。
+
+比如说alpine中用的不是dash也不是bash，而是ash，如果要用bash，需要先下载bash相关包再重建sh->bash的软连接。可以参考我关于[alpine中使用bash的github](https://github.com/orianna-zzo/dockerfile-repo/tree/master/alpine-bash-docker)
+
 
 
 ## 版本控制
@@ -38,3 +43,4 @@ toc: true
 | Version | Action           | Time       |
 | ------- | ---------------- | ---------- |
 | 1.0     | Init             | 2018-01-22 |
+| 1.1     | Bash is not everywhere | 2018-03-20|

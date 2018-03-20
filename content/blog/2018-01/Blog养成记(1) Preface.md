@@ -2,7 +2,7 @@
 date: "2018-01-01T16:05:25+08:00"
 draft: false
 title: "Blog养成记(1) Preface"
-tags: ['hugo']
+tags: ['blog']
 series: ["Blog养成记"]
 categories: ["杂技浅尝"]
 toc: true

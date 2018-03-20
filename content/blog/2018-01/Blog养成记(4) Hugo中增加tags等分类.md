@@ -1,8 +1,8 @@
 ---
 date: "2018-01-09T18:22:25+08:00"
 draft: false
-title: "Blog养成记(4) 增加tags等分类"
-tags: ["hugo"]
+title: "Blog养成记(4) Hugo中增加tags等分类"
+tags: ["hugo", "blog", "tag"]
 series: ["Blog养成记"]
 categories: ["杂技浅尝"]
 toc: true

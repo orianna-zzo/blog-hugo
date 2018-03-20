@@ -1,8 +1,8 @@
 ---
 date: "2018-03-19T22:33:45+08:00"
 draft: false
-title: "Blog养成记(6) LaTeX渲染"
-tags: ["LaTeX"]
+title: "Blog养成记(6) Hugo中的LaTeX渲染"
+tags: ["hugo", "LaTeX","blog"]
 series: ["Blog养成记"]
 categories: ["杂技浅尝"]
 toc: true

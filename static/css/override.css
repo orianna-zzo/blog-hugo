@@ -15,3 +15,32 @@
 .meta {
     display:block !important;
 }
+
+
+/* Nested Unordered List */
+
+section.main .content .markdown ul > li {
+    list-style-type: disc;
+}
+
+section.main .content .markdown ul > li > ul > li {
+    list-style-type: circle;
+}
+
+section.main .content .markdown ul > li > ul > li > ul > li {
+    list-style-type: square;
+}
+
+
+section.main .content .markdown ul > li > ol > li {
+    list-style-type: decimal;
+}
+  
+section.main .content .markdown ol > li > ul > li {
+    list-style-type: disc;
+}
+
+section.main .content .markdown ol > li > ul > li > ul > li {
+    list-style-type: circle;
+}
+

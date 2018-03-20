@@ -81,13 +81,15 @@ $ python setup.py install
 $ bash Miniconda_file_name.sh
 ```
 
-这部分不确定：
-
-网上有介绍说安装完成后，conda下的bin文件会添加到环境变量里面，这时候需要source一下bash文件：
-
-```shell
+>    这部分不确定：
+>    
+>    网上有介绍说安装完成后，conda下的bin文件会添加到环境变量里面，这时候需要source一下bash文件：
+>    
+>    ```shell
 $ source ~/.bashrc
 ```
+
+
 
 安装完成后可以通过下面的命令查看conda版本以及进行conda版本更新：
 
@@ -297,4 +299,4 @@ $ conda search tensorflow
 | ------- | ---------- | ---------- |
 | 1.0     | Init       | 2018-01-18 |
 | 1.1     | 增加公司流程 | 2018-01-19 |
-
+| 1.2     | fix quote bug | 2018-03-20 |

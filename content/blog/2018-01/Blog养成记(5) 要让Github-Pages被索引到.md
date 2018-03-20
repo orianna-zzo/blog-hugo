@@ -2,7 +2,7 @@
 date: "2018-01-28T22:04:23+08:00"
 draft: false
 title: "Blog养成记(5) 要让Github Pages被索引到"
-tags: ["seo", "sitemap"]
+tags: ["seo", "sitemap", "blog"]
 series: ["Blog养成记"]
 categories: ["杂技浅尝"]
 toc: true

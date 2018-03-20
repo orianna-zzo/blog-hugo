@@ -2,7 +2,7 @@
 date: "2018-01-07T11:05:25+08:00"
 draft: false
 title: "Blog养成记(2) Hugo+Docker在Github上建立Blog"
-tags: ["hugo", "docker", "环境配置"]
+tags: ["hugo", "docker", "环境配置", "blog"]
 series: ["Blog养成记"]
 categories: ["杂技浅尝"]
 toc: true
