@@ -31,6 +31,7 @@ section.main .content .markdown ul > li > ul > li > ul > li {
     list-style-type: square;
 }
 
+/* Mix List */
 
 section.main .content .markdown ul > li > ol > li {
     list-style-type: decimal;

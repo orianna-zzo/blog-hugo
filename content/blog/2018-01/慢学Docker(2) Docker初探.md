@@ -79,10 +79,11 @@ Docker CE支持Ubuntu、Debian、CentOS、Fedora这几个Linux环境安装。
 以下主要作为介绍及资料汇总，来源为官网([Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)、[Debian](https://docs.docker.com/install/linux/docker-ce/debian/)、[CentOS](https://docs.docker.com/install/linux/docker-ce/centos/)、[Fedora](https://docs.docker.com/install/linux/docker-ce/fedora/))。
 
 Linux的版本要求如下：
+
 * Ubuntu
     * Artful 17.10 (仅Docker CE 17.11 Edge 或更高版本)
     * Xenial 16.04 (LTS)
-    * Trusty 14.04 (LTS)
+    * Trusty 14.04 (LTS)    
 * Debian
     * Buster 10 (Docker CE 17.11 Edge only)
     * Stretch 9 (stable) / Raspbian Stretch
