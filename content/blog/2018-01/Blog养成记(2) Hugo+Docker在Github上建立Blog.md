@@ -241,6 +241,35 @@ $ ln -s ~/Documents/WorkingProject/orianna-zzo.github.io public
 $ docker run --name my-hugo -v $(pwd):/hugo-site -v $(pwd)/public:/static-site -p 1313:1313 --rm -it orianna/hugo-docker-dev:latest
 ```
 
+### 配置alias简化命令
+
+每次都需要翻blog找上述命令复制到terminal中总是有些繁琐，于是决定给上述命令配置别名。
+
+配置需要写到配置文件，有两个选择：
+
+* 对全部用户生效：修改 `/etc/profile`文件
+* 对当前用户生效：修改 `~/.profile`文件 （仅针对Mac，linux大多数情况下修改 `~/.bashrc`）
+
+我将用户自定义部分还是放入了`~/.profile`文件：  
+
+```shell
+$ vi ~/.profile
+```
+
+增加以下内容，给起个别称 `docker-hugo-dev`：
+
+```shell
+# config alias
+alias docker-hugo-dev='docker run --name my-hugo -v /Users/orianna/Projects/homepage/blog-hugo:/hugo-site -v /Users/orianna/Projects/homepage/blog-hugo/public:/static-site -p 1313:1313 --rm -it orianna/hugo-docker-dev:latest'
+```
+
+记得source一下，使配置文件立即生效：
+```shell
+$ source ~/.profile
+```
+   
+现在开始就可以直接使用 `docker-hugo-dev` 来启动hugo的docker镜像了。
+
 ## Github Pages部署
 
 参考[这里](https://help.github.com/articles/user-organization-and-project-pages/)，在Github Pages有四种类型，而对于非组织型用户来说有两种，一种是用户的个人网站，网页域名为 `username.github.io`，另一种为Project的主页，网页域名为 `username.github.io/projectname`。Github Pages对于Project主页的源码要求有了修改，现在也可以放置在master上，之前版本中必须放在`gh-pages` 分支上，不过这里暂且不提，主要还是关心用户个人主页。
@@ -262,4 +291,5 @@ $ docker run --name my-hugo -v $(pwd):/hugo-site -v $(pwd)/public:/static-site -
 | Version | Action                   | Time       |
 | ------- | ------------------------ | ---------- |
 | 1.0     | Init                     | 2018-01-07 |
-| 1.1     | 增加tag、版本控制及资源链接  | 2018-01-17 |
+| 1.1     | 增加tag、版本控制及资源链接 | 2018-01-17 |
+| 1.2     | Config alias             | 2018-03-21 |
