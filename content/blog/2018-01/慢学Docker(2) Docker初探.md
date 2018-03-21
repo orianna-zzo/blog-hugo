@@ -76,10 +76,40 @@ PS，其实还有docker toolbox，暂时还没搞清楚之间的关系，感觉�
 ### Linux安装
 
 Docker CE支持Ubuntu、Debian、CentOS、Fedora这几个Linux环境安装。
+以下主要作为介绍及资料汇总，来源为官网([Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)、[Debian](https://docs.docker.com/install/linux/docker-ce/debian/)、[CentOS](https://docs.docker.com/install/linux/docker-ce/centos/)、[Fedora](https://docs.docker.com/install/linux/docker-ce/fedora/))。
+
+Linux的版本要求如下：
+* Ubuntu
+    * Artful 17.10 (仅Docker CE 17.11 Edge 或更高版本)
+    * Xenial 16.04 (LTS)
+    * Trusty 14.04 (LTS)
+* Debian
+    * Buster 10 (Docker CE 17.11 Edge only)
+    * Stretch 9 (stable) / Raspbian Stretch
+    * Jessie 8 (LTS) / Raspbian Jessie
+    * Wheezy 7.7 (LTS) (需要升级内核，版本至少为3.10)
+* CentOS
+    * CentOS7 maintained version  
+* Fedora
+    * 64位 version 26
+    * 64位 version 27
+
+安装前需要先卸载以前的旧版本的docker或者docker-engine。
 
 Linux安装分为2种：
 
-* 一种是在[这里](https://download.docker.com/linux/)选择对应的linux发行版本下载安装包，然后再通过安装包进行安装，并通过下面命令启动docker。
+* 一种是在[这里](https://download.docker.com/linux/)选择对应的linux发行版本下载安装包。
+  
+    * Ubuntu  
+      在[https://download.docker.com/linux/ubuntu/dists/](https://download.docker.com/linux/ubuntu/dists/)选择Ubuntu版本，然后进入pool/stable文件夹，选择计算机架构并下载.deb包。  
+    * Debian  
+      在[https://download.docker.com/linux/debian/dists/](https://download.docker.com/linux/debian/dists/)选择Debian版本，然后进入pool/stable文件夹，选择计算机架构并下载.deb包。  
+    * CentOS  
+      在[https://download.docker.com/linux/centos/7/x86_64/stable/Packages/](https://download.docker.com/linux/centos/7/x86_64/stable/Packages/)下载.rpm包。
+    * Fedora  
+      在[https://download.docker.com/linux/fedora/](https://download.docker.com/linux/fedora/)选择Fedora版本，然后进入x86_64/stable/Packages文件夹，选择计算机架构并下载.rpm包。
+  
+  然后再通过安装包进行安装，并通过下面命令启动docker。
 
   ```shell
   $ # Ubuntu & Debian
@@ -92,7 +122,7 @@ Linux安装分为2种：
   $ sudo systemctl start docker    # start docker
   ```
 
-* 另一种需要先配置包管理器（apt-get/yum/dnf）的repository，再通过对应包管理器下载。不同的发行版本，具体的操作也不同，详情这里就不列举了，到官网对应的安装说明页（[Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)、[Debian](https://docs.docker.com/install/linux/docker-ce/debian/)、[CentOS](https://docs.docker.com/install/linux/docker-ce/centos/)、[Fedora](https://docs.docker.com/install/linux/docker-ce/fedora/)）去查看即可。
+* 另一种需要先配置包管理器（apt-get/yum/dnf）的repository，再通过对应包管理器下载。不同的发行版本，具体的操作也不同，详情这里就不列举了，到官网对应的安装说明页（[Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)、[Debian](https://docs.docker.com/install/linux/docker-ce/debian/)、[CentOS](https://docs.docker.com/install/linux/docker-ce/centos/)、[Fedora](https://docs.docker.com/install/linux/docker-ce/fedora/)）去查看。
 
 ### 查看安装版本
 
@@ -183,3 +213,4 @@ $ docker rmi alpine
 | Version | Action | Time       |
 | ------- | ------ | ---------- |
 | 1.0     | Init   | 2018-01-27 |
+| 1.1     | Update Linux Installation | 2018-03-21 |
