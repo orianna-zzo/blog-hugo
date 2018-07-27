@@ -1,7 +1,7 @@
 ---
 date: "2018-05-26T16:37:59+08:00"
 draft: false
-title: "中文版音乐剧《长腿叔叔》"
+title: "中文版音乐剧《长腿叔叔》repo"
 tags: ["musical", "中文", "兰心"]
 series: ["观后repo"]
 categories: ["品鉴评论"]
