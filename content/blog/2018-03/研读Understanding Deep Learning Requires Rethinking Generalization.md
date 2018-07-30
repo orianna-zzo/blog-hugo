@@ -10,9 +10,9 @@ toc: true
 
 ## 前言
 
-上周五小仓鼠说有篇论文很有意思，问我看过没，是ICLR 2017 的 Best Paper [Zhang et al. 2017]。汗颜的确很久没有关心会议论文，现在更多都是关心项目技术点方向的论文。这篇论文一看的确很有意思，而且在学术界引起了非常激烈的讨论。有些人认为论文深度不够，提出的观点在泛化的理论学界已经研究很久，更偏向于实验报告不足以Best Paper，有人说中间有些逻辑问题，也有不少人觉得是对传统理论发起进攻的flag。这引起了我的兴趣，于是替换了我最近打算实现的NER的论文作为精读系列第一篇。
+上周五小仓鼠说有篇论文很有意思，问我看过没，是ICLR 2017 的 Best Paper [Zhang et al. 2017] Understanding Deep Learning Requires Rethinking Generalization。汗颜的确很久没有关心会议论文，现在更多都是关心项目技术点方向的论文。这篇论文一看的确很有意思，而且在学术界引起了非常激烈的讨论。有些人认为论文深度不够，提出的观点在泛化的理论学界已经研究很久，更偏向于实验报告不足以Best Paper，有人说中间有些逻辑问题，也有不少人觉得是对传统理论发起进攻的flag。这引起了我的兴趣，于是替换了我最近打算实现的NER的论文作为精读系列第一篇。
 
-论文地址：[https://arxiv.org/abs/1611.03530](https://arxiv.org/abs/1611.03530)
+[Zhang C, Bengio S, Hardt M, et al. Deep Learning Requires Rethinking Generalization[C]// International Conference on Learning Representation. 2017:1-14.](https://arxiv.org/abs/1611.03530)
 
 ## 论文概要
 
