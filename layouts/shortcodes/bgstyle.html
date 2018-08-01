@@ -1,0 +1,21 @@
+{{ if eq .Get 0  "yellow" }}
+    <span style="background: #f5e484" >
+        {{ .Inner }}
+    <\span>
+{{ else if eq .Get 0 "red" }}
+    <span style="background: #f58484" >
+        {{ .Inner }}
+    <\span>
+{{ else if eq .Get 0 "blue" }}
+    <span style="background: #9ccaff" >
+        {{ .Inner }}
+    <\span>
+{{ else eq .Get 0 "green" }}
+    <span style="background: #b4ffd3" >
+        {{ .Inner }}
+    <\span>
+{{ else if eq .Get 0  "purple" }}
+    <span style="background: #eeb4ff" >
+        {{ .Inner }}
+    <\span>
+{{ end }}

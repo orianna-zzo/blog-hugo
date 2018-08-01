@@ -1,5 +1,7 @@
 ---
 date: "2018-07-30T17:41:23+08:00"
+publishdate: 2018-07-31
+lastmod: 2018-08-01
 draft: false
 title: "每周Paper精读(2) Sentence Representation系列泛读"
 tags: ["nlp", "repre"]
@@ -16,25 +18,25 @@ toc: true
 
 ## 论文列表与Contribution简述
 
-[1]. [Kim, Yoon. “Convolutional Neural Networks for Sentence Classification.” *Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP)*, 2014, pp. 1746–1751.](https://arxiv.org/abs/1408.5882)
+[1]. [Kim, Yoon. “Convolutional Neural Networks for Sentence Classification.” *Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP)*, 2014, pp. 1746–1751.]({{< relref "#1-convolutional-neural-networks-for-sentence-classification" >}}) [下载](https://arxiv.org/abs/1408.5882)
 
 据说是第一篇在NLP领域使用CNN的论文，算是将CNN从图像识别领域延伸到了NLP来，并取得了不错的效果。
 
-[2]. [Zhang, Ye, and Byron C. Wallace. “A Sensitivity Analysis of (and Practitioners’ Guide to) Convolutional Neural Networks for Sentence Classification.” *International Joint Conference on Natural Language Processing(IJCNLP)*, vol. 1, 2017, pp. 253–263.](https://arxiv.org/abs/1510.03820v1)
+[2]. [Zhang, Ye, and Byron C. Wallace. “A Sensitivity Analysis of (and Practitioners’ Guide to) Convolutional Neural Networks for Sentence Classification.” *International Joint Conference on Natural Language Processing(IJCNLP)*, vol. 1, 2017, pp. 253–263.]({{< relref "#2-a-sensitivity-analysis-of-and-practitioners-guide-to-convolutional-neural-networks-for-sentence-classification" >}})  [下载](https://arxiv.org/abs/1510.03820v1)
 
 对在句子分类层面使用CNN进行了详细的实验，对初学者的CNN调参有一定指导意义，可以帮助理解各参数对CNN的影响，但实质上的帮助并不会很大，算是给些经验性的参考吧。
 
-[3]. [Zhang, Xiang, et al. “Character-Level Convolutional Networks for Text Classification.” *Neural Information Processing Systems(NIPS)*, 2015, pp. 649–657.](https://arxiv.org/abs/1509.01626)
+[3]. [Zhang, Xiang, et al. “Character-Level Convolutional Networks for Text Classification.” *Neural Information Processing Systems(NIPS)*, 2015, pp. 649–657.]({{< relref "#3-character-level-convolutional-networks-for-text-classification" >}}) [下载](https://arxiv.org/abs/1509.01626)
 
 使用字符集Embedding来代替词语级的Embedding。
 
-[4]. [Shen, Dinghan, et al. “Baseline Needs More Love: On Simple Word-Embedding-Based Models and Associated Pooling Mechanisms.” *Proceedings of the 56th Annual Meeting of the Association for      Computational Linguistics (ACL)*, 2018.](https://arxiv.org/abs/1805.09843)
+[4]. [Shen, Dinghan, et al. “Baseline Needs More Love: On Simple Word-Embedding-Based Models and Associated Pooling Mechanisms.” *Proceedings of the 56th Annual Meeting of the Association for      Computational Linguistics (ACL)*, 2018.]({{< relref "#4-baseline-needs-more-love-on-simple-word-embedding-based-models-and-associated-pooling-mechanisms" >}}) [下载](https://arxiv.org/abs/1805.09843)
 
 2015直接就跳到了2018，其实中间有很多基于attention做的repre的建模，不管是对于句子中词语的attention，句子结构的attention，还是段落的，整体结构算是越来越复杂。但是这篇2018ACL的文章指出，根本不需要这么复杂的模型，只需要最简单的词向量就可以有很好的效果。不过，据实验，调参的好坏很大程度上决定了这个基线的结果。
 
-[5]. [Wang, Guoyin, et al. “Joint Embedding of Words and Labels for Text Classification.” *Meeting of the Association for Computational Linguistics(ACL)*, 2018.](https://arxiv.org/abs/1805.04174)
+[5]. [Wang, Guoyin, et al. “Joint Embedding of Words and Labels for Text Classification.” *Meeting of the Association for Computational Linguistics(ACL)*, 2018.]({{< relref "#5-joint-embedding-of-words-and-labels-for-text-classification" >}}) [下载](https://arxiv.org/abs/1805.04174)
 
-[6]. [Li, Shen, et al. “Analogical Reasoning on Chinese Morphological and Semantic Relations.” *Meeting of the Association for Computational Linguistics*, 2018.](https://arxiv.org/abs/1805.06504)
+[6]. [Li, Shen, et al. “Analogical Reasoning on Chinese Morphological and Semantic Relations.” *Meeting of the Association for Computational Linguistics*, 2018.]({{< relref "#6-analogical-reasoning-on-chinese-morphological-and-semantic-relations" >}}) [下载](https://arxiv.org/abs/1805.06504)
 
 ## 数据集
 
@@ -62,7 +64,7 @@ Table 1: Summary statistics for the datasets after tokenization. \\(c\\): Number
 
 ## 论文详情
 
-### [1]. Convolutional Neural Networks for Sentence Classification
+### [1]. Convolutional Neural Networks for Sentence Classification 
 
 据说是第一篇在NLP领域使用CNN的论文，但看了之后的实验观察，其实2014ACL就已经有一篇在NLP的句子建模领域使用CNN的论文了，但在那篇中在SST-1数据集上使用随机初始化词向量的模型效果只有37.4%，大大比这篇的45.0%低，作者Yoon Kim归功于采用了多个不同窗口宽度的filter。所以，这篇如果有较高地位，应该在“第一篇在NLP领域使用CNN的论文”前再加一句，效果出色。
 
@@ -77,7 +79,7 @@ Table 1: Summary statistics for the datasets after tokenization. \\(c\\): Number
 基本上图就能够说明论文的主要步骤和思想了，有几点比较有趣的思考：
 
 * 不同于图像领域的卷积核为\\(n \times n\\)的正方形，Yoon Kim在这里使用的是\\(n \times k\\)，其中\\(k\\)是词向量的维度，在此情况下的卷积结果的确比粗暴直接套CNN的正方形filter更为合理（除非对于词向量来说，也存在局部视野的意义）。在此情况下，feature map不再是类似地正方形，而是一个一维向量，max pooling原本为对feature map的2维度pooling改为单维度取最大值也是显而易见的。
-* 图片天然有RGB的三通道，Yoon Kim尝试使用static和non-static的词向量策略作为两个不同的通道，并希望能通过static的部分减少过拟合（使feature map不会偏离太过），但不是在所有数据集上都有更好的效果。多通道部分的确是一个很有趣的思路，可以考虑融合更多的信息进来，就像NIN一样。
+* 图片天然有RGB的三通道，Yoon Kim尝试使用static和non-static的词向量策略作为两个不同的通道，并希望能通过static的部分减少过拟合（使feature map不会偏离太过），但不是在所有数据集上都有更好的效果。{{% bgstyle red %}}多通道部分的确是一个很有趣的思路，可以考虑融合更多的信息进来，就像NIN一样。 {{% /bgstyle %}}
 * 之前大多直接使用word2vec，由于word2vec只考虑了上下文的文字信息，更偏向于句法概率而不是语义，因此两个语义相反但用法相似的词语是很有可能在词向量的距离上是相近的。而在新的数据集（特别是情感分类数据集）上继续fine-tune，由于加入了语义部分不断进行调整，可以使两个用法相似但是语义更远的词分得更开，对于原本的词向量，能对现实中的词语有更好的建模。
 
 除了以上几点之外，还有以下几个论文的内容比较有意思：
@@ -114,4 +116,4 @@ Table 1: Summary statistics for the datasets after tokenization. \\(c\\): Number
 
 | Version | Action | Time       |
 | ------- | ------ | ---------- |
-| 1.0     | Init + [1]  | 2018-07-30 |
+| 1.0     | Init + paper[1]  | 2018-07-30 |
