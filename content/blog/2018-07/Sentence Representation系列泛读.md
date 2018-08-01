@@ -1,7 +1,7 @@
 ---
 date: "2018-07-30T17:41:23+08:00"
-publishdate: 2018-07-31
-lastmod: 2018-08-01
+publishdate: "2018-07-31"
+lastmod: "2018-08-01"
 draft: false
 title: "每周Paper精读(2) Sentence Representation系列泛读"
 tags: ["nlp", "repre"]
@@ -79,7 +79,7 @@ Table 1: Summary statistics for the datasets after tokenization. \\(c\\): Number
 基本上图就能够说明论文的主要步骤和思想了，有几点比较有趣的思考：
 
 * 不同于图像领域的卷积核为\\(n \times n\\)的正方形，Yoon Kim在这里使用的是\\(n \times k\\)，其中\\(k\\)是词向量的维度，在此情况下的卷积结果的确比粗暴直接套CNN的正方形filter更为合理（除非对于词向量来说，也存在局部视野的意义）。在此情况下，feature map不再是类似地正方形，而是一个一维向量，max pooling原本为对feature map的2维度pooling改为单维度取最大值也是显而易见的。
-* 图片天然有RGB的三通道，Yoon Kim尝试使用static和non-static的词向量策略作为两个不同的通道，并希望能通过static的部分减少过拟合（使feature map不会偏离太过），但不是在所有数据集上都有更好的效果。{{% bgstyle red %}}多通道部分的确是一个很有趣的思路，可以考虑融合更多的信息进来，就像NIN一样。 {{% /bgstyle %}}
+* 图片天然有RGB的三通道，Yoon Kim尝试使用static和non-static的词向量策略作为两个不同的通道，并希望能通过static的部分减少过拟合（使feature map不会偏离太过），但不是在所有数据集上都有更好的效果。{{% bgstyle purple %}}多通道部分的确是一个很有趣的思路，可以考虑融合更多的信息进来，就像NIN一样。 {{% /bgstyle %}}
 * 之前大多直接使用word2vec，由于word2vec只考虑了上下文的文字信息，更偏向于句法概率而不是语义，因此两个语义相反但用法相似的词语是很有可能在词向量的距离上是相近的。而在新的数据集（特别是情感分类数据集）上继续fine-tune，由于加入了语义部分不断进行调整，可以使两个用法相似但是语义更远的词分得更开，对于原本的词向量，能对现实中的词语有更好的建模。
 
 除了以上几点之外，还有以下几个论文的内容比较有意思：
@@ -117,3 +117,4 @@ Table 1: Summary statistics for the datasets after tokenization. \\(c\\): Number
 | Version | Action | Time       |
 | ------- | ------ | ---------- |
 | 1.0     | Init + paper[1]  | 2018-07-30 |
+| 1.1| Add shortcode for text bg | 2018-08-01|
