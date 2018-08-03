@@ -56,7 +56,7 @@ $ docker images
 
 或者，你可以选择自己建立镜像。如果已经获得了Hugo镜像，可以略过这一部分。
 
-我建立Hugo docker的Dockerfile放在[Github](https://github.com/orianna-zzo/hugo-docker-dev)上，大家可以去参考试试。现在是v0.3版，只有94.9MB大小的镜像，后续随着开发可能会有新的变化。
+我建立Hugo docker的Dockerfile放在[Github](https://github.com/orianna-zzo/hugo-docker-dev)上，大家可以去参考试试。现在是v0.46版，只有85.3MB大小的镜像，后续随着开发可能会有新的变化。
 
 将所有内容clone到当前目录：
 
@@ -71,7 +71,7 @@ $ git clone https://github.com/orianna-zzo/hugo-docker-dev.git
 在这个repo的文件夹中打开终端，输入下面命令以建立镜像：
 
 ```shell
-$ docker build -t orianna/hugo-docker-dev:0.3 -t orianna/hugo-docker-dev:latest .
+$ docker build -t orianna/hugo-docker-dev:0.46 -t orianna/hugo-docker-dev:latest .
 ```
 
 其中`-t`给这个镜像打上tag。根据docker hub的要求，非官方镜像的镜像名称需要为`你的docker-name/镜像名称`，`:`后为该镜像的tag。`-t`可以有多个。注意不要忘记最后的`.`，它表示使用该文件夹中除了`.dockerignore` 中的其他内容作为建立镜像的上下文内容。
@@ -256,19 +256,19 @@ $ docker run --name my-hugo -v $(pwd):/hugo-site -v $(pwd)/public:/static-site -
 $ vi ~/.profile
 ```
 
-增加以下内容，给起个别称 `docker-hugo-dev`：
+增加以下内容，给起个别称 `docker-hugo-dev`，注意，需要所在目录路径：
 
 ```shell
 # config alias
-alias docker-hugo-dev='docker run --name my-hugo -v /Users/orianna/Projects/homepage/blog-hugo:/hugo-site -v /Users/orianna/Projects/homepage/blog-hugo/public:/static-site -p 1313:1313 --rm -it orianna/hugo-docker-dev:latest'
+alias docker-hugo="docker run -v \$(pwd):/hugo-site -v \$(pwd)/public:/static-site -p 1313:1313 --rm -it orianna/hugo-docker-dev:latest"
 ```
 
 记得source一下，使配置文件立即生效：
 ```shell
 $ source ~/.profile
 ```
-   
-现在开始就可以直接使用 `docker-hugo-dev` 来启动hugo的docker镜像了。
+
+现在开始就可以直接使用 `docker-hugo` 来启动hugo的docker镜像了。
 
 ## Github Pages部署
 
@@ -293,3 +293,4 @@ $ source ~/.profile
 | 1.0     | Init                     | 2018-01-07 |
 | 1.1     | 增加tag、版本控制及资源链接 | 2018-01-17 |
 | 1.2     | Config alias             | 2018-03-21 |
+| 1.3 | hugo-docker-dev v0.46 + 修改alias用法 | 2018-08-03 |
