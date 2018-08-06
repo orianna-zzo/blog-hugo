@@ -1,0 +1,29 @@
+{{ if eq (.Get 0)  "light-grey" }}
+    <span style="color: #cbcbcb" >
+        {{ .Inner }}
+    </span>
+{{ else if eq (.Get 0)  "yellow" }}
+    <span style="color: #ffeb92fd" >
+        {{ .Inner }}
+    </span>
+{{ else if eq (.Get 0) "red" }}
+    <span style="color: #fa9494" >
+        {{ .Inner }}
+    </span>
+{{ else if eq (.Get 0) "blue" }}
+    <span style="color: #9ccaff" >
+        {{ .Inner }}
+    </span>
+{{ else if eq (.Get 0) "green" }}
+    <span style="color: #acffea" >
+        {{ .Inner }}
+    </span>
+{{ else if eq (.Get 0)  "purple" }}
+    <span style="color: #eeb4ff" >
+        {{ .Inner }}
+    </span>
+{{ else }}
+    <span style="color: .Get 0" >
+        {{ .Inner }}
+    </span>    
+{{ end }}

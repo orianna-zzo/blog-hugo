@@ -3,7 +3,7 @@
 
 
 # dev run hugo server
- hugo server -b http://localhost:1313 --bind=0.0.0.0 --disableFastRender
+hugo server -b http://localhost:1313 --bind=0.0.0.0 --disableFastRender
 
 
 # generate static site
