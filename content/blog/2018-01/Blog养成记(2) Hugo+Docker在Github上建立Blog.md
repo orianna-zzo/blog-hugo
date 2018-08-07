@@ -282,17 +282,17 @@ $ source ~/.profile
 除了以上简化hugo内容之外，还可以有以下别名配置：
 
 ```shell
-$ # 查看博客的页面生成情况(绝对路径，所以不限执行该命令位置)
-$ alias hugo-dev='docker run --name my-hugo -v /Users/orianna/Projects/homepage/blog-hugo:/hugo-site -v /Users/orianna/Projects/homepage/blog-hugo/public:/static-site -p 1313:1313 --rm -it orianna/hugo:latest server -b http://localhost:1313 --bind=0.0.0.0 --disableFastRender'
-$ 
-$ # 生成博客的静态页面(绝对路径，所以不限执行该命令位置)
-$ alias hugo-dev-gen='docker run --name my-hugo -v /Users/orianna/Projects/homepage/blog-hugo:/hugo-site -v /Users/orianna/Projects/homepage/blog-hugo/public:/static-site -p 1313:1313 --rm -it orianna/hugo:latest --baseUrl="https://orianna-zzo.github.io/" -d /static-site'
-$ 
-$ # 可将常用的命令写在执行的文件夹中的run.sh中，镜像直接执行(绝对路径，所以不限执行该命令位置)
-$ alias hugo-dev-run='docker run --name my-hugo -v /Users/orianna/Projects/homepage/blog-hugo:/hugo-site -v /Users/orianna/Projects/homepage/blog-hugo/public:/static-site -p 1313:1313 --rm -it --entrypoint sh orianna/hugo-docker-dev:latest run.sh'
-$ 
-$ # 可将常用的命令写在执行的文件夹中的run.sh中，镜像直接执行(注意执行命令的路径)
-$ alias hugo-run='docker run -v $(pwd):/hugo-site -v $(pwd)/public:/static-site -p 1313:1313 --rm -it orianna/hugo-docker-dev:latest'
+# 查看博客的页面生成情况(绝对路径，所以不限执行该命令位置)
+alias hugo-dev='docker run --name my-hugo -v /Users/orianna/Projects/homepage/blog-hugo:/hugo-site -v /Users/orianna/Projects/homepage/blog-hugo/public:/static-site -p 1313:1313 --rm -it orianna/hugo:latest server -b http://localhost:1313 --bind=0.0.0.0 --disableFastRender'
+
+# 生成博客的静态页面(绝对路径，所以不限执行该命令位置)
+alias hugo-dev-gen='docker run --name my-hugo -v /Users/orianna/Projects/homepage/blog-hugo:/hugo-site -v /Users/orianna/Projects/homepage/blog-hugo/public:/static-site -p 1313:1313 --rm -it orianna/hugo:latest --baseUrl="https://orianna-zzo.github.io/" -d /static-site'
+
+# 可将常用的命令写在执行的文件夹中的run.sh中，镜像直接执行(绝对路径，所以不限执行该命令位置)
+alias hugo-dev-run='docker run --name my-hugo -v /Users/orianna/Projects/homepage/blog-hugo:/hugo-site -v /Users/orianna/Projects/homepage/blog-hugo/public:/static-site -p 1313:1313 --rm -it --entrypoint sh orianna/hugo-docker-dev:latest run.sh'
+
+# 可将常用的命令写在执行的文件夹中的run.sh中，镜像直接执行(注意执行命令的路径)
+alias hugo-run='docker run -v $(pwd):/hugo-site -v $(pwd)/public:/static-site -p 1313:1313 --rm -it orianna/hugo-docker-dev:latest'
 
 ```
 
