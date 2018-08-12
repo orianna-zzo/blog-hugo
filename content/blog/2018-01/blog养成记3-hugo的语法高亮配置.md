@@ -1,5 +1,6 @@
 ---
 date: "2018-01-09T17:52:25+08:00"
+Lastmod: "2018-08-13+08:00"
 draft: false
 title: "Blog养成记(3) Hugo的语法高亮配置"
 tags: ["hugo", "语法高亮", "blog"]
@@ -97,6 +98,17 @@ class Foo:
 1. shell脚本无法高亮  
 2. 对toml文件无法识别
 
+#### 2018.8.13 `Highlight shortcode`颜色渲染问题修正
+
+如题，突然发现颜色渲染有问题，所以只能逐个看到底用了那个css。发现我的主页用了`highlight shortcode`的css样式和官网的不一样。鉴于不想花太多时间，只要能看就要，因此在`override.css`中加了强制的css样式，于是问题暂时打个不怎么好看的补丁，但至少`highlight shortcode`还是勉强可看了。
+
+```css
+.highlight pre {
+    background-color: #f7f7f7 !important;
+    color: rgb(194, 192, 192) !important;
+}
+```
+
 ## 使用CSS进行高亮
 
 感觉使用CSS进行语法高亮会相对更灵活、可定制。但是暂时还未尝试，若后续尝试则在此处补充。
@@ -107,7 +119,7 @@ class Foo:
 我建立的docker for Hugo开发镜像:  [Docker Hub上的repo](https://hub.docker.com/r/orianna/hugo-docker-dev/)、[Github上的repo](https://github.com/orianna-zzo/hugo-docker-dev)。  
 我的个人主页Hugo代码:  [blog-hugo](https://github.com/orianna-zzo/blog-hugo)  
 
-[Hugo官网](https://gohugo.io)、[关于语法高亮说明](http://gohugo.io/content-management/syntax-highlighting/)
+[Hugo官网](https://gohugo.io)、[关于语法高亮说明](http://gohugo.io/content-management/syntax-highlighting/)、[pygments主题配色](https://help.farbox.com/pygments.html)
 
 ## 版本控制
 
@@ -115,5 +127,6 @@ class Foo:
 | ------- | ------------------------- | ---------- |
 | 1.0     | Init                      | 2018-01-09 |
 | 1.1     | 增加tag、版本控制及资源链接  | 2018-01-17 |
+| 1.2 | highlight颜色修正 | 2018-08-13 |
 
 

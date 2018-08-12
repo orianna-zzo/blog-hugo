@@ -5,7 +5,7 @@
 
 # baseurl                  = "https://orianna-zzo.github.io/"
 builddrafts                = false
-languageCode               = "zh-CN"
+languageCode               = "zh-cmn-Hans"
 canonifyurls               = true
 contentdir                 = "content"
 layoutdir                  = "layouts"
@@ -48,7 +48,7 @@ title                      = "博客|ZHENG Zi'ou"
 
 [params]
   # faviconfile              = "img/leaf.ico"
-  faviconfile              = "img/profile.png"
+  faviconfile              = "img/zheng.png"
   avatar                   = "img/profile.png"             # path to image in static dir e.g img/avatar.png (do not use in the same time as gravatar)
   author                   = "ZHENG Zi'ou"
   i18n_flags               = false                         # whether to display small country flags for available translations
@@ -70,14 +70,14 @@ title                      = "博客|ZHENG Zi'ou"
   pygmentsUseClassic       = true
   pygmentsUseClasses       = true
   pygmentsCodeFences       = true
-  pygmentsStyle            = "autumn"
+  pygmentsStyle            = "chroma"
 
 
   # links
   email                    = "zhengziou@gmail.com"
   github                   = "//github.com/orianna-zzo"
   linkedin                 = "//linkedin.com/in/ziouzheng"
-  include_rss              = true                          # include RSS <link> tag in <head> and show RSS icon
+  include_rss              = false                         # include RSS <link> tag in <head> and show RSS icon
 
 
   # analytics

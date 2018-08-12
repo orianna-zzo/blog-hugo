@@ -2,7 +2,7 @@
 date: "2018-05-24T10:17:35+08:00"
 draft: false
 title: "现实与幻想的距离——观《深夜小狗离奇事件》repo&感想"
-tags: ["话剧", "NT", "期待的Show", "文广"]
+tags: ["话剧", "National Theatre", "期待的Show", "文广"]
 series: ["观后repo"]
 categories: ["品鉴评论"]
 toc: true

@@ -16,6 +16,14 @@
     display:block !important;
 }
 
+.highlight pre {
+    background-color: #f7f7f7 !important;
+    color: rgb(194, 192, 192) !important;
+}
+
+/* .highlight pre span {
+    color: #3c3d38;
+} */
 
 /* Nested Unordered List */
 
