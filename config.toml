@@ -65,12 +65,12 @@ title                      = "博客|ZHENG Zi'ou"
  
 
   # highlighting 
-  highlightjs              = false
-  pygmentsOptions          = ""
-  pygmentsUseClassic       = true
-  pygmentsUseClasses       = true
-  pygmentsCodeFences       = true
-  pygmentsStyle            = "chroma"
+  highlightjs              = true
+  # pygmentsOptions          = ""
+  # pygmentsUseClassic       = false
+  # pygmentsUseClasses       = true
+  # pygmentsCodeFences       = true
+  # pygmentsStyle            = "trac"
 
 
   # links

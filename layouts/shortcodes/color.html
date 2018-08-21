@@ -1,29 +1,29 @@
-{{ if eq (.Get 0)  "light-grey" }}
-    <span style="color: #cbcbcb" >
-        {{ .Inner }}
-    </span>
-{{ else if eq (.Get 0)  "yellow" }}
-    <span style="color: #ffeb92fd" >
-        {{ .Inner }}
-    </span>
-{{ else if eq (.Get 0) "red" }}
-    <span style="color: #fa9494" >
-        {{ .Inner }}
-    </span>
-{{ else if eq (.Get 0) "blue" }}
-    <span style="color: #9ccaff" >
-        {{ .Inner }}
-    </span>
-{{ else if eq (.Get 0) "green" }}
-    <span style="color: #acffea" >
-        {{ .Inner }}
-    </span>
-{{ else if eq (.Get 0)  "purple" }}
-    <span style="color: #eeb4ff" >
-        {{ .Inner }}
-    </span>
-{{ else }}
-    <span style="color: .Get 0" >
-        {{ .Inner }}
-    </span>    
-{{ end }}
+{{- if eq (.Get 0)  "light-grey" -}}
+    <mark style="color: #cbcbcb;">
+        {{- .Inner -}}
+    </mark>
+{{- else if eq (.Get 0)  "yellow" -}}
+    <mark style="color: #ffeb92fd;">
+        {{- .Inner -}}
+    </mark>
+{{- else if eq (.Get 0) "red" -}}
+    <mark style="color: #fa9494;">
+        {{- .Inner -}}
+    </mark>
+{{- else if eq (.Get 0) "blue" -}}
+    <mark style="color: #9ccaff;">
+        {{- .Inner -}}
+    </mark>
+{{- else if eq (.Get 0) "green" -}}
+    <mark style="color: #acffea;">
+        {{- .Inner -}}
+    </mark>
+{{- else if eq (.Get 0)  "purple" -}}
+    <mark style="color: #eeb4ff;">
+        {{- .Inner -}}
+    </mark>
+{{- else -}}
+    <mark style="color: .Get 0 ;">
+        {{- .Inner -}}
+    </mark>    
+{{- end -}}
