@@ -14,16 +14,16 @@ toc: true
 
 首先，定义一个类，比如`avatar`，在css文件中定义该类使用了某长图片蒙版：
 
-{{< highlight css "hl_lines=5-6" >}}
+```html
 
 .avatar {
   border-radius: 50%;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
   max-width: 50px;
-  -webkit-mask-image: url(/img/mask/circle.svg);
-  mask-image: url(/img/mask/circle.svg);
+  {{% bgstyle purple %}}-webkit-mask-image: url(/img/mask/circle.svg);
+  mask-image: url(/img/mask/circle.svg);{{% /bgstyle %}}
 }
-{{</highlight >}}
+```
 
 其中高亮的两句定义了蒙版的图片。在这里，蒙版我使用的是font awesome里的圆形图，就长下面这个样子：
 
