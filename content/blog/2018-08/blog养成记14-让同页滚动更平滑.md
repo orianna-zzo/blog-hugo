@@ -31,7 +31,7 @@ toc: true
 $(window).bind('hashchange', function (event) {
     $.smoothScroll({
         // Replace '#/' with '#' to go to the correct target
-        scrollTarget: location.hash.replace(/^\#\/?/, '#')
+        scrollTarget: {{% bgstyle purple %}}decodeURI{{% /bgstyle %}}(location.hash.replace(/^\#\/?/, '#'))
     });
 });
 
@@ -53,6 +53,8 @@ if (location.hash) {
 ```
 
 上面的代码基本就可以直接使用了。它将`.smoothScroll`与`hashchange`进行绑定，将\<a\>的`href`的`hash`传入。
+
+此外，`decodeURI`是为了解决中文url出现乱码导致的js问题。
 
 smoothScroll可以设置网页偏移量，但是有一个问题不够灵活，如果我网站的网页偏移量不一致怎么办？
 
@@ -93,6 +95,7 @@ if (location.hash) {
 
 ## 版本控制
 
-| Version | Action | Time       |
-| ------- | ------ | ---------- |
-| 1.0     | Init   | 2018-08-18 |
+| Version | Action       | Time       |
+| ------- | ------------ | ---------- |
+| 1.0     | Init         | 2018-08-18 |
+| 1.1     | 解决中文乱码 | 2018-08-25 |
