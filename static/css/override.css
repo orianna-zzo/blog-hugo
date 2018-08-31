@@ -21,6 +21,11 @@
     color: rgb(194, 192, 192) !important;
 }
 
+pre code {
+    white-space: pre;
+    tab-size: 4;
+}
+
 /* .highlight pre span {
     color: #3c3d38;
 } */

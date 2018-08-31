@@ -3,14 +3,14 @@ date: "2018-08-17T21:01:32+08:00"
 publishdate: "2018-08-17+08:00"
 lastmod: "2018-08-17+08:00"
 draft: false
-title: "Blog养成记(13) 增加一个toc侧边栏"
+title: "Blog养成记(13) 增加一个TOC侧边栏"
 tags: ["前端", "css", "blog", "scrollspy", "bootstrap"]
 series: ["Blog养成记"]
 categories: ["杂技浅尝"]
 toc: true
 ---
 
-想在页面右侧保留一个固定在屏幕上的toc导航栏(table of content)，可以直接选择跳转的网页段落位置，此外也可以提醒文章结构。
+想在页面右侧保留一个固定在屏幕上的TOC导航栏(Table Of Content)，可以直接选择跳转的网页段落位置，此外也可以提醒文章结构。
 
 ## Scrollspy
 
