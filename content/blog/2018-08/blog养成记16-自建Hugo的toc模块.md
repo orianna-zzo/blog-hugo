@@ -109,69 +109,47 @@ Hugo对于Table Of Content也有内建变量，可以参考[这里](https://gohu
 
 一个是`Public Util Api`中的`getSelectorFromElement。`需要对`href`的内容进行解码，获得正确的中文，因为正文中的`id`是正确的中文，只有这样才能获得正确的selector。
 
-```javascript
-getSelectorFromElement: function getSelectorFromElement(element) {
-        var selector = element.getAttribute('data-target');
-
-        if (!selector || selector === '#') {
-          selector = {{% bgstyle purple %}}decodeURI(element.getAttribute('href')){{% /bgstyle %}} || '';
-        }
-
-        try {
-          return document.querySelector(selector) ? selector : null;
-        } catch (err) {
-          return null;
-        }
-      },
-```
-
 另一个是`scrollspy`中`_activate`函数。由于是需要根据`href`的内容获取selector，因此需要将`id`进行编码获得真实的`href`值。另外，为了能够与`href`正常中文的进行兼容，增加了判断。
 
-```javascript
-_proto._activate = function _activate(target) {
-        this._activeTarget = target;
-
-        this._clear();
-
-        var queries = this._selector.split(','); // eslint-disable-next-line arrow-body-style
-
-
-        queries = queries.map(function (selector) {
-          return selector + "[data-target=\"" + target + "\"]," + (selector + "[href=\"" + target + "\"]");
-        });
-        var $link = $$$1([].slice.call(document.querySelectorAll(queries.join(','))));
-
-        {{% bgstyle purple %}}if ($link.length==0){{% \bgstyle %}} {
-
-          queries = this._selector.split(',');
-          queries = queries.map(function (selector) {
-            return selector + "[data-target=\"" + target + "\"]," + (selector + "[href=\"" + {{% bgstyle purple %}}encodeURI(target).toLowerCase(){{% \bgstyle %}} + "\"]");
-          });
-          var $link = $$$1([].slice.call(document.querySelectorAll(queries.join(','))));
-
-        }
-        
-        
-
-        if ($link.hasClass(ClassName.DROPDOWN_ITEM)) {
-          $link.closest(Selector.DROPDOWN).find(Selector.DROPDOWN_TOGGLE).addClass(ClassName.ACTIVE);
-          $link.addClass(ClassName.ACTIVE);
-        } else {
-          // Set triggered link as active
-          $link.addClass(ClassName.ACTIVE); // Set triggered links parents as active
-          // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
-
-          $link.parents(Selector.NAV_LIST_GROUP).prev(Selector.NAV_LINKS + ", " + Selector.LIST_ITEMS).addClass(ClassName.ACTIVE); // Handle special case when .nav-link is inside .nav-item
-
-          $link.parents(Selector.NAV_LIST_GROUP).prev(Selector.NAV_ITEMS).children(Selector.NAV_LINKS).addClass(ClassName.ACTIVE);
-        }
-
-        $$$1(this._scrollElement).trigger(Event.ACTIVATE, {
-          relatedTarget: target
-        });
-      };
 ```
 
+_proto._activate = function _activate(target) {
+
+        this._activeTarget = target;
+        this._clear();
+        var queries = this._selector.split(','); // eslint-disable-next-line arrow-body-style
+
+        queries = queries.map(function (selector) {
+            return selector + "[data-target=\"" + target + "\"]," + (selector + "[href=\"" + target + "\"]");
+        });
+        var $link = $$$1([].slice.call(document.querySelectorAll(queries.join(','))));
+    
+        {{% bgstyle purple %}}if ($link.length==0){{% /bgstyle %}} {
+    
+            queries = this._selector.split(',');
+            queries = queries.map(function (selector) {
+              return selector + "[data-target=\"" + target + "\"]," + (selector + "[href=\"" + {{% bgstyle purple %}} encodeURI(target).toLowerCase(){{% /bgstyle %}} + "\"]");
+            });
+            var $link = $$$1([].slice.call(document.querySelectorAll(queries.join(','))));   
+        }
+                                
+        if ($link.hasClass(ClassName.DROPDOWN_ITEM)) {
+            $link.closest( Selector.DROPDOWN ).find( Selector.DROPDOWN_TOGGLE ).addClass( ClassName.ACTIVE );
+            $link.addClass(ClassName.ACTIVE);
+        } else {
+            // Set triggered link as active
+            $link.addClass(ClassName.ACTIVE); // Set triggered links parents as active
+            // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
+            $link.parents(Selector.NAV_LIST_GROUP).prev(Selector.NAV_LINKS + ", " + Selector.LIST_ITEMS).addClass(ClassName.ACTIVE); // Handle special case when .nav-link is inside .nav-item
+            $link.parents( Selector.NAV_LIST_GROUP ).prev( Selector.NAV_ITEMS ).children(  Selector.NAV_LINKS ).addClass( ClassName.ACTIVE );
+        }
+    
+        $$$1(this._scrollElement).trigger(Event.ACTIVATE, {
+            relatedTarget: target
+        });
+      };
+
+```
 
 
 ## Resource资源链接汇总
