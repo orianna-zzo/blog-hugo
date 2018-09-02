@@ -10,7 +10,7 @@ categories: ["杂技浅尝"]
 toc: true
 ---
 
-Table Of Content是一个十分常用的功能，这个系列的第13篇[增加一个TOC侧边栏]({{< ref "/blog/2018-08/blog养成记13-增加一个toc侧边栏" >}})就是为了这个做准备，只不过是在静态页面上尝试想要的样式。
+Table Of Content是一个十分常用的功能，这个系列的第13篇[增加一个TOC侧边栏]({{< ref "/blog/2018-08/blog养成记13-增加一个toc侧边栏" >}})就是为了这个做准备，只不过是在静态页面上尝试想要的样式。本文用到的样式都基于第13篇中增加的css样式。
 
 ## Hugo的Table of Content
 
@@ -46,7 +46,7 @@ Hugo对于Table Of Content也有内建变量，可以参考[这里](https://gohu
 
 ## 自建TOC模板
 
-在[Github的Issue](https://github.com/gohugoio/hugo/issues/1778)中找到了对于这些问题的一个方法，因此决定参考着也定制化地写一个我自己的TOC模板。模板中我并没有选择监听所有的标题，而只选择了\<h1\>~\<h4\>。
+在[Github的Issue](https://github.com/gohugoio/hugo/issues/1778)中找到了对于这些问题的一个方法，因此决定参考着也定制化地写一个我自己的TOC模板。模板中我并没有选择监听所有的标题，而只选择了\<h1\>~\<h4\>。此外，由于一些post中并不存在\<h1\>，对这种情况作了额外处理，避免TOC目录右移太多。
 
 ```
 {{ if .Params.toc }}
@@ -54,6 +54,10 @@ Hugo对于Table Of Content也有内建变量，可以参考[这里](https://gohu
 	{{ $headers := findRE "<h[1-4].*?>(.|\n])+?</h[1-4]>" .Content }}
 	<!-- at least one header to link to -->
 	{{ if ge (len $headers) 1 }}
+		{{% bgstyle purple %}}{{ $h1_n := len (findRE "<h1.*?>(.|\n])+?</h1>" .Content) }}{{% /bgstyle %}}
+		{{% bgstyle purple %}}{{ $re := (cond (eq $h1_n 0) "<h[2-4]" "<h[1-4]") }}{{% /bgstyle %}}
+		{{% bgstyle purple %}}{{ $renum := (cond (eq $h1_n 0) "[2-4]" "[1-4]") }}{{% /bgstyle %}}
+	
 
 		<!--Grid column-->
 		<div class="col-md-2 pl-0">
@@ -64,20 +68,22 @@ Hugo对于Table Of Content也有内建变量，可以参考[这里](https://gohu
 				<ul class="nav nav-pills ml-0">
 					<!-- TOC header -->
 					<li class="nav-item pb-3 text-center">
-						<span class="font-weight-bold mb-2">- CATALOG -</span>
+						<span class="font-weight-bold mb-2">- CATALOG - </span>
 					</li>
+
 					{{ range $headers }}
 						{{ $header := . }}
-						{{ range first 1 (findRE "<h[1-4]" $header 1) }}
-							{{ range findRE "[1-4]" . 1 }}
-								{{ $next_heading := (int . ) }}
+						{{ range first 1 (findRE $re $header 1) }}
+							{{ range findRE $renum . 1 }}
+								{{% bgstyle purple %}}{{ $next_heading := (cond (eq $h1_n 0) (sub (int .) 1 ) (int . ) ) }}{{% /bgstyle %}}
 								{{ range seq $next_heading }}
 									<ul class="nav">
 								{{end}}
 								{{ $anchorId :=  (replaceRE ".* id=\"(.*?)\".*" "$1" $header ) }}
+
 										<li class="nav-item">
 						 					<a class="nav-link" href="#{{ $anchorId }}">
-												 {{ $header | plainify | htmlEscape }}
+												 {{ $header | plainify | htmlUnescape }}
 											</a>
 										</li>
 						 
@@ -151,6 +157,40 @@ _proto._activate = function _activate(target) {
 
 ```
 
+### 标题太长怎么办
+
+经常会出现这种情况，一行的标题太长，于是就换行显示。问题到不大，只是不太美观，还是希望能够只显示一行。有两种方案，一个是允许TOC有水平滚动条，另一个是将太长的标题省略显示。
+
+#### 使用水平滚动条
+
+这个只需要在css样式中标记对应的元素不能换行即可。
+
+```css
+.toc-nav .nav-link {
+  white-space:nowrap;
+} 
+```
+
+这样如果标题太长，在TOC会出现水平滚动条。
+
+#### 太长标题省略显示
+
+TOC模块出现水平滚动条总嫌有些冗余，于是决定将太长的标题省略显示，在css中增加以下内容：
+
+```css
+.toc-nav ul {
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+.toc-nav .nav-link {
+  text-overflow:ellipsis;
+  overflow:hidden;
+} 
+
+```
+
+
 
 ## Resource资源链接汇总
 
@@ -158,6 +198,7 @@ _proto._activate = function _activate(target) {
 
 ## 版本控制
 
-| Version | Action | Time       |
-| ------- | ------ | ---------- |
-| 1.0     | Init   | 2018-08-25 |
+| Version | Action         | Time       |
+| ------- | -------------- | ---------- |
+| 1.0     | Init           | 2018-08-25 |
+| 1.1     | 处理没有\<h1\> | 2018-09-02 |

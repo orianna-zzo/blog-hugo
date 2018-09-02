@@ -20,8 +20,8 @@ toc: true
   border-radius: 50%;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
   max-width: 50px;
-  {{% bgstyle purple %}}-webkit-mask-image: url(/img/mask/circle.svg);
-  mask-image: url(/img/mask/circle.svg);{{% /bgstyle %}}
+  {{% bgstyle purple %}}-webkit-mask-image: url(/img/mask/circle.svg);{{% /bgstyle %}}
+  {{% bgstyle purple %}}mask-image: url(/img/mask/circle.svg);{{% /bgstyle %}}
 }
 ```
 

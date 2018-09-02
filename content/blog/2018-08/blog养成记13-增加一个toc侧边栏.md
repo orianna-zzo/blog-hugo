@@ -145,11 +145,17 @@ Bootstrap的Scrollspy我尝试了好几次，都无法达到页面展示的效�
   font-size: .875rem; 
 }
 
-.toc-nav .nav-item {
+.toc-nav ul {
+  list-style: none;
+  margin-left: 1rem;
+  padding-left: 0;
+}
+
+.toc-nav li, .toc-nav ul {
   width: 100%;
 }
 
-.toc-nav a.nav-link {
+.toc-nav .nav-item, .toc-nav .nav-link {
   font-size: .8rem;
   font-weight: 400;
   line-height: 1.1rem;
@@ -167,16 +173,16 @@ Bootstrap的Scrollspy我尝试了好几次，都无法达到页面展示的效�
 ```css
 .toc-nav a.nav-link:hover {
   background-color: transparent;
-  border-left: .025rem solid #45526e;
+  border-left: .025rem solid #38849e;
   -webkit-box-shadow: none;
   box-shadow: none;
-  color: #45526e; 
+  color: #38849e; 
 }
 
 .toc-nav a.nav-link.active, .toc-nav a.nav-link:active {
   background-color: transparent;
   color: black; 
-  border-left: .125rem solid #45526e;
+  border-left: .125rem solid #38849e;
   -webkit-box-shadow: none;
   box-shadow: none;
   font-weight: 500;
@@ -192,6 +198,7 @@ Bootstrap的Scrollspy我尝试了好几次，都无法达到页面展示的效�
 
 ## 版本控制
 
-| Version | Action | Time       |
-| ------- | ------ | ---------- |
-| 1.0     | Init   | 2018-08-17 |
+| Version | Action   | Time       |
+| ------- | -------- | ---------- |
+| 1.0     | Init     | 2018-08-17 |
+| 1.1     | fix bugs | 2018-09-02 |
