@@ -1,7 +1,7 @@
 ---
 date: "2018-03-20T16:46:17+08:00"
 draft: false
-title: "Blog养成记(7) Hugo多级列表无法显示? —— Markdown的bug合集"
+title: "Blog养成记(7) Hugo多级列表无法显示? —— Cocoa主题的Markdown bug合集"
 tags: ["hugo", "markdown", "nested list", "bug", "blog", "typora"]
 series: ["Blog养成记"]
 categories: ["杂技浅尝"]
@@ -51,11 +51,12 @@ toc: true
 
     >  > In the quote
     >  > ```shell
-    >  $ This is code fence
+    >  > $ This is code fence
+    >  > ```
     >  ```
     >  
     >  Out the quote
-    >  ```shell
+    >  ​```shell
     >  $ Another code fence
     >  ```
 
@@ -107,7 +108,7 @@ toc: true
     section.main .content .markdown ul > li > ol > li {
         list-style-type: decimal;
     }
-  
+    
     section.main .content .markdown ol > li > ul > li {
         list-style-type: disc;
     }
@@ -126,12 +127,12 @@ toc: true
     In the quote   
     > ```shell   
     $ This is code fence    
-    ```  
+    ​```  
      
     Out the quote    
-    ```shell        
+    ​```shell        
      $ Another code fence
-    ```     
+    ​```     
 
     ````
 
