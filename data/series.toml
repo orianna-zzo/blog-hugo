@@ -1,0 +1,26 @@
+[[series]]
+name = "慢学docker"
+img = "/images/series/慢学Docker/docker.png"
+summary = "Docker方便部署，也便于保持环境的清洁。这个系列记录学习docker脚步。"
+
+[[series]]
+name = "mac小白探索记"
+img = "/images/series/Mac小白探索记/explore.jpg"
+summary = "Mac小白以提高生产力为目标，探索如何高效配置及使用Mac。"
+
+[[series]]
+name = "前端试水"
+img = "/images/series/前端试水/web.jpg"
+summary = "前端相关技术以应用为目的浅尝辄止地了解。"
+
+[[series]]
+name = "blog养成记"
+img = "/images/series/Blog养成记/orianna_in_the_wood.jpg"
+summary = "我是如何一步步建立自己的Blog的。"
+
+[[series]]
+name = "观后repo"
+img = "/images/series/观后repo/theatre.jpg"
+summary = "话剧、舞台剧等观后感。"
+
+

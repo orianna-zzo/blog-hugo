@@ -5,6 +5,8 @@ title: "中文版音乐剧《长腿叔叔》repo"
 tags: ["musical", "中文", "兰心"]
 series: ["观后repo"]
 categories: ["品鉴评论"]
+img: "/images/series/观后repo/2018-05/uncle-ad.jpg"
+summary: "2018年5月25日 19:30 上海兰心大戏院 中文版音乐剧《长腿叔叔》repo"
 toc: true
 ---
 
@@ -23,6 +25,8 @@ toc: true
 杰维斯：丁辉
 
 乔若莎：陈希琰
+
+![uncle actor](/images/series/观后repo/2018-05/uncle-actor.jpg)
 
 ## 碎碎念…
 
@@ -50,7 +54,7 @@ toc: true
 
 不过兰心的音效也不算好，如果演员不是站在前台最前方，声音穿透到后排就减弱很多。小剧场的音乐剧感觉还是更喜欢大剧院的小剧场。《危险游戏》和《谋杀歌谣》都是相对效果更赞的中文版小剧场音乐剧，而这也不仅仅使剧院的原因。
 
-
+![uncle ending](/images/series/观后repo/2018-05/uncle-ending.jpg)
 
 ## 版本控制
 

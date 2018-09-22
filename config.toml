@@ -1,82 +1,93 @@
-
-# copyright = "my test?????"
-
-
-
-# baseurl                  = "https://orianna-zzo.github.io/"
+baseURL                    = "https://orianna-zzo.github.io/"
 builddrafts                = false
-languageCode               = "zh-cmn-Hans"
+languageCode               = "zh-Hans"
 canonifyurls               = true
 contentdir                 = "content"
 layoutdir                  = "layouts"
 publishdir                 = "public"
 enableEmoji                = true
+hasCJKLanguage             = true
+summaryLength              = 200
+Paginate                   = 5
 
-theme                      = "cocoa"
-author                     = "ZHENG Zi'ou"
-title                      = "博客|ZHENG Zi'ou"
+theme                      = "AllinOne"
+title                      = "ZHENG Zi'ou"
 
-
+pygmentsuseclasses         = true
 
 
 [permalinks]
+  sci-tech                 = "sci-tech/:year-:month/:slug/"
+  project                  = "project/:slug/"
   blog                     = "blog/:year-:month/:slug/"
-
-
+  profile                  = "profile/:slug/"
+  
 
 [taxonomies]
-  tag = "tags"
-  series = "series"
-  category = "categories"
-
+  tag                      = "tags"
+  series                   = "series"
+  category                 = "categories"
 
 
 [menu]
   [[menu.main]]
+    name                   = "Sci-Tech"
+    weight                 = 1
+    identifier             = "sci-tech"
+    url                    = "/sci-tech/"
+
+  # [[menu.main]]
+  #   name                   = "Project"
+  #   weight                 = 2
+  #   identifier             = "project"
+  #   url                    = "/project/"
+
+  [[menu.main]]
     name                   = "Blog"
-    weight                 = -120
+    weight                 = 3
     identifier             = "blog"
     url                    = "/blog/"
 
-  [[menu.main]]
-    name                   = "About"
-    weight                 = -110
-    identifier             = "about"
-    url                    = "/about/"
-
+  # [[menu.main]]
+  #   name                   = "Profile"
+  #   weight                 = 5
+  #   identifier             = "profile"
+  #   url                    = "/profile/"
 
 
 [params]
-  # faviconfile              = "img/leaf.ico"
   faviconfile              = "img/zheng.png"
   avatar                   = "img/profile.png"             # path to image in static dir e.g img/avatar.png (do not use in the same time as gravatar)
   author                   = "ZHENG Zi'ou"
-  i18n_flags               = false                         # whether to display small country flags for available translations
-  # description              = "Don't panic"
-  selfintro                = "Be myself. Love the wonderful world. Do the right things in the right way."           # appears in the site header when set to a non-empty string
+  description              = ["Be myself.", "Love the wonderful world.", "Do the right things and be a better man."]           # appears in the site header when set to a non-empty string
+  welcome_head             = "Hello, World!"
+  welcome_word             = "~ No Day But Today ~"
 
   latestpostscount         = 5                             # how many posts to display on the home page
-  cachebuster              = true                          # add the current unix timestamp in query string for cache busting css assets
+  bloggroupby              = 'month'
   dateform                 = "Jan 2, 2006"
-  # dateformfull             = "Mon Jan 2 2006  15:04:05"
   dateformfull             = "2006-01-02  Monday  15:04:05"
-  extracssfiles            = [ "/css/override.css" ]       # In your `static` directory, add/remove files as necessary.
-  noshowreadtime           = false                         # if true, don't show "<x> minutes read" in posts
- 
+  noshowreadtime           = false       
+
+  # slides
+  slidesDirPath            = "/static/img/header-slides"    # path to image in local dir (for hugo)
+  slidesDirPathURL         = "/img/header-slides"    # path to image in static dir (for static pages)
+
+  
 
   # highlighting 
   highlightjs              = true
-  # pygmentsOptions          = ""
-  # pygmentsUseClassic       = false
-  # pygmentsUseClasses       = true
-  # pygmentsCodeFences       = true
-  # pygmentsStyle            = "trac"
-
+  
 
   # links
   email                    = "zhengziou@gmail.com"
   github                   = "//github.com/orianna-zzo"
   linkedin                 = "//linkedin.com/in/ziouzheng"
+  # facebook                 = "//facebook.com/profile.php?id=100001597502469"
+  # googleplus               = "//plus.google.com/u/0/114708482192918964838"
+  # twitter                  = "//twitter.com/ZhengZiou"
+  # px500                    = "//px500"
+  instagram                = "//instagram.com/seagulldreamer/"
   include_rss              = false                         # include RSS <link> tag in <head> and show RSS icon
 
 

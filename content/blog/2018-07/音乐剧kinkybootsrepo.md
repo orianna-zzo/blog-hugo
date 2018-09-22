@@ -5,6 +5,8 @@ title: "音乐剧《Kinkyboots》repo"
 tags: ["musical", "百老汇", "文广"]
 series: ["观后repo"]
 categories: ["品鉴评论"]
+img: "/images/series/观后repo/2018-07/kinky-stage.jpg"
+summary: "2018年7月22日 19:30 上海文化广场 音乐剧《Kinkyboots》 repo"
 toc: true
 ---
 
@@ -42,8 +44,11 @@ toc: true
 
 从表演上说，几个男舞者全程脚踩高跟鞋又蹦又跳又劈叉，不过他们的跟都没有Lola的细，Lola真心气场全开，不得不赞叹一句，霸气v5。作为一个女生，平时都没有穿过这么高的跟走路，更不用说跳舞了。这几个变装绝对是Kinkyboots最大的亮点和特色。结尾的大群舞也很能调动情绪，特别想跟着跳一遍呀！
 
+![Kinky ending](/images/series/观后repo/2018-07/kinky-ending.jpg)
+
 ## 版本控制
 
 | Version | Action | Time       |
 | ------- | ------ | ---------- |
 | 1.0     | Init   | 2018-05-26 |
+| 1.0     | Add images | 2018-09-22 |
