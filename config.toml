@@ -34,25 +34,25 @@ pygmentsuseclasses         = true
     name                   = "Sci-Tech"
     weight                 = 1
     identifier             = "sci-tech"
-    url                    = "/sci-tech/"
+    url                    = "sci-tech/"
 
   # [[menu.main]]
   #   name                   = "Project"
   #   weight                 = 2
   #   identifier             = "project"
-  #   url                    = "/project/"
+  #   url                    = "project/"
 
   [[menu.main]]
     name                   = "Blog"
     weight                 = 3
     identifier             = "blog"
-    url                    = "/blog/"
+    url                    = "blog/"
 
   # [[menu.main]]
   #   name                   = "Profile"
   #   weight                 = 5
   #   identifier             = "profile"
-  #   url                    = "/profile/"
+  #   url                    = "profile/"
 
 
 [params]
@@ -70,8 +70,8 @@ pygmentsuseclasses         = true
   noshowreadtime           = false       
 
   # slides
-  slidesDirPath            = "/static/img/header-slides"    # path to image in local dir (for hugo)
-  slidesDirPathURL         = "/img/header-slides"    # path to image in static dir (for static pages)
+  slidesDirPath            = "static/img/header-slides"    # path to image in local dir (for hugo)
+  slidesDirPathURL         = "img/header-slides"    # path to image in static dir (for static pages)
 
   
 
