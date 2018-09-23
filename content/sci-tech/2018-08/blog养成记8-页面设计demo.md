@@ -42,7 +42,7 @@ toc: true
 
 网上找了不少静态页面的模板参考，还有各个博客的设计，参考他们的设计和功能，列了不少设想，所有的内容汇集在下面的思维导图中。
 
-![blog-xmind](/images/series/Blog养成记/8/blog-xmind.png)
+![blog-xmind](/images/series/Blog养成记/8/blog-xmind.jpg)
 
 ## Demo出炉
 
@@ -52,61 +52,61 @@ Duang~设计稿暂时定版如下，后续很有可能会修改，毕竟现在�
 
 ### 主页
 
-![home-page](/images/series/Blog养成记/8/1.png)
+![home-page](/images/series/Blog养成记/8/1.jpg)
 
 ### 赛先生
 
 list:
 
-![sci-index](/images/series/Blog养成记/8/1-1_sci.png)
+![sci-index](/images/series/Blog养成记/8/1-1_sci.jpg)
 
 single:
 
-![sci-single](/images/series/Blog养成记/8/1-1-1_papers.png)
+![sci-single](/images/series/Blog养成记/8/1-1-1_papers.jpg)
 
 ### 课题组
 
 list:
 
-![project-index](/images/series/Blog养成记/8/1-2_project.png)
+![project-index](/images/series/Blog养成记/8/1-2_project.jpg)
 
 single:
 
-![sci-index](/images/series/Blog养成记/8/1-2-1_projectdetail.png)
+![sci-index](/images/series/Blog养成记/8/1-2-1_projectdetail.jpg)
 
 ### 随想录
 
 list:
 
-![blog-index](/images/series/Blog养成记/8/1-3_blog.png)
+![blog-index](/images/series/Blog养成记/8/1-3_blog.jpg)
 
 single - default:
 
-![blog-single](/images/series/Blog养成记/8/1-3-3_travel.png)
+![blog-single](/images/series/Blog养成记/8/1-3-3_travel.jpg)
 
 single - moment:
 
-![blog-single2](/images/series/Blog养成记/8/1-3-4_moment.png)
+![blog-single2](/images/series/Blog养成记/8/1-3-4_moment.jpg)
 
 single - gallery:
 
-![blog-single3](/images/series/Blog养成记/8/1-3-5_gallery.png)
+![blog-single3](/images/series/Blog养成记/8/1-3-5_gallery.jpg)
 
 ### 荟萃集
 
 list:
 
-![arxiv-index](/images/series/Blog养成记/8/1-4_arxiv.png)
+![arxiv-index](/images/series/Blog养成记/8/1-4_arxiv.jpg)
 
 其他:
 
-![cat1](/images/series/Blog养成记/8/1-4-1_catpapers.png)
+![cat1](/images/series/Blog养成记/8/1-4-1_catpapers.jpg)
 
-![cat2](/images/series/Blog养成记/8/1-4-2_catmoment.png)
+![cat2](/images/series/Blog养成记/8/1-4-2_catmoment.jpg)
 
-![cat3](/images/series/Blog养成记/8/1-4-3_catgallery.png)
+![cat3](/images/series/Blog养成记/8/1-4-3_catgallery.jpg)
 
-![cat4](/images/series/Blog养成记/8/1-4-4_seriesblog.png)
+![cat4](/images/series/Blog养成记/8/1-4-4_seriesblog.jpg)
 
 
 

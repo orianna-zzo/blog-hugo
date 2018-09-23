@@ -27,7 +27,7 @@ toc: true
 
 我用的是mac，只需要在docker的Preference中配置即可，可配置多个Registry mirrors：
 
-<img name="docker-mirror" src="/images/series/慢学Docker/3/Docker-mirror.png" width='500px'/>
+{{% img-no-border %}}{{% center %}}<img name="docker-mirror" src="/images/series/慢学Docker/3/Docker-mirror.jpg" width='500px'/>{{% /center %}}{{% /img-no-border %}}
 
 最后点击⌈Apply& Restart⌋重启docker，或者在命令行执行重启。
 
@@ -47,7 +47,7 @@ $ service docker restart
 
 登陆阿里云，访问[https://cr.console.aliyun.com/#/accelerator](https://cr.console.aliyun.com/#/accelerator)，根据操作系统进行操作，添加镜像地址。
 
-![Aliyun-mirror](/images/series/慢学Docker/3/Aliyun-mirror.png)
+{{% img-no-border %}}![Aliyun-mirror](/images/series/慢学Docker/3/Aliyun-mirror.jpg){{% /img-no-border %}}
 
 ### 网易蜂巢
 
@@ -57,15 +57,15 @@ $ service docker restart
 
 进入[注册入口注册](https://account.daocloud.io/signin)。进入用户服务界面后，点击右上方的⌈加速器⌋：
 
-![aocloud_open_ac](/images/series/慢学Docker/3/Daocloud-open-acc.png)
+{{% img-no-border %}}![aocloud_open_ac](/images/series/慢学Docker/3/Daocloud-open-acc.jpg){{% /img-no-border %}}
 
 就会打开如下网页，可以得到一个加速器地址。根据docker所在系统的操作系统跟着指令完成配置。
 
-![aocloud-get-mirro](/images/series/慢学Docker/3/Daocloud-get-mirror.png)
+{{% img-no-border %}}![aocloud-get-mirro](/images/series/慢学Docker/3/Daocloud-get-mirror.jpg){{% /img-no-border %}}
 
 Daocloud在声明中提出docker加速器服务永久免费，希望不会食言。
 
-![aocloud-clai](/images/series/慢学Docker/3/Daocloud-claim.png)
+![aocloud-clai](/images/series/慢学Docker/3/Daocloud-claim.jpg)
 
 ## Resource资源链接汇总：
 

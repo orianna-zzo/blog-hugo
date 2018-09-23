@@ -37,11 +37,11 @@ $ killall Finder
 
 选择 ⌈显示⌋ > ⌈显示标签页栏⌋、⌈显示路径栏⌋、⌈显示边栏⌋、⌈显示预览⌋。
 
-<img name="Finder-view" src="/images/series/Mac小白探索记/2/finder-view.png" width='300px'/>
+{{% center %}}<img name="Finder-view" src="/images/series/Mac小白探索记/2/finder-view.jpg" width='250px'/>{{% /center %}}
 
 对工具栏自定义：⌈显示⌋ > ⌈自定义工具栏⌋，增加⌈新建文件夹⌋，或者还可以添加其他想要添加工具栏。
 
-<img name="Finder-toolbox" src="/images/series/Mac小白探索记/2/finder-toolbox.png" />
+{{% center %}}<img name="Finder-toolbox" src="/images/series/Mac小白探索记/2/finder-toolbox.jpg"  width='400px'/>{{% /center %}}
 
 ## 复制文件夹路径
 
@@ -61,17 +61,17 @@ $ killall Finder
 
 ⌈系统偏好设置⌋ > ⌈键盘⌋ > ⌈快捷键⌋ > ⌈服务⌋ > ⌈新建位于文件夹位置的终端窗口⌋。
 
-<img name="open-terminal" src="/images/series/Mac小白探索记/2/open-terminal.png" />
+{{% center %}}<img name="open-terminal" src="/images/series/Mac小白探索记/2/open-terminal.jpg" width='400px'/>{{% /center %}}
 
 这样在Finder中选中文件夹，双指右击，就可以在服务中看到打开终端的选项。
 
-<img name="service-open-terminal" src="/images/series/Mac小白探索记/2/service-open-terminal.png" />
+{{% img-no-border %}}{{% center %}}<img name="service-open-terminal" src="/images/series/Mac小白探索记/2/service-open-terminal.jpg"  width='400px'/>{{% /center %}}{{% /img-no-border %}}
 
 还可以设置快捷键，我设置了 `⌘⌥⌃T`，选中文件夹后使用快捷键后即可快速打开终端。
 
 ### 方案二：安装Go2Shell
 
-<img name="Go2Shell" src="/images/series/Mac小白探索记/2/Go2Shell.png" width='100px'/>
+{{% img-no-border %}}<img name="Go2Shell" src="/images/series/Mac小白探索记/2/Go2Shell.jpg" width='100px'/>{{% /img-no-border %}}
 
 相比方案一，这个还是要方便高效更多。注意不要通过App Store安装，无法使用，直接通过Homebrew安装：
 
@@ -81,11 +81,11 @@ $ brew cask install go2shell
 
 安装后打开，点击⌈Install Go2Shell to Finder⌋
 
-<img name="go2shell-finder" src="/images/series/Mac小白探索记/2/go2shell-finder.png" width='300px'/>
+{{% center %}}<img name="go2shell-finder" src="/images/series/Mac小白探索记/2/go2shell-finder.jpg" width='250px'/>{{% /center %}}
 
 然后就可以在Finder的工具栏发现Go2Shell的图标了。点击这个图标就会打开一个在当前文件夹的Terminal，很方便。
 
-![go2shell-toolbox](/images/series/Mac小白探索记/2/go2shell-toolbox.png)
+![go2shell-toolbox](/images/series/Mac小白探索记/2/go2shell-toolbox.jpg)
 
 ## 快速新建文件
 
@@ -93,21 +93,22 @@ $ brew cask install go2shell
 
 或者可以利用Automator来新建一个应用Applicstion。
 
-<img name="Automator" src="/images/series/Mac小白探索记/2/Automator.png" width='100px'/>
+{{% img-no-border %}}<img name="Automator" src="/images/series/Mac小白探索记/2/Automator.jpg" width='100px'/>{{% /img-no-border %}}
 
 ### 创建脚本
 
 双击打开应用后选择⌈新建文档⌋。
 
-![new-application](/images/series/Mac小白探索记/2/new-application.png)
+
+{{% img-no-border %}}{{% center %}}<img name="new-application" src="/images/series/Mac小白探索记/2/new-application.jpg" width='400px'/>{{% /center %}}{{% /img-no-border %}}
 
 选择新建⌈Application⌋。
 
-![application](/images/series/Mac小白探索记/2/application.png)
+{{% img-no-border %}}![application](/images/series/Mac小白探索记/2/application.jpg){{% /img-no-border %}}
 
 选择⌈Run AppleScript⌋，双击后右侧会自动出现脚本模板。
 
-![run-script](/images/series/Mac小白探索记/2/run-script.png)
+{{% img-no-border %}}![run-script](/images/series/Mac小白探索记/2/run-script.jpg){{% /img-no-border %}}
 
 新建文件代码如下：
 
@@ -124,19 +125,20 @@ end run
 
 按 `⌘S` 保存脚本，修改app名称和存放位置。 
 
-![save-script](/images/series/Mac小白探索记/2/save-script.png)
+{{% img-no-border %}}![save-script](/images/series/Mac小白探索记/2/save-script.jpg){{% /img-no-border %}}
 
 ### 修改图标
 
 可以在[这里](https://www.iconfinder.com/icons/314924/add_document_icon#size=512)下载图标，双击打开图标图片，`⌘C` 复制图标。选中NewFile.app，按 `⌘I` 打开软件信息，点击左上角的图标，会有一圈蓝色光圈，然后按 `⌘V` 粘贴图标，图标修改完成。
 
-<img name="change-icon" src="/images/series/Mac小白探索记/2/change-icon.png" width='300px'/>
+{{% img-no-border %}}{{% center %}}<img name="change-icon" src="/images/series/Mac小白探索记/2/change-icon.jpg" width='300px'/>{{% /center %}}{{% /img-no-border %}}
 
 ### 添加至Finder工具栏
 
 打开两个Finder窗口，平铺。打开⌈显示⌋ >⌈自定义工具栏⌋，将新建的NewFile.app图标拖到工具栏上。之后就可以直接在Finder窗口点击图标生成新的文件了，也可以使用spotlight使用NewFile新建文件。
 
-![add-app](/images/series/Mac小白探索记/2/add-app.png)
+
+{{% img-no-border %}}{{% center %}}<img name="add-app" src="/images/series/Mac小白探索记/2/add-app.jpg" width='400px'/>{{% /center %}}{{% /img-no-border %}}
 
 ## 版本控制
 

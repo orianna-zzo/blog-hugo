@@ -42,7 +42,7 @@ Windows平台上control在快捷键中使用频繁，而转到mac平台后很多
 
 ⌈系统偏好设置⌋ > ⌈键盘⌋ > ⌈键盘⌋ > 点击⌈自定义控制条⌋ 即可进行设置。
 
-<img name="touchbar-config" src="/images/series/Mac小白探索记/1/touchbar-config.png"/>
+{{% center %}}<img name="touchbar-config" src="/images/series/Mac小白探索记/1/touchbar-config.jpg" width='400px'/>{{% /center %}}
 
 可以将一些找起来比较麻烦但常用的设置放在touchbar，移除默认设置touchbar中一些不常用的功能。我放了night shift、免打扰和屏幕保护程序。应用程序中的touchbar的功能和该应用程序本身功能有关，有些可以在程序中设置touchbar的功能。
 
@@ -58,7 +58,7 @@ $ sudo spctl --master-disable
 
 然后在⌈系统偏好设置⌋ > ⌈安全与隐私⌋ 中选择 ⌈任何来源⌋。安装完毕后，为了安全考虑，最好能够再选择回来自可信任的开发者。
 
-<img name="Config-privacy-source" src="/images/series/Mac小白探索记/1/config-privacy-source.png"/>
+{{% center %}}<img name="Config-privacy-source" src="/images/series/Mac小白探索记/1/config-privacy-source.jpg" width='400px'/>{{% /center %}}
 
 ## 包管理器
 
@@ -152,7 +152,7 @@ $ brew cask install sogouinput
 
 #### Windscribe
 
-<img name="Windscribe" src="/images/series/Mac小白探索记/1/Windscribe.png" width='100px'/>
+{{% img-no-border %}}<img name="Windscribe" src="/images/series/Mac小白探索记/1/Windscribe.jpg" width='100px'/>{{% /img-no-border %}}
 
 这个比较麻烦，[Windscribe官网](https://windscribe.com)和安装包都需要科学上网，如果要使用需要先在官网注册，但是也要先科学上网。Homebrew下载也无法直接连接。还好之前找人下了安装包。好在安装完后可以直接登陆。免费用户每个月有10G流量，基本不看视频都够用，而且这个软件也有手机和ipad版。
 
@@ -160,7 +160,7 @@ $ brew cask install sogouinput
 
 #### Spectacle
 
-<img name="Spectacle" src="/images/series/Mac小白探索记/1/Spectacle.png" width='100px'/>
+{{% img-no-border %}}<img name="Spectacle" src="/images/series/Mac小白探索记/1/Spectacle.jpg" width='100px'/>{{% /img-no-border %}}
 
 可用Homebrew进行安装。
 
@@ -176,7 +176,7 @@ Spectacle默认设置 `⌘⌥C` 是将窗口放在屏幕中央 (center)，这个
 
 #### Amphetamine 防休眠工具
 
-<img name="Amphetamine" src="/images/series/Mac小白探索记/1/Amphetamine.png" width='100px'/>
+{{% img-no-border %}}<img name="Amphetamine" src="/images/series/Mac小白探索记/1/Amphetamine.jpg" width='100px'/>{{% /img-no-border %}}
 
 苹果App Store上直接下载就好，选择不在Dock栏显示。默认对图标左击打开设置，右击(双击)进行状态激活，可进行相反设置，为防止误击，我保留了原始设置。
 
@@ -186,7 +186,7 @@ Amphetamine可设定每次状态激活时防休眠时长，可指定每天的某
 
 #### NoSleep 合盖休眠也无效
 
-<img name="NoSleep" src="/images/series/Mac小白探索记/1/NoSleep.png" width='100px'/>
+{{% img-no-border %}}<img name="NoSleep" src="/images/series/Mac小白探索记/1/NoSleep.jpg" width='100px'/>{{% /img-no-border %}}
 
 经常我们希望mac合屏后也能继续工作，比如晚上下载时避免光污染。对我来说在确认安全不会离开座位的情况下，合盖并不希望休眠，继续工作时并不想再次输入密码。NoSleep 就是专为合盖放休眠设计的。
 
@@ -200,7 +200,7 @@ NoSleep的设置比较简单，除去指定在电源适配器或者电池下启�
 
 ### Cheatsheet 查看快捷键
 
-<img name="Cheatsheet" src="/images/series/Mac小白探索记/1/Cheatsheet.png" width='100px'/>
+{{% img-no-border %}}<img name="Cheatsheet" src="/images/series/Mac小白探索记/1/Cheatsheet.jpg" width='100px'/>{{% /img-no-border %}}
 
 ```shell
 $ brew cask install cheatsheet
@@ -212,7 +212,7 @@ $ brew cask install cheatsheet
 
 #### The Unarchive
 
-<img name="unarchiver" src="/images/series/Mac小白探索记/1/unarchiver.png" width='100px'/>
+{{% img-no-border %}}<img name="unarchiver" src="/images/series/Mac小白探索记/1/unarchiver.jpg" width='100px'/>{{% /img-no-border %}}
 
 The Unarchiver 支持解压 **RAR**、**7-zip**、**Tar**等常用压缩格式的文件，同时也可以打开**ISO**、**EXE**等类型的文件，功能齐全并且免费。
 
@@ -224,7 +224,7 @@ $ brew cask install the-unarchiver
 
 #### Azureus
 
-<img name="vuze" src="/images/series/Mac小白探索记/1/vuze.png" width='100px'/>
+{{% img-no-border %}}<img name="vuze" src="/images/series/Mac小白探索记/1/vuze.jpg" width='100px'/>{{% /img-no-border %}}
 
 这个是PT需要的软件，linux环境下一般推荐这个。
 
@@ -236,7 +236,7 @@ $ brew cask install vuze
 
 #### Splayerx 射手播放器
 
-<img name="SPlayerX" src="/images/series/Mac小白探索记/1/SPlayerX.png" width='100px'/>
+{{% img-no-border %}}<img name="SPlayerX" src="/images/series/Mac小白探索记/1/SPlayerX.jpg" width='100px'/>{{% /img-no-border %}}
 
 尽管射手播放器并不是在播放器中口碑最好的，而且射手播放器已经停止更新维护好几年了，但由于射手播放器自动搜索字幕并下载实在太好用太方便，不忍舍弃。
 
@@ -246,7 +246,7 @@ $ brew cask install splayerx
 
 #### VLC
 
-<img name="vlc" src="/images/series/Mac小白探索记/1/vlc.png" width='100px'/>
+{{% img-no-border %}}<img name="vlc" src="/images/series/Mac小白探索记/1/vlc.jpg" width='100px'/>{{% /img-no-border %}}
 
 vlc应该是linux上最著名的开源播放器，口碑非常好。不过鉴于射手太好用，估计只有在射手实在hold不住时才会打开吧。PS，iphone/ipad上用这个看影片很不错，特别是rmvb格式的影片。
 
@@ -260,7 +260,7 @@ $ brew cask install vlc
 
 ### Little Snitch 防止软件自动连接网络
 
-<img name="Little-Snitch" src="/images/series/Mac小白探索记/1/Little-Snitch.png" width='100px'/>
+{{% img-no-border %}}<img name="Little-Snitch" src="/images/series/Mac小白探索记/1/Little-Snitch.jpg" width='100px'/>{{% /img-no-border %}}
 
 这个不错，可以防止软件自动连接网络，不过这个软件收费也不便宜。已下载安装包。
 
@@ -270,7 +270,7 @@ $ brew cask install vlc
 
 #### Docker
 
-<img name="Docker" src="/images/series/Mac小白探索记/1/Docker.png" width='100px'/>
+{{% img-no-border %}}<img name="Docker" src="/images/series/Mac小白探索记/1/Docker.jpg" width='100px'/>{{% /img-no-border %}}
 
 Terminal安装稳定版：
 
@@ -284,7 +284,7 @@ $ brew cask install docker
 
 #### Sublime Text
 
-<img name="Sublime" src="/images/series/Mac小白探索记/1/Sublime-Text.png" width='100px'/>
+{{% img-no-border %}}<img name="Sublime" src="/images/series/Mac小白探索记/1/Sublime-Text.jpg" width='100px'/>{{% /img-no-border %}}
 
 可以在官网下载安装，但是为了便于更新，还是使用Homebrew安装
 
@@ -360,7 +360,7 @@ import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.
 
 #### Visual Studio Code
 
-<img name="Code" src="/images/series/Mac小白探索记/1/Code.png" width='100px'/>
+{{% img-no-border %}}<img name="Code" src="/images/series/Mac小白探索记/1/Code.jpg" width='100px'/>{{% /img-no-border %}}
 
 这是微软出品免费的文本编辑器，主要针对前端开发，真心很好用。同样Homebrew安装：
 
@@ -374,7 +374,7 @@ $ brew cask install visual-studio-code
 
 #### Pycharm
 
-<img name="Pycharm" src="/images/series/Mac小白探索记/1/PyCharm.png" width='100px'/>
+{{% img-no-border %}}<img name="Pycharm" src="/images/series/Mac小白探索记/1/PyCharm.jpg" width='100px'/>{{% /img-no-border %}}
 
 下载Professional版，需要输入key：
 

@@ -45,11 +45,11 @@ Disallow: /
 
 在google搜索页面输入“site:orianna-zzo.github.io”就可以看到这个网页是否被google索引到，如果没被索引到，在搜索结果页面就会直接提示你使用[Google Search Console](www.google.com/webmasters/)。登录后，如果是首次使用在Search Console中以下界面中选择“网页”类型资源，并将博客完整url填入其中，我填入“[https://orianna-zzo.github.io](https://orianna-zzo.github.io)”。注意http或者https，www等最好能完全正确。
 
-![google-add-resource1](/images/series/Blog养成记/5/google-add-resource1.png)
+![google-add-resource1](/images/series/Blog养成记/5/google-add-resource1.jpg)
 
 如果已经添加过资源，则需要点击下面的红色按钮“添加属性”，然后和上面一样地添加资源即可。
 
-![google-add-resource2](/images/series/Blog养成记/5/google-add-resource2.png)
+![google-add-resource2](/images/series/Blog养成记/5/google-add-resource2.jpg)
 
 资源添加后，需要验证你对该网站有所有权。Google提供了几种方法，我选择了HTML验证文件上传，只需要根据要求，下载HTML验证文件，把文件放在网站的repository中上传，然后进行验证即可。
 
@@ -59,17 +59,17 @@ Disallow: /
 
 进入资源后，在左侧点击“抓取>robots.txt测试工具”，右边会有显示robots.txt的内容。需要注意的是，robots.txt并不一定是最新版的，看上去这个每天只会更新一次。可以在下方输入需要测试的网址，并点击测试。若显示已允许则说明设置ok。
 
-![google-robots](/images/series/Blog养成记/5/google-robots.png)
+![google-robots](/images/series/Blog养成记/5/google-robots.jpg)
 
 #### 添加url
 
 robots.txt设置成功还是不够的，还是需要手动添加url。在左侧点击“抓取>Google抓取工具”，在右侧金融人机身份验证后，可以将想要添加的url写入输入框，并进行抓取。
 
-![google-crawl](/images/series/Blog养成记/5/google-crawl.png)
+![google-crawl](/images/series/Blog养成记/5/google-crawl.jpg)
 
 状态显示完成，说明该网页已经爬取成功。点击“请求输入索引”，会显示以下选择框：
 
-![google-add-index](/images/series/Blog养成记/5/google-add-index.png)
+![google-add-index](/images/series/Blog养成记/5/google-add-index.jpg)
 
 有两个选项，第一个仅抓取次网址，每个月500次提交机会，第二个抓取次网址及其直接链接，每个月有10次提交机会。提交后，编入了索引，等上一会就可以在google上搜索了！
 
@@ -79,7 +79,7 @@ robots.txt设置成功还是不够的，还是需要手动添加url。在左侧�
 
 在左侧点击“站点地图”，并在右侧点添加/测试站点地图，并添加url，我的是“[https://orianna-zzo.github.io/sitemap.xml](https://orianna-zzo.github.io/sitemap.xml)”。
 
-![google-add-sitemap](/images/series/Blog养成记/5/google-add-sitemap.png)
+![google-add-sitemap](/images/series/Blog养成记/5/google-add-sitemap.jpg)
 
 发现提示有警告，说是网址遭到robots.txt阻止。原来sitemap需要在robots.txt增加配置，于是现在robots.txt如下所示：
 
@@ -97,11 +97,11 @@ Sitemap: https://orianna-zzo.github.io/sitemap.xml
 
 然后在左侧点击“配置我的网站>Sitemaps”，并在右侧加上sitemap的url，点击提交。
 
-![gbing-sitemap](/images/series/Blog养成记/5/bing-sitemap.png)
+![gbing-sitemap](/images/series/Blog养成记/5/bing-sitemap.jpg)
 
 Google基本过一天就能查到，但是Bing我总是很难搜索到，猛然发现上次抓取更新时间还在1-11，已经过了大半个月了，不知道什么时候才能知道效果了。
 
-![bing-crawl](/images/series/Blog养成记/5/bing-crawl.png)
+![bing-crawl](/images/series/Blog养成记/5/bing-crawl.jpg)
 
 ### 百度不死心的尝试
 
@@ -109,17 +109,17 @@ Google基本过一天就能查到，但是Bing我总是很难搜索到，猛然�
 
 在右侧选择“数据监控>Robots”，并点击检测并更新刷新robots设置。
 
-![baidu-robots](/images/series/Blog养成记/5/baidu-robots.png)
+![baidu-robots](/images/series/Blog养成记/5/baidu-robots.jpg)
 
 在“数据引入>链接提交”中的自动提交选择sitemap，并提交sitemap地址。
 
-![baidu-sitemap](/images/series/Blog养成记/5/baidu-sitemap.png)
+![baidu-sitemap](/images/series/Blog养成记/5/baidu-sitemap.jpg)
 
 状态转了很久显示抓取失败T^T。
 
 然后选择“数据监控>抓取诊断”，并输入博客网址进行抓取。然后发现，全部都抓取失败了，显示是“拒绝访问”。果然是真的屏蔽了百度爬虫了呀。
 
-![baidu-spider](/images/series/Blog养成记/5/baidu-spider.png)
+![baidu-spider](/images/series/Blog养成记/5/baidu-spider.jpg)
 
 
 ## Resource资源链接汇总

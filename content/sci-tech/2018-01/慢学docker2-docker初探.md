@@ -24,9 +24,9 @@ toc: true
 
 不过docker容器和虚拟机尽管都是虚拟化技术，但是里面的技术细节有很多不同。下面两张docker官网上的图很清晰简单地表示了两者的区别：
 
-<img name="virtual machine architecture" src="https://www.docker.com/sites/default/files/VM%402x.png" width='300px'/>
+{{% img-no-border %}}{{% center %}}<img name="virtual machine architecture" src="https://www.docker.com/sites/default/files/VM%402x.png" width='300px'/>{{% /center %}}{{% /img-no-border %}}
 
-<img name="docker container architecture" src="https://www.docker.com/sites/default/files/Container%402x.png"  width='300px'/>
+{{% img-no-border %}}{{% center %}}<img name="docker container architecture" src="https://www.docker.com/sites/default/files/Container%402x.png"  width='300px'/>{{% /center %}}{{% /img-no-border %}}
 
 前者是虚拟机的架构图，后者是docker容器的架构图。最显然的区别是，每个虚拟机中都运行着各自的guest OS，而在docker容器架构中每个容器只包含了各自的应用和依赖包，并不包含独立的操作系统。也就是说容器采用kernel共享，同时使用cgroups和namespace等方法对容器所使用的命名空间和依赖包等进行区分以达到隔离效果。所以尽管各个容器都是独立在宿主机的操作系统上运行着的，但不可避免地，各个容器之间会共享一些通用运行库。这个区别会使得各个容器之间相互独立，但并没有虚拟机的隔离性好，但这也是使得docker容器能够快速启动并且资源占用少的一个重要原因。太复杂的我也不清楚细节，只是大致有个概念，这对我们简单应用了解也应该就足够了。
 
