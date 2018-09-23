@@ -57,7 +57,7 @@ pygmentsuseclasses         = true
 
 [params]
   faviconfile              = "img/zheng.png"
-  avatar                   = "img/profile.png"             # path to image in static dir e.g img/avatar.png (do not use in the same time as gravatar)
+  avatar                   = "img/profile.jpg"             # path to image in static dir e.g img/avatar.png (do not use in the same time as gravatar)
   author                   = "ZHENG Zi'ou"
   description              = ["Be myself.", "Love the wonderful world.", "Do the right things and be a better man."]           # appears in the site header when set to a non-empty string
   welcome_head             = "Hello, World!"
