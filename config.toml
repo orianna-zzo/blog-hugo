@@ -54,6 +54,12 @@ pygmentsuseclasses         = true
   #   identifier             = "profile"
   #   url                    = "profile/"
 
+  [[menu.main]]
+    name                   = "About"
+    weight                 = 9
+    identifier             = "about"
+    url                    = "about/"
+
 
 [params]
   faviconfile              = "img/zheng.png"
@@ -93,3 +99,6 @@ pygmentsuseclasses         = true
 
   # analytics
   googleAnalytics          = "UA-90057853-1"
+
+  # counter
+  busuanzi                 = true
