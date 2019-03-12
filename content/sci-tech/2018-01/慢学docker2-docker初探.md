@@ -24,11 +24,10 @@ toc: true
 
 不过docker容器和虚拟机尽管都是虚拟化技术，但是里面的技术细节有很多不同。下面两张docker官网上的图很清晰简单地表示了两者的区别：
 
-{{% img-no-border %}}{{% center %}}<img name="virtual machine architecture" src="https://www.docker.com/sites/default/files/VM%402x.png" width='300px'/>{{% /center %}}{{% /img-no-border %}}
+{{% img-no-border %}}{{% center %}}<img name="architecture comparison" src="https://www.docker.com/sites/default/files/d8/2018-11/docker-containerized-and-vm-transparent-bg.png" />{{% /center %}}{{% /img-no-border %}}
 
-{{% img-no-border %}}{{% center %}}<img name="docker container architecture" src="https://www.docker.com/sites/default/files/Container%402x.png"  width='300px'/>{{% /center %}}{{% /img-no-border %}}
 
-前者是虚拟机的架构图，后者是docker容器的架构图。最显然的区别是，每个虚拟机中都运行着各自的guest OS，而在docker容器架构中每个容器只包含了各自的应用和依赖包，并不包含独立的操作系统。也就是说容器采用kernel共享，同时使用cgroups和namespace等方法对容器所使用的命名空间和依赖包等进行区分以达到隔离效果。所以尽管各个容器都是独立在宿主机的操作系统上运行着的，但不可避免地，各个容器之间会共享一些通用运行库。这个区别会使得各个容器之间相互独立，但并没有虚拟机的隔离性好，但这也是使得docker容器能够快速启动并且资源占用少的一个重要原因。太复杂的我也不清楚细节，只是大致有个概念，这对我们简单应用了解也应该就足够了。
+前者是docker容器的架构图，后者是虚拟机的架构图。最显然的区别是，每个虚拟机中都运行着各自的guest OS，而在docker容器架构中每个容器只包含了各自的应用和依赖包，并不包含独立的操作系统。也就是说容器采用kernel共享，同时使用cgroups和namespace等方法对容器所使用的命名空间和依赖包等进行区分以达到隔离效果。所以尽管各个容器都是独立在宿主机的操作系统上运行着的，但不可避免地，各个容器之间会共享一些通用运行库。这个区别会使得各个容器之间相互独立，但并没有虚拟机的隔离性好，但这也是使得docker容器能够快速启动并且资源占用少的一个重要原因。太复杂的我也不清楚细节，只是大致有个概念，这对我们简单应用了解也应该就足够了。
 
 嗯，再啰嗦一句。在查资料是看到了这篇知乎上的[博文](https://zhuanlan.zhihu.com/p/30594040?utm_source=weibo&utm_medium=social)，里面提到在会议SOSP 2017上发表了一篇很有意思的paper，他们通过精简内核和其他虚拟技术把虚拟机做的更轻量级，使之启动速度比docker更快，内存开销比docker更小。现在的热门是容器技术，说不定再过个四五年的又是虚拟机的天下了呢？嗯，说不准是两个结合的究极进化体。门外汉表示看看热闹就可以了。
 
@@ -215,3 +214,4 @@ $ docker rmi alpine
 | ------- | ------ | ---------- |
 | 1.0     | Init   | 2018-01-27 |
 | 1.1     | Update Linux Installation | 2018-03-21 |
+| 1.2     | Update Images | 2019-03-12 |

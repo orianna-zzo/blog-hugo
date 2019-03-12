@@ -34,7 +34,7 @@ Repo拖得有些久，好些都记不太得了。
 
 上剧场在商场中，有些吵闹，门口有着赖声川的题字。
 
-![Shang Theatre](/images/series/观后repo/2019-01/shang_theatre.jpg)
+{{% center %}}<img name="shang-theatre" src="/images/series/观后repo/2019-01/shang_theatre.jpg" width='400px'/>{{% /center %}}
 
 记得弹钢琴的小哥哥很不错，弹起钢琴特别帅，配上流动的音符，很赞。舞美印象中是不错的，演员表演的也是可圈可点，虽然算不上特别惊艳，但是整体也算是值得一看。
 
